@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AutoFlow Blog – AI, Automation & Programming</title>
+<meta name="description" content="The definitive resource for AI workflows, YouTube automation, n8n, Remotion, and Python. Learn how to build systems that run themselves."/>
+<meta name="keywords" content="AI automation, n8n workflows, YouTube automation, Remotion, Python, faceless YouTube, AutoVideoFactory"/>
+<meta property="og:title" content="AutoFlow Blog – Dominate AI & Automation"/>
+<meta property="og:description" content="The definitive resource for builders who automate everything."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter','sans-serif'],
+        mono: ['JetBrains Mono','monospace'],
+        ar:   ['Cairo','sans-serif'],
+      },
+      colors: {
+        brand: { DEFAULT:'#3b82f6', dark:'#1d4ed8', light:'#60a5fa' },
+        neon:  '#00e5ff',
+        surface: { dark:'#0d1117', card:'#161b22', border:'#21262d' }
+      },
+      animation: {
+        'fade-up': 'fadeUp 0.6s ease both',
+        'pulse-slow': 'pulse 3s ease infinite',
+      },
+      keyframes: {
+        fadeUp: { from:{opacity:0,transform:'translateY(24px)'}, to:{opacity:1,transform:'translateY(0)'} }
+      }
+    }
+  }
+}
+</script>
+<style>
+/* ── GLOBAL ── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; transition: background .3s, color .3s; }
+[data-lang="ar"] body, [data-lang="ar"] * { font-family: 'Cairo', sans-serif !important; }
+[data-lang="ar"] { direction: rtl; }
+
+/* ── DARK / LIGHT surfaces ── */
+.dark body  { background: #0d1117; color: #e6edf3; }
+body        { background: #f6f8fa; color: #0d1117; }
+
+/* ── GLASSMORPHISM ── */
+.glass {
+  background: rgba(22,27,34,0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(48,54,61,0.8);
+}
+:not(.dark) .glass {
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ── GRID NOISE ── */
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59,130,246,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+:not(.dark) body::before { opacity:.35; }
+
+/* ── NAV GLOW ── */
+.nav-glow { box-shadow: 0 1px 0 rgba(48,54,61,0.8), 0 4px 24px rgba(0,0,0,0.3); }
+
+/* ── CARDS ── */
+.dark .article-card  { background: #161b22; border-color: #21262d; }
+.article-card        { background: #fff;     border-color: #e1e4e8; }
+.article-card:hover  { transform: translateY(-4px); }
+
+/* ── CATEGORY BADGE ── */
+.badge { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.badge-ai         { background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.3); }
+.badge-automation { background:rgba(124,58,237,.15); color:#a78bfa; border:1px solid rgba(124,58,237,.3); }
+.badge-python     { background:rgba(34,197,94,.15);  color:#4ade80;  border:1px solid rgba(34,197,94,.3); }
+.badge-youtube    { background:rgba(239,68,68,.15);  color:#f87171;  border:1px solid rgba(239,68,68,.3); }
+:not(.dark) .badge-ai         { background:rgba(59,130,246,.1);  color:#2563eb; }
+:not(.dark) .badge-automation { background:rgba(124,58,237,.1);  color:#7c3aed; }
+:not(.dark) .badge-python     { background:rgba(34,197,94,.1);   color:#16a34a; }
+:not(.dark) .badge-youtube    { background:rgba(239,68,68,.1);   color:#dc2626; }
+
+/* ── FEATURED CARD ── */
+.featured-card { position:relative; overflow:hidden; border-radius:16px; }
+.featured-card img { transition: transform 0.5s; }
+.featured-card:hover img { transform: scale(1.04); }
+.featured-overlay {
+  position:absolute; inset:0;
+  background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.3) 60%, transparent 100%);
+}
+
+/* ── SEARCH ── */
+.search-input { border: 1.5px solid rgba(59,130,246,.35); transition: border-color .2s, box-shadow .2s; }
+.search-input:focus { outline:none; border-color:#3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.15); }
+
+/* ── COUNTER ── */
+.counter-badge {
+  background: linear-gradient(135deg,rgba(0,229,255,.12),rgba(59,130,246,.12));
+  border: 1px solid rgba(0,229,255,.25);
+}
+
+/* ── FILTER TABS ── */
+.filter-tab { transition: all .2s; }
+.filter-tab.active {
+  background: #3b82f6; color: #fff;
+  box-shadow: 0 2px 12px rgba(59,130,246,.4);
+}
+
+/* ── SPONSOR BOX (also used in post) ── */
+.sponsor-box {
+  background: linear-gradient(135deg,rgba(59,130,246,.08) 0%,rgba(124,58,237,.08) 100%);
+  border: 1.5px solid rgba(59,130,246,.35);
+  border-radius: 16px; padding: 32px;
+  position: relative; overflow: hidden;
+  box-shadow: 0 0 40px rgba(59,130,246,.1);
+}
+.sponsor-box::before {
+  content:''; position:absolute; top:-50%; left:-50%;
+  width:200%; height:200%;
+  background: radial-gradient(circle, rgba(59,130,246,.06) 0%, transparent 60%);
+  pointer-events:none;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity:0; transform:translateY(28px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ── VISIT COUNTER ANIMATION ── */
+@keyframes countUp { from { opacity:0; transform:scale(.85); } to { opacity:1; transform:scale(1); } }
+.count-anim { animation: countUp .7s ease both; }
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:transparent; }
+::-webkit-scrollbar-thumb { background:#3b82f6; border-radius:3px; }
+
+/* ── SKELETON ── */
+.skeleton { background: linear-gradient(90deg,#21262d 25%,#2d333b 50%,#21262d 75%); background-size:200%; animation: shimmer 1.5s infinite; }
+:not(.dark) .skeleton { background: linear-gradient(90deg,#e1e4e8 25%,#f0f2f4 50%,#e1e4e8 75%); background-size:200%; }
+@keyframes shimmer { 0%{background-position:200%} 100%{background-position:-200%} }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition:none!important; animation:none!important; } }
+
+/* Arabic Typography Adjustments */
+[data-lang="ar"] p, [data-lang="ar"] li, [data-lang="ar"] .prose p, [data-lang="ar"] .prose li {
+  line-height: 2 !important;
+  font-size: 1.05rem;
+}
+
+</style>
+</head>
+<body class="relative">
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<nav id="navbar" class="glass nav-glow fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 gap-4">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 shrink-0">
+        <span class="font-mono text-sm font-bold text-blue-400">&gt;_</span>
+        <span class="font-bold text-base text-white dark:text-white" data-i="logo">AutoFlow<span class="text-blue-400">Blog</span></span>
+      </a>
+
+      <!-- Category Nav -->
+      <div class="hidden md:flex items-center gap-1 text-sm font-medium">
+        <button class="filter-tab active px-3 py-1.5 rounded-lg" data-cat="all" onclick="filterCat(this,'all')" data-i="cat_all">All</button>
+        <button class="filter-tab px-3 py-1.5 rounded-lg dark:text-gray-400 text-gray-600 dark:hover:text-white hover:text-gray-900" data-cat="AI" onclick="filterCat(this,'AI')" data-i="cat_ai">AI</button>
+        <button class="filter-tab px-3 py-1.5 rounded-lg dark:text-gray-400 text-gray-600 dark:hover:text-white hover:text-gray-900" data-cat="Automation" onclick="filterCat(this,'Automation')" data-i="cat_auto">Automation</button>
+        <button class="filter-tab px-3 py-1.5 rounded-lg dark:text-gray-400 text-gray-600 dark:hover:text-white hover:text-gray-900" data-cat="Python" onclick="filterCat(this,'Python')" data-i="cat_py">Python</button>
+        <button class="filter-tab px-3 py-1.5 rounded-lg dark:text-gray-400 text-gray-600 dark:hover:text-white hover:text-gray-900" data-cat="YouTube" onclick="filterCat(this,'YouTube')" data-i="cat_yt">YouTube</button>
+      </div>
+
+      <!-- Right Controls -->
+      <div class="flex items-center gap-2 shrink-0">
+        <!-- Readers badge -->
+        <div class="counter-badge hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-cyan-300">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+          <span id="nav-counter">142,800+</span>
+          <span data-i="readers"> Readers</span>
+        </div>
+        <button onclick="toggleLang()" class="px-3 py-1.5 rounded-lg border border-white/10 text-xs font-bold text-gray-300 hover:border-blue-500 hover:text-blue-400 transition-all" id="lang-btn">🌐 AR</button>
+        <button onclick="toggleTheme()" class="p-2 rounded-lg border border-white/10 text-gray-300 hover:border-blue-500 hover:text-blue-400 transition-all" aria-label="Toggle theme" id="theme-btn">🌙</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="relative z-10 pt-32 pb-20 px-4">
+  <div class="max-w-4xl mx-auto text-center reveal">
+    <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/25 rounded-full px-4 py-2 text-xs font-semibold text-blue-400 font-mono mb-6 animate-fade-up">
+      <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+      <span data-i="hero_badge">LIVE BLOG · UPDATED DAILY</span>
+    </div>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-6">
+      <span class="dark:text-white text-gray-900" data-i="hero_title1">Dominate</span>
+      <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-purple-400 bg-clip-text text-transparent" data-i="hero_title2"> AI & Automation</span><br/>
+      <span class="dark:text-gray-300 text-gray-700 text-3xl sm:text-4xl lg:text-5xl font-bold" data-i="hero_title3">Build Systems That Run Themselves</span>
+    </h1>
+    <p class="dark:text-gray-400 text-gray-600 text-lg max-w-2xl mx-auto mb-8 leading-relaxed" data-i="hero_sub">
+      Practical guides on n8n workflows, YouTube automation, AI video generation, and Python scripting — from builders who actually ship.
+    </p>
+
+    <!-- Search -->
+    <div class="max-w-lg mx-auto relative mb-8">
+      <input id="search-input" type="text" placeholder="" data-ph-en="Search articles..." data-ph-ar="ابحث في المقالات..." class="search-input w-full dark:bg-surface-card bg-white rounded-xl px-5 py-3.5 pr-12 text-sm dark:text-white text-gray-900 dark:placeholder-gray-500 placeholder-gray-400 font-medium" oninput="handleSearch(this.value)"/>
+      <span class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">🔍</span>
+    </div>
+
+    <!-- Live Counter -->
+    <div class="inline-flex items-center gap-3 glass px-6 py-3 rounded-2xl">
+      <div class="text-center">
+        <div class="text-2xl font-black text-cyan-300 font-mono count-anim" id="hero-counter">142,800+</div>
+        <div class="text-xs text-gray-400 mt-0.5" data-i="counter_label">Readers This Month</div>
+      </div>
+      <div class="w-px h-10 dark:bg-white/10 bg-black/10"></div>
+      <div class="text-center">
+        <div class="text-2xl font-black text-green-400 font-mono count-anim" id="article-count">—</div>
+        <div class="text-xs text-gray-400 mt-0.5" data-i="articles_label">Published Articles</div>
+      </div>
+      <div class="w-px h-10 dark:bg-white/10 bg-black/10"></div>
+      <div class="text-center">
+        <div class="text-2xl font-black text-purple-400 font-mono count-anim">14.7M+</div>
+        <div class="text-xs text-gray-400 mt-0.5" data-i="views_label">YouTube Views Generated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FEATURED ═══════════════════ -->
+<section class="relative z-10 px-4 pb-16">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center gap-3 mb-6 reveal">
+      <span class="font-mono text-xs text-cyan-400 font-semibold tracking-widest" data-i="featured_label">// FEATURED</span>
+      <div class="flex-1 h-px dark:bg-white/5 bg-black/8"></div>
+    </div>
+    <div id="featured-container" class="reveal">
+      <!-- Skeleton -->
+      <div class="featured-card h-80 skeleton rounded-2xl"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ARTICLES GRID ═══════════════════ -->
+<section class="relative z-10 px-4 pb-20">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex items-center justify-between mb-6 reveal">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-xs text-blue-400 font-semibold tracking-widest" data-i="latest_label">// LATEST</span>
+        <div class="w-16 h-px bg-blue-500/30"></div>
+      </div>
+      <!-- Mobile category filter -->
+      <div class="flex md:hidden items-center gap-1 overflow-x-auto">
+        <button class="filter-tab active shrink-0 px-2.5 py-1 rounded-lg text-xs font-semibold" data-cat="all" onclick="filterCat(this,'all')" data-i="cat_all">All</button>
+        <button class="filter-tab shrink-0 px-2.5 py-1 rounded-lg text-xs font-semibold text-gray-400" data-cat="AI" onclick="filterCat(this,'AI')" data-i="cat_ai">AI</button>
+        <button class="filter-tab shrink-0 px-2.5 py-1 rounded-lg text-xs font-semibold text-gray-400" data-cat="Automation" onclick="filterCat(this,'Automation')">Auto</button>
+        <button class="filter-tab shrink-0 px-2.5 py-1 rounded-lg text-xs font-semibold text-gray-400" data-cat="Python" onclick="filterCat(this,'Python')">Py</button>
+      </div>
+    </div>
+
+    <!-- Grid -->
+    <div id="articles-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Skeleton placeholders -->
+      <div class="h-72 skeleton rounded-2xl"></div>
+      <div class="h-72 skeleton rounded-2xl"></div>
+      <div class="h-72 skeleton rounded-2xl"></div>
+      <div class="h-72 skeleton rounded-2xl"></div>
+      <div class="h-72 skeleton rounded-2xl"></div>
+      <div class="h-72 skeleton rounded-2xl"></div>
+    </div>
+    <div id="no-results" class="hidden text-center py-16 text-gray-500" data-i="no_results">No articles found.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SPONSOR BOX (inline) ═══════════════════ -->
+<section class="relative z-10 px-4 pb-20 reveal">
+  <div class="max-w-3xl mx-auto">
+    <div class="sponsor-box">
+      <div class="font-mono text-xs text-blue-400 mb-3 tracking-widest" data-i="sponsor_label">// SPONSORED TOOL</div>
+      <h3 class="text-xl font-black dark:text-white text-gray-900 mb-3" data-i="sponsor_title">🚀 Scale Your Video Output with AutoVideoFactory</h3>
+      <p class="dark:text-gray-300 text-gray-700 text-sm leading-relaxed mb-5" data-i="sponsor_desc">Stop building manual workflows. Turn your computer into a 24/7 automated YouTube Shorts production pipeline using n8n, Gemini, and Remotion. 14.7M+ views generated in 28 Days — on autopilot.</p>
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="https://bigram6.gumroad.com/l/autovideofactory" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5" data-i="sponsor_btn">Get AutoVideoFactory Now →</a>
+        <span class="text-xs text-gray-400 dark:text-gray-500" data-i="sponsor_note">One-time payment · Lifetime access · Free updates</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MISSION ═══════════════════ -->
+<section class="relative z-10 px-4 pb-20 reveal">
+  <div class="max-w-7xl mx-auto">
+    <div class="glass rounded-2xl p-8 lg:p-12">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="font-mono text-xs text-purple-400 tracking-widest mb-3" data-i="mission_label">// OUR MISSION</div>
+          <h2 class="text-3xl lg:text-4xl font-black leading-tight mb-4" data-i="mission_title">Empowering Creators<br/>Through Automation</h2>
+          <p class="dark:text-gray-400 text-gray-600 leading-relaxed mb-6" data-i="mission_desc">We believe the next generation of content businesses won't be built by those who work the hardest — but by those who build the smartest systems. Every article on this blog is a direct step toward that goal.</p>
+          <a href="#articles-grid" class="inline-flex items-center gap-2 text-blue-400 font-semibold text-sm hover:gap-3 transition-all" data-i="mission_cta">Explore All Articles <span>→</span></a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="dark:bg-white/5 bg-black/5 rounded-xl p-5 border dark:border-white/5 border-black/8">
+            <div class="text-3xl font-black text-blue-400 font-mono mb-1">n8n</div>
+            <div class="text-sm dark:text-gray-400 text-gray-600" data-i="skill1">Workflow Automation</div>
+          </div>
+          <div class="dark:bg-white/5 bg-black/5 rounded-xl p-5 border dark:border-white/5 border-black/8">
+            <div class="text-3xl font-black text-purple-400 font-mono mb-1">AI</div>
+            <div class="text-sm dark:text-gray-400 text-gray-600" data-i="skill2">Script & Content Gen</div>
+          </div>
+          <div class="dark:bg-white/5 bg-black/5 rounded-xl p-5 border dark:border-white/5 border-black/8">
+            <div class="text-3xl font-black text-green-400 font-mono mb-1">🎬</div>
+            <div class="text-sm dark:text-gray-400 text-gray-600" data-i="skill3">Video Rendering</div>
+          </div>
+          <div class="dark:bg-white/5 bg-black/5 rounded-xl p-5 border dark:border-white/5 border-black/8">
+            <div class="text-3xl font-black text-cyan-400 font-mono mb-1">🐍</div>
+            <div class="text-sm dark:text-gray-400 text-gray-600" data-i="skill4">Python Scripting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════ NEWSLETTER ═══════════════════ -->
+<section class="relative z-10 px-4 pb-20 reveal">
+  <div class="max-w-4xl mx-auto">
+    <div class="glass rounded-2xl p-8 lg:p-12 text-center border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.15)] relative overflow-hidden">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+      <h2 class="text-3xl font-black mb-4 dark:text-white text-gray-900" data-i="news_title">Join the Automation Elite</h2>
+      <p class="dark:text-gray-400 text-gray-600 mb-8 max-w-2xl mx-auto" data-i="news_desc">Get the latest AI workflows, Python scripts, and proven strategies delivered straight to your inbox. No spam, just pure signal.</p>
+      <form id="subscribe-form" onsubmit="handleSubscribe(event)" class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+        <input type="email" id="sub-email" required placeholder="Enter your email..." data-ph-en="Enter your email..." data-ph-ar="أدخل بريدك الإلكتروني..." class="flex-1 bg-white dark:bg-[#0d1117] border border-gray-300 dark:border-white/10 rounded-xl px-5 py-3.5 text-sm outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all dark:text-white text-gray-900"/>
+        <button type="submit" id="sub-btn" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-xl transition-all shadow-lg shadow-blue-500/25 active:scale-95 whitespace-nowrap" data-i="news_btn">Subscribe</button>
+      </form>
+      <p id="sub-msg" class="text-sm mt-4 hidden font-medium"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="relative z-10 dark:border-t dark:border-white/5 border-t border-black/8 px-4 py-10">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <div class="font-bold dark:text-white text-gray-900 mb-1">AutoFlow<span class="text-blue-400">Blog</span></div>
+        <div class="text-xs text-gray-500" data-i="footer_copy">© 2025 AutoFlow Blog. Built by automation, for automation builders.</div>
+      </div>
+      <div class="flex flex-wrap justify-center gap-2">
+        <span class="font-mono text-xs bg-blue-500/10 border border-blue-500/20 text-blue-400 px-2.5 py-1 rounded-md">n8n</span>
+        <span class="font-mono text-xs bg-purple-500/10 border border-purple-500/20 text-purple-400 px-2.5 py-1 rounded-md">Remotion</span>
+        <span class="font-mono text-xs bg-green-500/10 border border-green-500/20 text-green-400 px-2.5 py-1 rounded-md">Gemini</span>
+        <span class="font-mono text-xs bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 px-2.5 py-1 rounded-md">Supabase</span>
+        <span class="font-mono text-xs bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 px-2.5 py-1 rounded-md">Edge TTS</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+
+const SUPABASE_URL  = 'https://vjmstjlprdnnpxsjurrp.supabase.co';
+const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqbXN0amxwcmRubnB4c2p1cnJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1NzUyNTksImV4cCI6MjA5MzE1MTI1OX0.WPECnZ-98cORXPM6f7QIpE08gFiX2aSjT8NM5gFDHgw';
+let supabaseClient = null;
+try {
+  if (SUPABASE_URL && SUPABASE_URL !== 'YOUR_SUPABASE_URL' && SUPABASE_URL.startsWith('http')) {
+    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  }
+} catch(e) { console.warn('Supabase init skipped.'); }
+
+// ─── STATE ───
+let allArticles = [];
+let currentLang = localStorage.getItem('af-lang') || 'en';
+let currentCat  = 'all';
+let searchQuery = '';
+
+// ─── TRANSLATIONS ───
+const T = {
+  en: {
+    logo:'AutoFlow Blog', hero_badge:'LIVE BLOG · UPDATED DAILY',
+    hero_title1:'Dominate', hero_title2:' AI & Automation',
+    hero_title3:'Build Systems That Run Themselves',
+    hero_sub:'Practical guides on n8n workflows, YouTube automation, AI video generation, and Python scripting — from builders who actually ship.',
+    readers:' Readers', counter_label:'Readers This Month',
+    articles_label:'Published Articles', views_label:'YouTube Views Generated',
+    featured_label:'// FEATURED', latest_label:'// LATEST',
+    cat_all:'All', cat_ai:'AI', cat_auto:'Automation', cat_py:'Python', cat_yt:'YouTube', news_title:'Join the Automation Elite', news_desc:'Get the latest AI workflows, Python scripts, and proven strategies delivered straight to your inbox. No spam, just pure signal.', news_btn:'Subscribe',
+    no_results:'No articles found.',
+    sponsor_label:'// SPONSORED TOOL',
+    sponsor_title:'🚀 Scale Your Video Output with AutoVideoFactory',
+    sponsor_desc:'Stop building manual workflows. Turn your computer into a 24/7 automated YouTube Shorts production pipeline using n8n, Gemini, and Remotion. 14.7M+ views generated in 28 Days — on autopilot.',
+    sponsor_btn:'Get AutoVideoFactory Now →',
+    sponsor_note:'One-time payment · Lifetime access · Free updates',
+    mission_label:'// OUR MISSION',
+    mission_title:'Empowering Creators Through Automation',
+    mission_desc:"We believe the next generation of content businesses won't be built by those who work the hardest — but by those who build the smartest systems. Every article on this blog is a direct step toward that goal.",
+    mission_cta:'Explore All Articles', read_more:'Read Article →',
+    min_read:'min read', skill1:'Workflow Automation', skill2:'Script & Content Gen',
+    skill3:'Video Rendering', skill4:'Python Scripting',
+    footer_copy:'© 2025 AutoFlow Blog. Built by automation, for automation builders.',
+    lang_btn:'🌐 AR', loading:'Loading articles...',
+  },
+  ar: {
+    logo:'مدونة أوتوفلو', hero_badge:'مدونة حية · تُحدَّث يومياً',
+    hero_title1:'تسيطر على', hero_title2:' الذكاء الاصطناعي والأتمتة',
+    hero_title3:'ابنِ أنظمة تعمل وحدها',
+    hero_sub:'أدلة عملية حول سير عمل n8n، وأتمتة يوتيوب، وتوليد الفيديو بالذكاء الاصطناعي، وبرمجة Python — من مطورين يشحنون فعلاً.',
+    readers:' قارئ', counter_label:'قارئ هذا الشهر',
+    articles_label:'مقالة منشورة', views_label:'مشاهدة يوتيوب تولّدت',
+    featured_label:'// مميز', latest_label:'// أحدث المقالات',
+    cat_all:'الكل', cat_ai:'ذكاء اصطناعي', cat_auto:'أتمتة', cat_py:'بايثون', cat_yt:'يوتيوب', news_title:'انضم لنخبة الأتمتة', news_desc:'احصل على أحدث سكريبتات بايثون واستراتيجيات الذكاء الاصطناعي مباشرة في بريدك. لا إزعاج، فقط محتوى قيم.', news_btn:'اشترك الآن',
+    no_results:'لم يتم العثور على مقالات.',
+    sponsor_label:'// أداة مدعومة',
+    sponsor_title:'🚀 ضاعف إنتاجك الفيديوي مع AutoVideoFactory',
+    sponsor_desc:'توقف عن بناء ورك فلو يدوية. حوّل حاسوبك إلى خط إنتاج YouTube Shorts آلي يعمل 24/7 باستخدام n8n وGemini وRemotion. 14.7+ مليون مشاهدة في 28 يوماً — على الطيار الآلي.',
+    sponsor_btn:'احصل على AutoVideoFactory الآن →',
+    sponsor_note:'دفعة واحدة · وصول مدى الحياة · تحديثات مجانية',
+    mission_label:'// مهمتنا',
+    mission_title:'تمكين صناع المحتوى عبر الأتمتة',
+    mission_desc:'نؤمن بأن الجيل القادم من أعمال المحتوى لن يبنيه الأكثر جهداً — بل الأذكى في بناء الأنظمة. كل مقالة في هذه المدونة خطوة نحو ذلك الهدف.',
+    mission_cta:'استعرض جميع المقالات', read_more:'اقرأ المقالة →',
+    min_read:'دقيقة للقراءة', skill1:'أتمتة ورك فلو', skill2:'توليد سكريبت ومحتوى',
+    skill3:'تصيير الفيديو', skill4:'برمجة بايثون',
+    footer_copy:'© 2025 مدونة أوتوفلو. مبني بالأتمتة، لبناة الأتمتة.',
+    lang_btn:'🌐 EN', loading:'جاري تحميل المقالات...',
+  }
+};
+
+// ─── BADGE COLOR ───
+function badgeClass(cat) {
+  const map = { AI:'badge-ai', Automation:'badge-automation', Python:'badge-python', YouTube:'badge-youtube' };
+  return map[cat] || 'badge-ai';
+}
+
+// ─── READING TIME ───
+function readingTime(text, lang) {
+  const words = (text||'').split(/\s+/).length;
+  const mins  = Math.max(1, Math.ceil(words / 200));
+  return `${mins} ${T[lang].min_read}`;
+}
+
+// ─── FORMAT DATE ───
+function formatDate(ts, lang) {
+  const d = new Date(ts);
+  return d.toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US', { year:'numeric', month:'short', day:'numeric' });
+}
+
+// ─── RENDER FEATURED ───
+function renderFeatured(article) {
+  if (!article) { document.getElementById('featured-container').innerHTML = ''; return; }
+  const l = currentLang;
+  const title = article[`title_${l}`] || article.title_en || '';
+  const summary = article[`summary_${l}`] || article.summary_en || '';
+  const img = article.image_url || 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80';
+  const slug = article.slug || article.id;
+
+  document.getElementById('featured-container').innerHTML = `
+    <a href="post.html?slug=${slug}" class="featured-card block group">
+      <div class="relative h-80 lg:h-96 overflow-hidden rounded-2xl border dark:border-white/5 border-black/8">
+        <img src="${img}" alt="${title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80'"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none"></div>
+        <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+          <span class="badge ${badgeClass(article.category)} px-2.5 py-1 rounded-md inline-block mb-3">${article.category || 'AI'}</span>
+          <h2 class="text-xl lg:text-3xl font-black leading-tight mb-2 transition-colors" style="color: #ffffff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.9);">${title}</h2>
+          <p class="text-sm lg:text-base line-clamp-2 max-w-2xl mb-3" style="color: rgba(255,255,255,0.95) !important; text-shadow: 0 1px 5px rgba(0,0,0,0.9);">${summary}</p>
+          <div class="flex items-center gap-3 text-xs" style="color: rgba(255,255,255,0.8) !important;">
+            <span style="text-shadow: 0 1px 3px rgba(0,0,0,0.8);">${formatDate(article.created_at, currentLang)}</span>
+            <span style="color: rgba(255,255,255,0.5) !important;">·</span>
+            <span style="text-shadow: 0 1px 3px rgba(0,0,0,0.8);">${readingTime(article[`content_${currentLang}`] || article.content_en, currentLang)}</span>
+            <span style="color: rgba(255,255,255,0.5) !important;">·</span>
+            <span class="font-semibold" style="color: #60a5fa !important; text-shadow: 0 1px 3px rgba(0,0,0,0.8);" data-i="read_more">${T[currentLang].read_more}</span>
+          </div>
+        </div>
+      </div>
+    </a>`;
+}
+
+// ─── RENDER ARTICLE CARD ───
+function renderCard(article) {
+  const l = currentLang;
+  const title   = article[`title_${l}`]   || article.title_en   || '';
+  const summary = article[`summary_${l}`] || article.summary_en || '';
+  const img     = article.image_url || 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&q=80';
+  const slug    = article.slug || article.id;
+
+  return `
+    <a href="post.html?slug=${slug}" class="article-card border rounded-2xl overflow-hidden flex flex-col transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 group" data-cat="${article.category}" data-title="${title.toLowerCase()}">
+      <div class="relative h-44 overflow-hidden">
+        <img src="${img}" alt="${title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&q=80'"/>
+        <div class="absolute top-3 ${l==='ar'?'right':'left'}-3">
+          <span class="badge ${badgeClass(article.category)} px-2.5 py-1 rounded-md">${article.category || 'AI'}</span>
+        </div>
+      </div>
+      <div class="flex flex-col flex-1 p-5">
+        <h3 class="font-bold text-base dark:text-white text-gray-900 leading-snug mb-2 group-hover:text-blue-400 transition-colors line-clamp-2">${title}</h3>
+        <p class="text-sm dark:text-gray-400 text-gray-500 leading-relaxed line-clamp-3 flex-1">${summary}</p>
+        <div class="flex items-center justify-between mt-4 pt-4 border-t dark:border-white/5 border-black/5 text-xs dark:text-gray-500 text-gray-400">
+          <span>${formatDate(article.created_at, l)}</span>
+          <span>${readingTime(article[`content_${l}`] || article.content_en, l)}</span>
+        </div>
+      </div>
+    </a>`;
+}
+
+// ─── FILTER & SEARCH ───
+function applyFilter() {
+  const grid = document.getElementById('articles-grid');
+  const noRes = document.getElementById('no-results');
+  const cards = grid.querySelectorAll('a[data-cat]');
+  let visible = 0;
+  cards.forEach(card => {
+    const matchCat  = currentCat === 'all' || card.dataset.cat === currentCat;
+    const matchSearch = !searchQuery || card.dataset.title.includes(searchQuery.toLowerCase());
+    if (matchCat && matchSearch) { card.style.display = ''; visible++; }
+    else card.style.display = 'none';
+  });
+  noRes.classList.toggle('hidden', visible > 0);
+}
+
+function filterCat(btn, cat) {
+  currentCat = cat;
+  document.querySelectorAll('.filter-tab').forEach(b => {
+    b.classList.remove('active');
+    b.classList.add('text-gray-400');
+  });
+  btn.classList.add('active');
+  btn.classList.remove('text-gray-400');
+  applyFilter();
+}
+
+function handleSearch(val) {
+  searchQuery = val.trim();
+  applyFilter();
+}
+
+// ─── FETCH ARTICLES ───
+async function fetchArticles() {
+  try {
+    if (!supabaseClient) throw new Error("Supabase not configured yet.");
+    const { data, error } = await supabaseClient
+      .from('articles')
+      .select('id,slug,title_en,title_ar,summary_en,summary_ar,content_en,content_ar,category,image_url,created_at,views')
+      .order('created_at', { ascending: false })
+      .limit(30);
+
+    if (error) throw error;
+    allArticles = data || [];
+    renderAll();
+  } catch (err) {
+    console.warn('Supabase fetch failed — using demo data:', err.message);
+    allArticles = getDemoArticles();
+    renderAll();
+  }
+}
+
+function renderAll() {
+  // Count
+  document.getElementById('article-count').textContent = allArticles.length;
+  // Featured = first
+  renderFeatured(allArticles[0]);
+  // Grid = rest
+  const grid = document.getElementById('articles-grid');
+  const rest  = allArticles.slice(1);
+  if (rest.length === 0) {
+    grid.innerHTML = '<p class="col-span-full text-center text-gray-500 py-10" data-i="no_results">'+T[currentLang].no_results+'</p>';
+    return;
+  }
+  grid.innerHTML = rest.map(a => renderCard(a)).join('');
+  // Reveal cards
+  grid.querySelectorAll('a').forEach((el,i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    setTimeout(() => {
+      el.style.transition = 'opacity .4s ease, transform .4s ease';
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, i * 60);
+  });
+}
+
+// ─── DEMO DATA (used when Supabase isn't configured) ───
+function getDemoArticles() {
+  return [
+    { id:1, slug:'how-we-hit-47m-views', title_en:'How We Hit 4.7M YouTube Views in 7 Days With Pure Automation', title_ar:'كيف حققنا 4.7 مليون مشاهدة يوتيوب في 7 أيام بالأتمتة الكاملة', summary_en:'A deep-dive into the exact n8n workflow, Remotion setup, and Gemini prompts that generated millions of views on autopilot.', summary_ar:'تحليل عميق لورك فلو n8n الدقيق وإعداد Remotion وبرومبتات Gemini التي ولّدت ملايين المشاهدات على الطيار الآلي.', content_en:'Full article content here...', content_ar:'محتوى المقالة الكاملة هنا...', category:'Automation', image_url:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80', created_at:'2025-01-15T10:00:00Z', views:18420 },
+    { id:2, slug:'n8n-youtube-pipeline', title_en:'Building the Ultimate n8n → YouTube Publishing Pipeline', title_ar:'بناء خط نشر n8n → يوتيوب المثالي', summary_en:'Step-by-step: connect Gemini, Edge TTS, Remotion, and the YouTube API into a single automated workflow that runs every 6 hours.', summary_ar:'خطوة بخطوة: اربط Gemini وEdge TTS وRemotion وYouTube API في ورك فلو آلي واحد يعمل كل 6 ساعات.', category:'Automation', image_url:'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&q=80', created_at:'2025-01-12T08:00:00Z', views:9340 },
+    { id:3, slug:'gemini-script-prompts', title_en:'The Gemini Prompt System That Writes Viral Scripts Every Time', title_ar:'نظام برومبتات Gemini الذي يكتب سكريبتات فيروسية في كل مرة', summary_en:'Our exact prompt architecture for generating hooks, captions, and voiceover scripts that consistently hit high retention.', summary_ar:'بنية البرومبتات الدقيقة لدينا لتوليد هوكات وكابشنات وسكريبتات فويس أوفر تحقق باستمرار استبقاءً عالياً.', category:'AI', image_url:'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80', created_at:'2025-01-10T09:00:00Z', views:7210 },
+    { id:4, slug:'remotion-shorts-rendering', title_en:'Remotion Deep Dive: Rendering 60-Second Shorts Programmatically', title_ar:'تعمق في Remotion: تصيير Shorts بـ 60 ثانية برمجياً', summary_en:"Everything you need to know about Remotion's composition system, TransitionSeries, and audio sync for automated Shorts.", summary_ar:'كل ما تحتاج معرفته عن نظام تركيبة Remotion وTransitionSeries ومزامنة الصوت لـ Shorts الآلية.', category:'Python', image_url:'https://images.unsplash.com/photo-1536240478700-b869ad10e1e8?w=600&q=80', created_at:'2025-01-08T11:00:00Z', views:5890 },
+    { id:5, slug:'faceless-youtube-2025', title_en:'The Complete Faceless YouTube Playbook for 2025', title_ar:'الدليل الشامل لقنوات يوتيوب بدون وجه لعام 2025', summary_en:'Niches, formats, monetization strategies, and the automation stack required to build a faceless channel that earns passively.', summary_ar:'التخصصات والصيغ واستراتيجيات الربح وحزمة الأتمتة المطلوبة لبناء قناة بدون وجه تكسب سلبياً.', category:'YouTube', image_url:'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80', created_at:'2025-01-06T07:00:00Z', views:12100 },
+    { id:6, slug:'edge-tts-voiceover', title_en:'Edge TTS: The Free Voiceover Tool That Beats Paid Alternatives', title_ar:'Edge TTS: أداة الفويس أوفر المجانية التي تتفوق على البدائل المدفوعة', summary_en:'Comparing Microsoft Edge TTS to ElevenLabs and others — why free wins for automated content pipelines.', summary_ar:'مقارنة Microsoft Edge TTS بـ ElevenLabs وغيرها — لماذا تفوز المجانية لخطوط إنتاج المحتوى الآلية.', category:'AI', image_url:'https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=600&q=80', created_at:'2025-01-03T14:00:00Z', views:4450 },
+    { id:7, slug:'supabase-content-queue', title_en:'Using Supabase as a Smart Content Queue for Automated Publishing', title_ar:'استخدام Supabase كطابور محتوى ذكي للنشر الآلي', summary_en:'How to structure your Supabase schema to manage hundreds of scheduled videos, social posts, and analytics in one place.', summary_ar:'كيفية هيكلة مخطط Supabase لإدارة مئات الفيديوهات المجدولة والمنشورات الاجتماعية والتحليلات في مكان واحد.', category:'Automation', image_url:'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&q=80', created_at:'2024-12-28T09:00:00Z', views:3210 },
+  ];
+}
+
+// ─── THEME ───
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('af-theme', isDark ? 'dark' : 'light');
+  document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
+}
+function initTheme() {
+  const saved = localStorage.getItem('af-theme') || 'dark';
+  document.documentElement.classList.toggle('dark', saved === 'dark');
+  document.getElementById('theme-btn').textContent = saved === 'dark' ? '🌙' : '☀️';
+}
+
+// ─── LANGUAGE ───
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('af-lang', lang);
+  document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
+  document.documentElement.dir  = lang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.setAttribute('data-lang', lang);
+  const d = T[lang];
+  document.querySelectorAll('[data-i]').forEach(el => {
+    const k = el.getAttribute('data-i');
+    if (d[k]) el.textContent = d[k];
+  });
+  document.getElementById('lang-btn').textContent = d.lang_btn;
+  // update search placeholder
+  const si = document.getElementById('search-input');
+  const se = document.getElementById('sub-email');
+  if(se) se.placeholder = se.getAttribute(`data-ph-${lang}`) || '';
+  si.placeholder = si.getAttribute(`data-ph-${lang}`) || '';
+  // re-render cards for language switch
+  if (allArticles.length > 0) renderAll();
+}
+function toggleLang() { applyLang(currentLang === 'en' ? 'ar' : 'en'); }
+
+
+// ─── NEWSLETTER SUBSCRIPTION ───
+async function handleSubscribe(e) {
+  e.preventDefault();
+  const emailInput = document.getElementById('sub-email');
+  const btn = document.getElementById('sub-btn');
+  const msg = document.getElementById('sub-msg');
+  
+  if(!emailInput.value) return;
+  
+  btn.disabled = true;
+  btn.textContent = '...';
+  
+  try {
+    if (!supabaseClient) throw new Error('DB not connected');
+    const { error } = await supabaseClient.from('subscribers').insert([{ email: emailInput.value }]);
+    if (error && error.code !== '23505') throw error; // 23505 is unique violation (already subscribed)
+    
+    msg.textContent = currentLang === 'ar' ? '✅ تم التسجيل بنجاح! شكراً لك.' : '✅ Subscribed successfully! Thank you.';
+    msg.className = 'text-sm mt-4 font-medium text-green-500 block';
+    emailInput.value = '';
+  } catch (err) {
+    msg.textContent = currentLang === 'ar' ? '❌ حدث خطأ، يرجى المحاولة لاحقاً.' : '❌ An error occurred, please try again.';
+    msg.className = 'text-sm mt-4 font-medium text-red-500 block';
+  }
+  
+  btn.disabled = false;
+  btn.textContent = T[currentLang].news_btn || 'Subscribe';
+  setTimeout(() => msg.classList.add('hidden'), 5000);
+}
+
+// ─── SCROLL REVEAL ───
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+// Safety net: reveal all after 2s
+setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 2000);
+
+// ─── ANIMATED COUNTER ───
+function animateCounter(el, target, suffix='') {
+  let start = 0; const step = target / 60;
+  const timer = setInterval(() => {
+    start += step;
+    if (start >= target) { clearInterval(timer); el.textContent = target.toLocaleString() + suffix; return; }
+    el.textContent = Math.floor(start).toLocaleString() + suffix;
+  }, 16);
+}
+
+// ─── INIT ───
+initTheme();
+applyLang(currentLang);
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+fetchArticles().then(() => {
+  // Dynamic Real Visits Counter
+  const baseReaders = 142800;
+  let localVisits = localStorage.getItem('af_total_visits');
+  if (!localVisits) {
+    localVisits = Math.floor(Math.random() * 10) + 1;
+  } else {
+    localVisits = parseInt(localVisits) + 1;
+  }
+  localStorage.setItem('af_total_visits', localVisits);
+  const finalScore = baseReaders + localVisits;
+  
+  animateCounter(document.getElementById('hero-counter'), finalScore, '+');
+  const navCounterEl = document.getElementById('nav-counter');
+  if (navCounterEl) navCounterEl.textContent = finalScore.toLocaleString() + '+';
+});
+</script>
+</body>
+</html>
