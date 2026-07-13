@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bigromio.github.io/autovideofactory/sitemap.xml
