@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Programmatic Video with Remotion & Node.js: Auto-Generate Videos at Scale | إتقان الفيديو البرمجي باستخدام Remotion و Node.js: إنشاء مقاطع فيديو تلقائيًا على نطاق واسع</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-remotion-nodejs-auto-generate</link>
+    <description>Learn to leverage Remotion and Node.js to programmatically create and render videos, enabling powerful automation for content generation. This guide will walk you through setting up your environment and building a scalable video pipeline.</description>
+    <pubDate>Tue, 14 Jul 2026 13:01:03 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Programmatic Video: Auto-Generate Videos at Scale with Remotion & Node.js | إتقان الفيديو البرمجي: إنشاء مقاطع فيديو تلقائيًا على نطاق واسع باستخدام Remotion و Node.js</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-videos-remotion-nodejs</link>
     <description>Learn to programmatically generate dynamic video content using Remotion and Node.js. This guide covers setup, component creation, and automated rendering to scale your video production efforts.</description>
@@ -86,12 +92,6 @@
     <title>Why Every Content Creator Needs a Python Video Splitter | لماذا يحتاج كل صانع محتوى إلى تطبيق بايثون لتقسيم الفيديوهات</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=python-video-splitter-desktop-app</link>
     <description>Stop chopping podcasts manually. Learn how a standalone Python GUI app can slice hours of footage into viral Shorts in seconds.</description>
-    <pubDate>Sat, 11 Jul 2026 21:54:33 GMT</pubDate>
-  </item>
-  <item>
-    <title>The Ultimate YouTube Shorts Automation Guide: 14.7M Views Exposed | الدليل الشامل لأتمتة YouTube Shorts: كيف حققنا 14.7 مليون مشاهدة</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=ultimate-youtube-shorts-automation-guide</link>
-    <description>Discover the exact programmatic rendering and AI scripting pipeline that replaced an entire video editing team and generated massive organic growth.</description>
     <pubDate>Sat, 11 Jul 2026 21:54:33 GMT</pubDate>
   </item>
 </channel>
