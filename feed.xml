@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Mastering Programmatic Video: Auto-Generate Dynamic Content with Remotion & Node.js | إتقان الفيديو البرمجي: إنشاء محتوى ديناميكي تلقائيًا باستخدام Remotion و Node.js</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automating-video-creation-remotion-nodejs</link>
+    <description>Learn to leverage Remotion and Node.js to build automated pipelines for generating stunning, data-driven video content at scale. This guide provides a step-by-step approach to transforming structured data into engaging video narratives.</description>
+    <pubDate>Tue, 14 Jul 2026 22:28:59 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Programmatic Video with Remotion & Node.js: Auto-Generate Videos at Scale | إتقان الفيديو البرمجي باستخدام Remotion و Node.js: إنشاء مقاطع فيديو تلقائيًا على نطاق واسع</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-remotion-nodejs-auto-generate</link>
     <description>Learn to leverage Remotion and Node.js to programmatically create and render videos, enabling powerful automation for content generation. This guide will walk you through setting up your environment and building a scalable video pipeline.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-agents-orchestrating-future-workflow-automation</link>
     <description>Explore how AI Agents are moving beyond traditional automation to dynamically adapt, learn, and execute complex tasks, revolutionizing industries and boosting productivity. Discover how specialized tools like AutoVideoFactory are empowering creators to scale YouTube Shorts content.</description>
     <pubDate>Mon, 13 Jul 2026 04:49:46 GMT</pubDate>
-  </item>
-  <item>
-    <title>Why Every Content Creator Needs a Python Video Splitter | لماذا يحتاج كل صانع محتوى إلى تطبيق بايثون لتقسيم الفيديوهات</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=python-video-splitter-desktop-app</link>
-    <description>Stop chopping podcasts manually. Learn how a standalone Python GUI app can slice hours of footage into viral Shorts in seconds.</description>
-    <pubDate>Sat, 11 Jul 2026 21:54:33 GMT</pubDate>
   </item>
 </channel>
 </rss>
