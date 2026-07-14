@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Unleash the Future: How AI-Powered Hyperautomation is Redefining Work and Creativity | AutoFlow Blog</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+<meta id="meta-desc" name="description" content="Read this article on AutoFlow Blog."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;600&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: { sans:['Inter','sans-serif'], mono:['JetBrains Mono','monospace'], ar:['Cairo','sans-serif'] },
+      colors: { brand:'#3b82f6', neon:'#00e5ff' },
+      typography: (theme) => ({
+        DEFAULT: { css: { color: theme('colors.gray.700'), 'h1,h2,h3,h4':{ color:theme('colors.gray.900'), fontWeight:'800' }, a:{ color:theme('colors.blue.600') }, code:{ background:theme('colors.gray.100'), padding:'2px 6px', borderRadius:'4px', fontWeight:'600' }, pre:{ background:theme('colors.gray.900'), color:theme('colors.green.400') }, blockquote:{ borderLeftColor:theme('colors.blue.500'), color:theme('colors.gray.600') } } },
+        invert: { css: { color: theme('colors.gray.300'), 'h1,h2,h3,h4':{ color:theme('colors.white') }, a:{ color:theme('colors.blue.400') }, code:{ background:'rgba(255,255,255,0.08)', color:theme('colors.cyan.300') }, pre:{ background:'#0d1117' }, blockquote:{ color:theme('colors.gray.400') } } }
+      })
+    }
+  },
+  plugins: []
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Inter',sans-serif; transition:background .3s, color .3s; }
+[data-lang="ar"] * { font-family:'Cairo',sans-serif !important; }
+[data-lang="ar"] { direction:rtl; }
+.dark body  { background:#0d1117; color:#e6edf3; }
+body        { background:#f6f8fa; color:#0d1117; }
+
+/* Grid noise */
+body::before {
+  content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(59,130,246,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(59,130,246,0.03) 1px,transparent 1px);
+  background-size:40px 40px;
+}
+:not(.dark) body::before { opacity:.35; }
+
+/* Glass nav */
+.glass { background:rgba(13,17,23,0.85); backdrop-filter:blur(12px); border-bottom:1px solid rgba(48,54,61,0.7); }
+:not(.dark) .glass { background:rgba(246,248,250,0.92); border-bottom:1px solid rgba(0,0,0,0.08); }
+
+/* Prose overrides */
+.prose { max-width:none; }
+.prose img { border-radius:12px; margin:24px 0; }
+.prose h2 { margin-top:2em; padding-bottom:0.4em; border-bottom:1px solid rgba(59,130,246,.2); }
+.prose code::before, .prose code::after { content:''; }
+.prose pre code { background:transparent; }
+.dark .prose-invert a { color:#60a5fa; }
+.dark .prose-invert code { background:rgba(255,255,255,.07); color:#7dd3fc; }
+.dark .prose-invert pre { background:#161b22; border:1px solid #21262d; }
+.dark .prose-invert blockquote { border-left-color:#3b82f6; background:rgba(59,130,246,.06); padding:1em 1.5em; border-radius:0 8px 8px 0; }
+
+/* Sponsor box */
+.sponsor-box {
+  background:linear-gradient(135deg,rgba(59,130,246,.1) 0%,rgba(124,58,237,.1) 100%);
+  border:1.5px solid rgba(59,130,246,.4);
+  border-radius:16px; padding:32px;
+  position:relative; overflow:hidden;
+  box-shadow:0 0 50px rgba(59,130,246,.12), 0 0 0 1px rgba(255,255,255,.03);
+  margin:40px 0;
+}
+.sponsor-box::before {
+  content:''; position:absolute; top:-60%; left:-60%;
+  width:220%; height:220%;
+  background:radial-gradient(circle,rgba(59,130,246,.07) 0%,transparent 60%);
+  pointer-events:none; animation:rotateBg 20s linear infinite;
+}
+@keyframes rotateBg { from{transform:rotate(0)} to{transform:rotate(360deg)} }
+
+/* TOC */
+.toc-item { transition:all .2s; }
+.toc-item.active { color:#60a5fa; border-left-color:#3b82f6 !important; }
+
+/* Progress bar */
+#progress-bar {
+  position:fixed; top:0; left:0; height:2px; z-index:200;
+  background:linear-gradient(90deg,#3b82f6,#00e5ff);
+  transition:width .1s;
+}
+
+/* Badges */
+.badge { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+.badge-ai         { background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.3); }
+.badge-automation { background:rgba(124,58,237,.15); color:#a78bfa; border:1px solid rgba(124,58,237,.3); }
+.badge-python     { background:rgba(34,197,94,.15);  color:#4ade80;  border:1px solid rgba(34,197,94,.3); }
+.badge-youtube    { background:rgba(239,68,68,.15);  color:#f87171;  border:1px solid rgba(239,68,68,.3); }
+:not(.dark) .badge-ai         { background:rgba(59,130,246,.1);  color:#2563eb; }
+:not(.dark) .badge-automation { background:rgba(124,58,237,.1);  color:#7c3aed; }
+:not(.dark) .badge-python     { background:rgba(34,197,94,.1);   color:#16a34a; }
+:not(.dark) .badge-youtube    { background:rgba(239,68,68,.1);   color:#dc2626; }
+
+/* Skeleton */
+.skeleton { background:linear-gradient(90deg,#21262d 25%,#2d333b 50%,#21262d 75%); background-size:200%; animation:shimmer 1.5s infinite; }
+:not(.dark) .skeleton { background:linear-gradient(90deg,#e1e4e8 25%,#f0f2f4 50%,#e1e4e8 75%); background-size:200%; }
+@keyframes shimmer { 0%{background-position:200%} 100%{background-position:-200%} }
+
+/* Reveal */
+.reveal { opacity:0; transform:translateY(20px); transition:opacity .5s ease, transform .5s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* Error state */
+.error-state { text-align:center; padding:80px 20px; }
+
+@media (prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; animation:none!important; } }
+
+/* Arabic Typography Adjustments */
+[data-lang="ar"] p, [data-lang="ar"] li, [data-lang="ar"] .prose p, [data-lang="ar"] .prose li {
+  line-height: 2 !important;
+  font-size: 1.05rem;
+}
+
+</style>
+</head>
+<body class="relative">
+
+<!-- Progress bar -->
+<div id="progress-bar" style="width:0%"></div>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<nav class="glass fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-14 gap-4">
+      <a href="index.html" class="flex items-center gap-2 text-sm font-bold dark:text-white text-gray-900 hover:text-blue-400 transition-colors">
+        <span class="text-gray-400">←</span>
+        <span class="font-mono text-blue-400">&gt;_</span>
+        <span>AutoFlow<span class="text-blue-400">Blog</span></span>
+      </a>
+      <div class="flex items-center gap-2">
+        <button onclick="toggleLang()" class="px-3 py-1.5 rounded-lg border border-white/10 text-xs font-bold text-gray-300 hover:border-blue-500 hover:text-blue-400 transition-all" id="lang-btn">🌐 AR</button>
+        <button onclick="toggleTheme()" class="p-2 rounded-lg border border-white/10 text-gray-300 hover:border-blue-500 hover:text-blue-400 transition-all" id="theme-btn">🌙</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════ MAIN LAYOUT ═══════════════════ -->
+<main class="relative z-10 pt-20 pb-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Loading skeleton -->
+    <div id="loading-state" class="max-w-3xl mx-auto">
+      <div class="skeleton h-6 w-24 rounded-full mb-6 mt-4"></div>
+      <div class="skeleton h-10 w-full rounded-xl mb-3"></div>
+      <div class="skeleton h-10 w-3/4 rounded-xl mb-6"></div>
+      <div class="skeleton h-5 w-48 rounded mb-8"></div>
+      <div class="skeleton h-64 w-full rounded-2xl mb-8"></div>
+      <div class="space-y-3">
+        <div class="skeleton h-4 w-full rounded"></div>
+        <div class="skeleton h-4 w-5/6 rounded"></div>
+        <div class="skeleton h-4 w-4/6 rounded"></div>
+        <div class="skeleton h-4 w-full rounded"></div>
+        <div class="skeleton h-4 w-3/4 rounded"></div>
+      </div>
+    </div>
+
+    <!-- Error state -->
+    <div id="error-state" class="hidden error-state">
+      <div class="text-6xl mb-4">📭</div>
+      <h2 class="text-2xl font-bold dark:text-white text-gray-900 mb-3" data-i="err_title">Article not found</h2>
+      <p class="text-gray-400 mb-6" data-i="err_desc">This article may have been moved or doesn't exist.</p>
+      <a href="index.html" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-3 rounded-xl transition-all" data-i="err_back">← Back to Blog</a>
+    </div>
+
+    <!-- Article content -->
+    <div id="article-content" class="hidden lg:grid lg:grid-cols-[1fr_280px] gap-10">
+
+      <!-- Main column -->
+      <article>
+        <!-- Header -->
+        <div id="article-header" class="mb-8 reveal">
+          <!-- filled by JS -->
+        </div>
+
+        <!-- Cover image -->
+        <div id="article-cover" class="mb-8 reveal">
+          <!-- filled by JS -->
+        </div>
+
+        <!-- Body -->
+        <div id="article-body" class="reveal prose prose-base dark:prose-invert max-w-none
+          prose-headings:font-black
+          prose-a:text-blue-500 prose-a:no-underline hover:prose-a:underline
+          prose-code:text-cyan-400 prose-code:bg-white/5
+          prose-pre:bg-[#161b22] prose-pre:border prose-pre:border-white/5
+          prose-img:rounded-xl prose-img:shadow-xl
+          prose-blockquote:border-blue-500 prose-blockquote:not-italic
+          dark:prose-p:text-gray-300 prose-p:leading-8">
+        </div>
+
+        <!-- Sponsor Box (injected after content) -->
+        <div id="sponsor-box" class="reveal">
+          <div class="sponsor-box">
+            <div class="font-mono text-xs text-blue-400 mb-3 tracking-widest" data-i="sponsor_label">// SPONSORED TOOL</div>
+            <h3 class="text-xl font-black dark:text-white text-gray-900 mb-3" data-i="sponsor_title">🚀 Scale Your Video Output with AutoVideoFactory</h3>
+            <p class="dark:text-gray-300 text-gray-600 text-sm leading-relaxed mb-5" data-i="sponsor_desc">Stop building manual workflows. Turn your computer into a 24/7 automated YouTube Shorts production pipeline using n8n, Gemini, and Remotion. 14.7M+ views generated in 28 Days — on autopilot.</p>
+            <div class="flex flex-wrap items-center gap-3">
+              <a href="https://bigram6.gumroad.com/l/autovideofactory" target="_blank" rel="noopener"
+                class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5"
+                data-i="sponsor_btn">Get AutoVideoFactory Now →</a>
+              <span class="text-xs dark:text-gray-500 text-gray-400" data-i="sponsor_note">One-time payment · Lifetime access · Free updates</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related / Back -->
+        <div class="reveal mt-12 pt-8 border-t dark:border-white/5 border-black/8">
+          <a href="index.html" class="inline-flex items-center gap-2 dark:text-gray-400 text-gray-500 hover:text-blue-400 transition-colors text-sm font-medium" data-i="back_link">← Back to all articles</a>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-20 space-y-6">
+
+          <!-- TOC -->
+          <div class="dark:bg-[#161b22] bg-white border dark:border-[#21262d] border-gray-200 rounded-2xl p-5">
+            <div class="font-mono text-xs text-blue-400 tracking-widest mb-4" data-i="toc_title">// TABLE OF CONTENTS</div>
+            <nav id="toc-nav" class="space-y-1 text-sm">
+              <div class="text-gray-500 text-xs" data-i="toc_empty">Generating...</div>
+            </nav>
+          </div>
+
+          <!-- Sidebar sponsor -->
+          <div class="bg-gradient-to-b from-blue-600/10 to-purple-600/10 border dark:border-blue-500/25 border-blue-500/20 rounded-2xl p-5">
+            <div class="font-mono text-xs text-blue-400 mb-3 tracking-widest">// TOOL</div>
+            <p class="font-black dark:text-white text-gray-900 text-sm leading-snug mb-3" data-i="sidebar_title">AutoVideoFactory</p>
+            <p class="text-xs dark:text-gray-400 text-gray-500 leading-relaxed mb-4" data-i="sidebar_desc">14.7M views in 28 Days. Full automation pipeline for YouTube Shorts.</p>
+            <a href="https://bigram6.gumroad.com/l/autovideofactory" target="_blank" rel="noopener"
+              class="block text-center bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition-all"
+              data-i="sidebar_btn">Get it Now →</a>
+          </div>
+
+          <!-- Share -->
+          <div class="dark:bg-[#161b22] bg-white border dark:border-[#21262d] border-gray-200 rounded-2xl p-5">
+            <div class="font-mono text-xs text-purple-400 tracking-widest mb-4" data-i="share_title">// SHARE</div>
+            <div class="flex gap-2">
+              <button onclick="shareArticle('twitter')" class="flex-1 bg-black/50 hover:bg-black/80 border dark:border-white/10 border-black/10 rounded-xl py-2 text-xs font-semibold text-gray-300 hover:text-white transition-all">𝕏</button>
+              <button onclick="shareArticle('linkedin')" class="flex-1 bg-blue-700/20 hover:bg-blue-700/40 border border-blue-500/20 rounded-xl py-2 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-all">in</button>
+              <button onclick="shareArticle('copy')" id="copy-btn" class="flex-1 dark:bg-white/5 bg-black/5 hover:bg-white/10 border dark:border-white/10 border-black/10 rounded-xl py-2 text-xs font-semibold dark:text-gray-300 text-gray-500 hover:text-white transition-all" data-i="copy_btn">🔗</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</main>
+
+<!-- Mobile sponsor floating -->
+<div class="lg:hidden fixed bottom-0 left-0 right-0 z-50 p-3">
+  <a href="https://bigram6.gumroad.com/l/autovideofactory" target="_blank" rel="noopener"
+    class="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-sm py-3.5 px-6 rounded-xl shadow-xl shadow-blue-500/30 transition-all active:scale-95">
+    🚀 <span data-i="mobile_cta">Get AutoVideoFactory →</span>
+  </a>
+</div>
+
+<!-- Footer -->
+<footer class="relative z-10 dark:border-t dark:border-white/5 border-t border-black/8 px-4 py-8 text-center text-sm dark:text-gray-500 text-gray-400 pb-24 lg:pb-8">
+  <span>AutoFlow<span class="text-blue-400">Blog</span></span>
+  <span class="mx-2">·</span>
+  <span data-i="footer_copy">Built by automation, for automation builders.</span>
+</footer>
+
+<script>
+// ─── SUPABASE CONFIG ─── Replace with your credentials
+const SUPABASE_URL  = 'https://vjmstjlprdnnpxsjurrp.supabase.co';
+const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqbXN0amxwcmRubnB4c2p1cnJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1NzUyNTksImV4cCI6MjA5MzE1MTI1OX0.WPECnZ-98cORXPM6f7QIpE08gFiX2aSjT8NM5gFDHgw';
+
+let supabaseClient = null;
+try {
+  if (SUPABASE_URL && SUPABASE_URL !== 'YOUR_SUPABASE_URL' && SUPABASE_URL.startsWith('http')) {
+    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  }
+} catch(e) { console.warn('Supabase init skipped.'); }
+
+// ─── STATE ───
+let currentLang = localStorage.getItem('af-lang') || 'en';
+let articleData  = null;
+
+// ─── TRANSLATIONS ───
+const T = {
+  en: {
+    lang_btn:'🌐 AR',
+    sponsor_label:'// SPONSORED TOOL',
+    sponsor_title:'🚀 Scale Your Video Output with AutoVideoFactory',
+    sponsor_desc:'Stop building manual workflows. Turn your computer into a 24/7 automated YouTube Shorts production pipeline using n8n, Gemini, and Remotion. 14.7M+ views generated in 28 Days — on autopilot.',
+    sponsor_btn:'Get AutoVideoFactory Now →',
+    sponsor_note:'One-time payment · Lifetime access · Free updates',
+    sidebar_title:'AutoVideoFactory', sidebar_desc:'14.7M views in 28 Days. Full automation pipeline for YouTube Shorts.',
+    sidebar_btn:'Get it Now →',
+    toc_title:'// TABLE OF CONTENTS', toc_empty:'Generating...',
+    share_title:'// SHARE', copy_btn:'🔗 Copy',
+    mobile_cta:'Get AutoVideoFactory →',
+    back_link:'← Back to all articles',
+    err_title:'Article not found', err_desc:"This article may have been moved or doesn't exist.", err_back:'← Back to Blog',
+    footer_copy:'Built by automation, for automation builders.',
+    by:'By', min_read:'min read', views:'views',
+  },
+  ar: {
+    lang_btn:'🌐 EN',
+    sponsor_label:'// أداة مدعومة',
+    sponsor_title:'🚀 ضاعف إنتاجك الفيديوي مع AutoVideoFactory',
+    sponsor_desc:'توقف عن بناء ورك فلو يدوية. حوّل حاسوبك إلى خط إنتاج YouTube Shorts آلي يعمل 24/7 باستخدام n8n وGemini وRemotion. 14.7+ مليون مشاهدة في 28 يوماً — على الطيار الآلي.',
+    sponsor_btn:'احصل على AutoVideoFactory الآن →',
+    sponsor_note:'دفعة واحدة · وصول مدى الحياة · تحديثات مجانية',
+    sidebar_title:'AutoVideoFactory', sidebar_desc:'14.7 مليون مشاهدة في 28 يوماً. خط إنتاج آلي كامل لـ YouTube Shorts.',
+    sidebar_btn:'احصل عليه الآن →',
+    toc_title:'// جدول المحتويات', toc_empty:'جاري التوليد...',
+    share_title:'// شارك', copy_btn:'🔗 نسخ',
+    mobile_cta:'احصل على AutoVideoFactory →',
+    back_link:'← العودة لجميع المقالات',
+    err_title:'المقالة غير موجودة', err_desc:'قد تكون هذه المقالة نُقلت أو غير موجودة.', err_back:'← العودة للمدونة',
+    footer_copy:'مبني بالأتمتة، لبناة الأتمتة.',
+    by:'بقلم', min_read:'دقيقة للقراءة', views:'مشاهدة',
+  }
+};
+
+// ─── BADGE ───
+function badgeClass(cat) {
+  const map = { AI:'badge-ai', Automation:'badge-automation', Python:'badge-python', YouTube:'badge-youtube' };
+  return map[cat] || 'badge-ai';
+}
+
+// ─── FORMAT ───
+function formatDate(ts, lang) {
+  return new Date(ts).toLocaleDateString(lang==='ar'?'ar-EG':'en-US',{year:'numeric',month:'long',day:'numeric'});
+}
+function readingTime(text, lang) {
+  const mins = Math.max(1, Math.ceil((text||'').split(/\s+/).length / 200));
+  return `${mins} ${T[lang].min_read}`;
+}
+
+// ─── RENDER ARTICLE ───
+function renderArticle(a) {
+  const l = currentLang;
+  const title   = a[`title_${l}`]   || a.title_en   || 'Untitled';
+  const content = a[`content_${l}`] || a.content_en || '<p>No content available.</p>';
+
+  // Update page title & meta
+  document.title = `${title} – AutoFlow Blog`;
+  const summary = a[`summary_${l}`] || a.summary_en || '';
+  document.getElementById('meta-desc').setAttribute('content', summary);
+  
+  // SEO Dynamic Meta Tags Injection (OpenGraph & Twitter Cards)
+  const updateMeta = (prop, content) => {
+    let meta = document.querySelector(`meta[property="${prop}"]`) || document.querySelector(`meta[name="${prop}"]`);
+    if(!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute(prop.includes('og:') ? 'property' : 'name', prop);
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', content);
+  };
+  updateMeta('og:title', title + ' – AutoFlow Blog');
+  updateMeta('og:description', summary);
+  updateMeta('twitter:card', 'summary_large_image');
+  updateMeta('twitter:title', title);
+  updateMeta('twitter:description', summary);
+  if(a.image_url) {
+    updateMeta('og:image', a.image_url);
+    updateMeta('twitter:image', a.image_url);
+  }
+
+  // Header
+  document.getElementById('article-header').innerHTML = `
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+      <span class="badge ${badgeClass(a.category)} px-2.5 py-1 rounded-md">${a.category||'AI'}</span>
+      <span class="text-xs dark:text-gray-500 text-gray-400">${formatDate(a.created_at,l)}</span>
+      <span class="text-xs dark:text-gray-500 text-gray-400">·</span>
+      <span class="text-xs dark:text-gray-500 text-gray-400">${readingTime(content,l)}</span>
+      ${a.views ? `<span class="text-xs dark:text-gray-500 text-gray-400">· ${Number(a.views).toLocaleString()} ${T[l].views}</span>` : ''}
+    </div>
+    <h1 class="text-3xl lg:text-4xl xl:text-5xl font-black dark:text-white text-gray-900 leading-tight mb-4">${title}</h1>
+    ${summary ? `<p class="text-lg dark:text-gray-400 text-gray-500 leading-relaxed mb-4">${summary}</p>` : ''}
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">AI</div>
+      <div>
+        <div class="text-sm font-semibold dark:text-white text-gray-900">AI Infrastructure Team</div>
+        <div class="text-xs dark:text-gray-500 text-gray-400">AutoFlow Blog</div>
+      </div>
+    </div>`;
+
+  // Cover image
+  if (a.image_url) {
+    document.getElementById('article-cover').innerHTML = `
+      <div class="rounded-2xl overflow-hidden border dark:border-white/5 border-black/8 shadow-2xl">
+        <img src="${a.image_url}" alt="${title}" class="w-full max-h-[460px] object-cover" loading="eager" onerror="this.parentElement.style.display='none'"/>
+      </div>`;
+  } else { document.getElementById('article-cover').style.display='none'; }
+
+  // Body
+  document.getElementById('article-body').innerHTML = content;
+
+  // Build TOC from h2/h3 in rendered content
+  setTimeout(buildTOC, 100);
+
+  // Show article, hide loading
+  document.getElementById('loading-state').style.display = 'none';
+  const ac = document.getElementById('article-content');
+  ac.classList.remove('hidden');
+  ac.classList.add('grid');
+
+  // Reveal
+  setTimeout(() => {
+    document.querySelectorAll('.reveal').forEach((el,i) => {
+      setTimeout(() => el.classList.add('visible'), i * 80);
+    });
+  }, 50);
+}
+
+// ─── TOC ───
+function buildTOC() {
+  const body   = document.getElementById('article-body');
+  const tocNav = document.getElementById('toc-nav');
+  const heads  = body.querySelectorAll('h2, h3');
+  if (!heads.length) { tocNav.innerHTML = `<span class="text-xs text-gray-500">${T[currentLang].toc_empty}</span>`; return; }
+  tocNav.innerHTML = '';
+  heads.forEach((h, i) => {
+    const id = `heading-${i}`;
+    h.id = id;
+    const isH3 = h.tagName === 'H3';
+    const a = document.createElement('a');
+    a.href = `#${id}`;
+    a.textContent = h.textContent;
+    a.className = `toc-item block text-xs leading-snug py-1 border-l-2 dark:border-white/10 border-black/10 pl-3 dark:text-gray-400 text-gray-500 dark:hover:text-blue-400 hover:text-blue-600 transition-all ${isH3 ? 'pl-5 opacity-75' : ''}`;
+    a.addEventListener('click', e => { e.preventDefault(); h.scrollIntoView({behavior:'smooth',block:'start'}); });
+    tocNav.appendChild(a);
+  });
+
+  // Active heading on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.toc-item').forEach(t => t.classList.remove('active'));
+        const active = tocNav.querySelector(`a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin:'-20% 0px -70% 0px' });
+  heads.forEach(h => observer.observe(h));
+}
+
+// ─── PROGRESS BAR ───
+window.addEventListener('scroll', () => {
+  const doc  = document.documentElement;
+  const pct  = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+  document.getElementById('progress-bar').style.width = Math.min(100, pct) + '%';
+});
+
+// ─── SHARE ───
+function shareArticle(platform) {
+  const url   = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title);
+  if (platform === 'twitter')  window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`,'_blank');
+  if (platform === 'linkedin') window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`,'_blank');
+  if (platform === 'copy') {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✅'; setTimeout(() => { btn.textContent = T[currentLang].copy_btn; }, 2000);
+    });
+  }
+}
+
+// ─── FETCH ───
+async function fetchArticle() {
+  const params = new URLSearchParams(window.location.search);
+  const slug   = params.get('slug');
+  const id     = params.get('id');
+
+  if (!slug && !id) { showError(); return; }
+
+  try {
+    if (!supabaseClient) throw new Error('Supabase not configured yet.');
+    let query = supabaseClient.from('articles').select('*');
+    if (slug) query = query.eq('slug', slug);
+    else      query = query.eq('id', id);
+    const { data, error } = await query.single();
+    if (error || !data) throw new Error('not found');
+    articleData = data;
+    renderArticle(data);
+    // Increment view count (fire-and-forget)
+    if (data.id) supabaseClient.from('articles').update({ views: (data.views||0)+1 }).eq('id', data.id);
+  } catch (err) {
+    console.warn('Supabase fetch failed:', err.message);
+    // Use demo article if slug matches demo data
+    const demo = getDemoArticle(slug||id);
+    if (demo) { articleData = demo; renderArticle(demo); }
+    else showError();
+  }
+}
+
+function showError() {
+  document.getElementById('loading-state').style.display = 'none';
+  document.getElementById('error-state').classList.remove('hidden');
+}
+
+function getDemoArticle(slugOrId) {
+  const demos = {
+    'how-we-hit-47m-views': {
+      id:1, slug:'how-we-hit-47m-views',
+      title_en:'How We Hit 4.7M YouTube Views in 7 Days With Pure Automation',
+      title_ar:'كيف حققنا 4.7 مليون مشاهدة يوتيوب في 7 أيام بالأتمتة الكاملة',
+      summary_en:'A deep-dive into the exact n8n workflow, Remotion setup, and Gemini prompts that generated millions of views on autopilot.',
+      summary_ar:'تحليل عميق لورك فلو n8n الدقيق وإعداد Remotion وبرومبتات Gemini التي ولّدت ملايين المشاهدات على الطيار الآلي.',
+      content_en:`<h2>The System That Changed Everything</h2>
+<p>28 Days. 14.7 million views. Zero manual editing. This isn't a hypothetical — it's what AutoVideoFactory produced on a single channel using the exact stack we'll walk through in this article.</p>
+<p>The key insight: <strong>YouTube Shorts rewards volume and retention above everything else</strong>. If you can publish 6–12 highly-retained Shorts per day, the algorithm will do the distribution for you.</p>
+<h2>The Core Stack</h2>
+<p>Every component serves a specific purpose:</p>
+<ul>
+<li><strong>n8n</strong> – The orchestration layer. Schedules tasks, passes data between services, and handles retries.</li>
+<li><strong>Google Gemini</strong> – Script and caption generation. Also analyzes images to provide zoom coordinates for each scene.</li>
+<li><strong>Microsoft Edge TTS</strong> – Free, natural-sounding voiceover. No monthly subscription.</li>
+<li><strong>Remotion</strong> – Programmatic video rendering. Takes props (titles, captions, images, timings) and outputs MP4.</li>
+<li><strong>Supabase</strong> – The content queue. Stores topics, tracks status, and archives published videos.</li>
+<li><strong>YouTube Data API</strong> – Automated uploads with titles, descriptions, and scheduled publishing.</li>
+</ul>
+<h2>The Workflow Architecture</h2>
+<p>The entire factory runs on a cron schedule every 6 hours:</p>
+<pre><code>Schedule → Get Topic → Prepare Prompt → Gemini Vision API → Parse JSON
+  → Audio & Timing Engine → Render Video → Upload to YouTube</code></pre>
+<h2>Gemini Vision: The Secret Weapon</h2>
+<p>Most automation systems use AI for text only. We went further: Gemini analyzes the actual images being used in each scene and returns <strong>precise zoom coordinates</strong> (focus_x, focus_y, zoom_level) so Remotion can create cinematic zoom-ins on the most important element in each frame.</p>
+<p>This single feature dramatically increased our retention rate from 45% to 77.8%.</p>
+<h2>Results</h2>
+<p>After 28 days of continuous operation:</p>
+<ul>
+<li>📈 14.7M+ total views</li>
+<li>⚡ 187.3K+ watch hours</li>
+<li>👥 20,300+ new subscribers</li>
+<li>🎯 82% audience retention</li>
+</ul>
+<p>The factory is now available as a complete package — workflows, Remotion project, installer, and guide — for anyone who wants to deploy their own.</p>`,
+      content_ar:`<h2>النظام الذي غيّر كل شيء</h2>
+<p>28 يوماً. 14.7 مليون مشاهدة. صفر تحرير يدوي. هذا ليس افتراضياً — هذا ما أنتجه AutoVideoFactory على قناة واحدة باستخدام نفس المكدس الذي سنشرحه في هذا المقال.</p>
+<p>الرؤية الجوهرية: <strong>YouTube Shorts يكافئ الحجم والاستبقاء فوق كل شيء آخر</strong>. إذا استطعت نشر 6-12 Short ذا استبقاء عالٍ يومياً، ستتولى الخوارزمية التوزيع نيابةً عنك.</p>
+<h2>المكدس الأساسي</h2>
+<p>كل مكوّن يخدم غرضاً محدداً:</p>
+<ul>
+<li><strong>n8n</strong> – طبقة التنسيق. يجدول المهام ويمرر البيانات بين الخدمات.</li>
+<li><strong>Google Gemini</strong> – توليد السكريبتات والكابشنات. يحلل الصور أيضاً.</li>
+<li><strong>Microsoft Edge TTS</strong> – فويس أوفر مجاني وطبيعي. بدون اشتراك شهري.</li>
+<li><strong>Remotion</strong> – تصيير الفيديو برمجياً. يأخذ البروبس ويخرج MP4.</li>
+<li><strong>Supabase</strong> – طابور المحتوى. يخزن المواضيع ويتتبع الحالة.</li>
+<li><strong>YouTube Data API</strong> – رفع آلي مع العناوين والأوصاف والنشر المجدول.</li>
+</ul>
+<h2>النتائج</h2>
+<p>بعد 28 يوماً من التشغيل المستمر:</p>
+<ul>
+<li>📈 أكثر من 4.7 مليون مشاهدة إجمالية</li>
+<li>⚡ أكثر من 187.3 ألف ساعة مشاهدة</li>
+<li>👥 20,300+ مشترك جديد</li>
+<li>🎯 82% معدل استبقاء الجمهور</li>
+</ul>`,
+      category:'Automation',
+      image_url:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200&q=80',
+      created_at:'2025-01-15T10:00:00Z', views:18420
+    }
+  };
+  return demos[slugOrId] || null;
+}
+
+// ─── THEME ───
+function toggleTheme() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  localStorage.setItem('af-theme', isDark ? 'dark' : 'light');
+  document.getElementById('theme-btn').textContent = isDark ? '🌙' : '☀️';
+}
+function initTheme() {
+  const saved = localStorage.getItem('af-theme') || 'dark';
+  document.documentElement.classList.toggle('dark', saved === 'dark');
+  document.getElementById('theme-btn').textContent = saved === 'dark' ? '🌙' : '☀️';
+}
+
+// ─── LANGUAGE ───
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('af-lang', lang);
+  document.documentElement.lang = lang === 'ar' ? 'ar' : 'en';
+  document.documentElement.dir  = lang === 'ar' ? 'rtl' : 'ltr';
+  document.documentElement.setAttribute('data-lang', lang);
+  const d = T[lang];
+  document.querySelectorAll('[data-i]').forEach(el => {
+    const k = el.getAttribute('data-i');
+    if (d[k]) el.textContent = d[k];
+  });
+  document.getElementById('lang-btn').textContent = d.lang_btn;
+  // Re-render if article is loaded
+  if (articleData) renderArticle(articleData);
+}
+function toggleLang() { applyLang(currentLang === 'en' ? 'ar' : 'en'); }
+
+
+// ─── NEWSLETTER SUBSCRIPTION ───
+async function handleSubscribe(e) {
+  e.preventDefault();
+  const emailInput = document.getElementById('sub-email');
+  const btn = document.getElementById('sub-btn');
+  const msg = document.getElementById('sub-msg');
+  
+  if(!emailInput.value) return;
+  
+  btn.disabled = true;
+  btn.textContent = '...';
+  
+  try {
+    if (!supabaseClient) throw new Error('DB not connected');
+    const { error } = await supabaseClient.from('subscribers').insert([{ email: emailInput.value }]);
+    if (error && error.code !== '23505') throw error; // 23505 is unique violation (already subscribed)
+    
+    msg.textContent = currentLang === 'ar' ? '✅ تم التسجيل بنجاح! شكراً لك.' : '✅ Subscribed successfully! Thank you.';
+    msg.className = 'text-sm mt-4 font-medium text-green-500 block';
+    emailInput.value = '';
+  } catch (err) {
+    msg.textContent = currentLang === 'ar' ? '❌ حدث خطأ، يرجى المحاولة لاحقاً.' : '❌ An error occurred, please try again.';
+    msg.className = 'text-sm mt-4 font-medium text-red-500 block';
+  }
+  
+  btn.disabled = false;
+  btn.textContent = T[currentLang].news_btn || 'Subscribe';
+  setTimeout(() => msg.classList.add('hidden'), 5000);
+}
+
+// ─── SCROLL REVEAL ───
+const revObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revObs.unobserve(e.target); } });
+}, { threshold:.05 });
+setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 2500);
+
+// ─── INIT ───
+initTheme();
+applyLang(currentLang);
+fetchArticle();
+</script>
+</body>
+</html>
