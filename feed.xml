@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Programmatic Video: Auto-Generate Videos at Scale with Remotion & Node.js | إتقان الفيديو البرمجي: إنشاء مقاطع فيديو تلقائيًا على نطاق واسع باستخدام Remotion و Node.js</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-videos-remotion-nodejs</link>
+    <description>Learn to programmatically generate dynamic video content using Remotion and Node.js. This guide covers setup, component creation, and automated rendering to scale your video production efforts.</description>
+    <pubDate>Tue, 14 Jul 2026 04:52:24 GMT</pubDate>
+  </item>
+  <item>
     <title>Unlock Scalable Video Creation: A Remotion Guide to Programmatic Video Generation | أطلق العنان لإنشاء الفيديو القابل للتطوير: دليل Remotion لإنشاء الفيديو برمجيًا</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=remotion-programmatic-video-generation</link>
     <description>Learn how to leverage Remotion, a React-based framework, to generate dynamic videos programmatically. This guide walks you through setting up a project, composing scenes, and rendering high-quality video content at scale.</description>
@@ -86,12 +92,6 @@
     <title>The Ultimate YouTube Shorts Automation Guide: 14.7M Views Exposed | الدليل الشامل لأتمتة YouTube Shorts: كيف حققنا 14.7 مليون مشاهدة</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=ultimate-youtube-shorts-automation-guide</link>
     <description>Discover the exact programmatic rendering and AI scripting pipeline that replaced an entire video editing team and generated massive organic growth.</description>
-    <pubDate>Sat, 11 Jul 2026 21:54:33 GMT</pubDate>
-  </item>
-  <item>
-    <title>Mastering Gemini Prompt Engineering for Viral YouTube Shorts | احتراف هندسة الأوامر لـ Gemini لإنتاج فيديوهات Shorts فيروسية</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=gemini-prompt-engineering-for-shorts</link>
-    <description>Unlock the exact prompt structure that forces Google Gemini to output high-retention, perfectly paced scripts every single time.</description>
     <pubDate>Sat, 11 Jul 2026 21:54:33 GMT</pubDate>
   </item>
 </channel>
