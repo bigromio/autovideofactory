@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Programmatic Video: Generate YouTube Shorts at Scale with Remotion & Node.js | إتقان الفيديو البرمجي: إنشاء مقاطع يوتيوب قصيرة على نطاق واسع باستخدام Remotion و Node.js</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-remotion-nodejs-youtube-shorts</link>
+    <description>Unlock the power of programmatic video to automatically generate countless YouTube Shorts using Remotion and Node.js. This guide provides a step-by-step tutorial on setting up your project, designing dynamic video components, and automating the rendering process for scalable content creation.</description>
+    <pubDate>Wed, 15 Jul 2026 09:36:10 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Programmatic Video: Auto-Generate Engaging Videos with Remotion & Node.js | إتقان الفيديو البرمجي: إنشاء مقاطع فيديو جذابة تلقائيًا باستخدام Remotion و Node.js</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-remotion-nodejs</link>
     <description>Learn how to leverage Remotion with Node.js to programmatically create dynamic video content at scale. This guide walks you through setting up your project, composing scenes, and rendering custom videos from data.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-agents-hyperautomation-future-work</link>
     <description>Explore how AI Agents are driving the hyperautomation revolution, redefining productivity and unlocking new levels of efficiency and innovation across industries. Learn how specialized tools like AutoVideoFactory are empowering creators.</description>
     <pubDate>Mon, 13 Jul 2026 05:19:41 GMT</pubDate>
-  </item>
-  <item>
-    <title>The Synergy of AI and Automation: Unleashing Productivity in the Digital Age | تآزر الذكاء الاصطناعي والأتمتة: إطلاق العنان للإنتاجية في العصر الرقمي</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-powered-workflow-automation-future-productivity</link>
-    <description>Discover how the powerful synergy of AI and workflow automation is transforming how we work, freeing us from mundane tasks to unleash creativity. Learn about tools like n8n and how AutoVideoFactory can revolutionize YouTube Shorts automation.</description>
-    <pubDate>Mon, 13 Jul 2026 05:07:54 GMT</pubDate>
   </item>
 </channel>
 </rss>
