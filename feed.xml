@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Web Automation: Build a Powerful Data Scraper with Python & Playwright | إتقان أتمتة الويب: بناء كاشط بيانات قوي باستخدام بايثون وبلاي رايت</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-web-automation-python-playwright-scraper</link>
+    <description>Learn how to leverage Python and Playwright to build a robust, headless browser automation pipeline for web scraping. This guide walks you through setting up Playwright, navigating dynamic websites, and extracting data efficiently.</description>
+    <pubDate>Wed, 15 Jul 2026 13:28:30 GMT</pubDate>
+  </item>
+  <item>
     <title>Master AI Content Analysis: Integrate DeepSeek V3 with Python for Advanced Summarization | إتقان تحليل المحتوى بالذكاء الاصطناعي: دمج DeepSeek V3 مع بايثون للتكثيف المتقدم</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-ai-content-analysis-deepseek-v3-python</link>
     <description>Unlock advanced content analysis by integrating the powerful DeepSeek V3 LLM into your Python scripts. This guide provides a step-by-step tutorial to automate sophisticated text summarization and information extraction.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=hyperautomation-ai-workflow-revolution</link>
     <description>Explore how hyperautomation, combining AI, RPA, and advanced technologies, is reshaping business workflows, boosting efficiency, and freeing human potential. Discover key tools and how solutions like AutoVideoFactory are revolutionizing content creation.</description>
     <pubDate>Mon, 13 Jul 2026 16:26:34 GMT</pubDate>
-  </item>
-  <item>
-    <title>The Future of Work: How AI-Powered Automation is Reshaping Industries and Content Creation | مستقبل العمل: كيف تعيد الأتمتة المدعومة بالذكاء الاصطناعي تشكيل الصناعات وإنشاء المحتوى</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=the-future-of-work-ai-automation-shorts</link>
-    <description>Discover how AI-powered workflow automation is revolutionizing industries, boosting efficiency, and freeing up human creativity. Learn about its impact on content creation, especially YouTube Shorts, and how tools like AutoVideoFactory are leading the charge.</description>
-    <pubDate>Mon, 13 Jul 2026 13:00:34 GMT</pubDate>
   </item>
 </channel>
 </rss>
