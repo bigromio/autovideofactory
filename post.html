@@ -458,20 +458,16 @@ function renderArticle(a) {
       hljs.highlightElement(el);
   });
 
-  // Show article, hide loading
-  document.getElementById('loading-state').style.display = 'none';
-  ac.classList.remove('hidden');
-  // 🟢 استبدل ac.classList.add('grid'); بهذا السطر ليعمل بمرونة على الجوال وسطح المكتب:
-  ac.classList.add('flex', 'flex-col', 'lg:grid');
-
   // Build TOC from h2/h3 in rendered content
   setTimeout(buildTOC, 100);  
 
   // Show article, hide loading
   document.getElementById('loading-state').style.display = 'none';
-  const ac = document.getElementById('article-content');
-  ac.classList.remove('hidden');
-  ac.classList.add('grid');
+  
+  // 🟢 تعريف الحاوية وإظهارها مع التنسيق المرن للجوال وسطح المكتب
+  const articleContainer = document.getElementById('article-content');
+  articleContainer.classList.remove('hidden');
+  articleContainer.classList.add('flex', 'flex-col', 'lg:grid');
 
   // Reveal
   setTimeout(() => {
