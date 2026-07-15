@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Advanced Content Automation: n8n & Claude 3.5 Sonnet Integration | إتقان أتمتة المحتوى المتقدمة: دمج n8n و Claude 3.5 Sonnet</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-advanced-content-automation-n8n-claude-3-5-sonnet</link>
+    <description>Learn to build a powerful n8n workflow that leverages Claude 3.5 Sonnet for intelligent content generation and rewriting. This guide provides a step-by-step process to automate your content pipeline, saving you valuable time.</description>
+    <pubDate>Wed, 15 Jul 2026 16:14:06 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Web Automation: Build a Powerful Data Scraper with Python & Playwright | إتقان أتمتة الويب: بناء كاشط بيانات قوي باستخدام بايثون وبلاي رايت</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-web-automation-python-playwright-scraper</link>
     <description>Learn how to leverage Python and Playwright to build a robust, headless browser automation pipeline for web scraping. This guide walks you through setting up Playwright, navigating dynamic websites, and extracting data efficiently.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=unleash-hyperautomation-with-n8n-and-ai</link>
     <description>Discover how the powerful combination of n8n and Artificial Intelligence is revolutionizing business operations, moving beyond simple automation to create intelligent, self-optimizing workflows. Learn to leverage hyperautomation for unprecedented efficiency and innovation across your organization.</description>
     <pubDate>Mon, 13 Jul 2026 17:37:10 GMT</pubDate>
-  </item>
-  <item>
-    <title>The Hyperautomation Revolution: Unleashing AI to Transform Your Workflow | ثورة الأتمتة الفائقة: إطلاق العنان للذكاء الاصطناعي لتحويل سير عملك</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=hyperautomation-ai-workflow-revolution</link>
-    <description>Explore how hyperautomation, combining AI, RPA, and advanced technologies, is reshaping business workflows, boosting efficiency, and freeing human potential. Discover key tools and how solutions like AutoVideoFactory are revolutionizing content creation.</description>
-    <pubDate>Mon, 13 Jul 2026 16:26:34 GMT</pubDate>
   </item>
 </channel>
 </rss>
