@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Self-Hosted n8n: Comprehensive Docker Deployment for Scalable Automation | إتقان n8n المستضاف ذاتيًا: دليل شامل لنشر Docker للأتمتة القابلة للتطوير</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-self-hosted-n8n-docker-deployment-guide</link>
+    <description>This guide provides a step-by-step tutorial on deploying n8n using Docker and Docker Compose, ensuring a robust, scalable, and persistent automation environment. Learn to set up n8n on your own infrastructure, taking full control of your workflows and data.</description>
+    <pubDate>Thu, 16 Jul 2026 18:00:03 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Multi-Agent AI Systems: Build an Autonomous Research & Drafting Bot with Python & LLMs | إتقان أنظمة الذكاء الاصطناعي متعددة الوكلاء: بناء روبوت بحث وصياغة مستقل باستخدام بايثون ونماذج اللغة الكبيرة</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-system-python-llms-autoflow</link>
     <description>Learn to design and implement a multi-agent AI system in Python that autonomously researches topics and drafts content using large language models. This guide provides a step-by-step tutorial for building your own intelligent automation pipeline.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-hyperautomation-redefining-work-creativity</link>
     <description>Hyperautomation, fueled by advanced AI, is transforming how we work and create, moving beyond simple task execution. Discover how this revolutionary approach combines intelligent software with human ingenuity to automate and optimize complex workflows across industries.</description>
     <pubDate>Tue, 14 Jul 2026 02:23:41 GMT</pubDate>
-  </item>
-  <item>
-    <title>The Hyperautomation Revolution: Unleashing AI-Powered Workflows & YouTube Shorts Automation | ثورة الأتمتة الفائقة: إطلاق العنان لسير العمل المدعوم بالذكاء الاصطناعي وأتمتة مقاطع YouTube القصيرة</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-hyperautomation-youtube-shorts-autovideofactory</link>
-    <description>Dive into the world of hyperautomation, where AI and intelligent tools are transforming business operations and content creation. Discover how to revolutionize your workflows and automate YouTube Shorts with cutting-edge solutions like AutoVideoFactory.</description>
-    <pubDate>Tue, 14 Jul 2026 01:37:08 GMT</pubDate>
   </item>
 </channel>
 </rss>
