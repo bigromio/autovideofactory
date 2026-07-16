@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master n8n & Google Gemini 1.5 Pro: Automate Long-Form Content Analysis & Generation | إتقان n8n وGoogle Gemini 1.5 Pro: أتمتة تحليل المحتوى الطويل وتوليده</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-gemini-1-5-pro-long-form-automation</link>
+    <description>Learn how to design powerful n8n workflows that leverage Google Gemini 1.5 Pro's massive context window for advanced long-form content analysis, summarization, and generation, transforming your data processing capabilities.</description>
+    <pubDate>Thu, 16 Jul 2026 03:09:34 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Programmatic Video Editing with FFmpeg & Python (Full Guide + Code) | إتقان تحرير الفيديو البرمجي باستخدام FFmpeg وبايثون (دليل كامل + كود)</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-ffmpeg-python-programmatic-video</link>
     <description>Learn how to harness the power of FFmpeg via Python to automate video editing tasks like cutting, merging, and overlaying. This guide provides step-by-step instructions and practical code examples to kickstart your scalable video generation projects.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-redefining-workflow-automation</link>
     <description>Discover how AI is transforming traditional workflow automation, moving beyond simple task execution to intelligent, adaptive processes. Learn how this fusion is unlocking new levels of productivity and innovation for businesses globally.</description>
     <pubDate>Mon, 13 Jul 2026 23:53:13 GMT</pubDate>
-  </item>
-  <item>
-    <title>The AI Revolution: Supercharging Workflow Automation & YouTube Shorts! | ثورة الذكاء الاصطناعي: تعزيز أتمتة سير العمل ومقاطع YouTube القصيرة!</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-powering-workflow-automation-shorts-revolution</link>
-    <description>Discover how AI is transforming workflow automation, moving beyond simple 'if-then' rules to intelligent, adaptive systems. This post explores the synergy between powerful automation platforms and the critical role of AI in scaling content creation, especially for YouTube Shorts.</description>
-    <pubDate>Mon, 13 Jul 2026 21:00:28 GMT</pubDate>
   </item>
 </channel>
 </rss>
