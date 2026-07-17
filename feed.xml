@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Social Media Automation: Build a Python & Playwright Auto-Posting Bot | إتقان أتمتة وسائل التواصل الاجتماعي: بناء روبوت نشر تلقائي باستخدام Python و Playwright</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-python-playwright-social-media-bot</link>
+    <description>Learn to build a powerful Python script using Playwright to automate social media posts on platforms like LinkedIn. This guide provides step-by-step instructions and code to save you hours of manual effort.</description>
+    <pubDate>Fri, 17 Jul 2026 22:15:15 GMT</pubDate>
+  </item>
+  <item>
     <title>Build an Advanced AI Agent with Claude 3.5 Sonnet & Python: Mastering Dynamic Tool Use | بناء وكيل ذكاء اصطناعي متقدم باستخدام Claude 3.5 Sonnet وبايثون: إتقان استخدام الأدوات الديناميكي</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-advanced-ai-agent-claude-3-5-sonnet-python-tool-use</link>
     <description>Discover how to leverage Claude 3.5 Sonnet's powerful tool use capabilities with Python to build sophisticated AI agents that can interact with external systems and perform complex tasks. This guide will walk you through implementing a dynamic tool-calling agent from scratch.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-videos-remotion-nodejs</link>
     <description>Learn to programmatically generate dynamic video content using Remotion and Node.js. This guide covers setup, component creation, and automated rendering to scale your video production efforts.</description>
     <pubDate>Tue, 14 Jul 2026 04:52:24 GMT</pubDate>
-  </item>
-  <item>
-    <title>Unlock Scalable Video Creation: A Remotion Guide to Programmatic Video Generation | أطلق العنان لإنشاء الفيديو القابل للتطوير: دليل Remotion لإنشاء الفيديو برمجيًا</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=remotion-programmatic-video-generation</link>
-    <description>Learn how to leverage Remotion, a React-based framework, to generate dynamic videos programmatically. This guide walks you through setting up a project, composing scenes, and rendering high-quality video content at scale.</description>
-    <pubDate>Tue, 14 Jul 2026 04:15:20 GMT</pubDate>
   </item>
 </channel>
 </rss>
