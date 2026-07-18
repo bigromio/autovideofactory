@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Llama 3 Integration: Build a Real-time Content Classifier with Python | إتقان تكامل Llama 3: بناء مصنف محتوى في الوقت الفعلي باستخدام بايثون</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-llama3-content-classifier-python</link>
+    <description>Learn how to integrate Meta's Llama 3 LLM via a high-speed API (e.g., Groq) into a Python application to build an efficient, real-time content classification system. This guide provides step-by-step instructions and practical code to process and categorize text data automatically.</description>
+    <pubDate>Sat, 18 Jul 2026 18:54:16 GMT</pubDate>
+  </item>
+  <item>
     <title>Build an Autonomous News Bot with n8n & DeepSeek: Summarize & Publish (Full Guide + Code) | بناء روبوت أخبار ذاتي التشغيل باستخدام n8n و DeepSeek: تلخيص ونشر (دليل كامل + كود)</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-autonomous-news-bot-n8n-deepseek</link>
     <description>Learn to build a powerful autonomous news bot that fetches articles, summarizes them using DeepSeek AI, and publishes them automatically using n8n. This guide provides a step-by-step walkthrough to leverage advanced AI for content automation.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automating-video-creation-remotion-nodejs</link>
     <description>Learn to leverage Remotion and Node.js to build automated pipelines for generating stunning, data-driven video content at scale. This guide provides a step-by-step approach to transforming structured data into engaging video narratives.</description>
     <pubDate>Tue, 14 Jul 2026 22:28:59 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Programmatic Video with Remotion & Node.js: Auto-Generate Videos at Scale | إتقان الفيديو البرمجي باستخدام Remotion و Node.js: إنشاء مقاطع فيديو تلقائيًا على نطاق واسع</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-remotion-nodejs-auto-generate</link>
-    <description>Learn to leverage Remotion and Node.js to programmatically create and render videos, enabling powerful automation for content generation. This guide will walk you through setting up your environment and building a scalable video pipeline.</description>
-    <pubDate>Tue, 14 Jul 2026 13:01:03 GMT</pubDate>
   </item>
 </channel>
 </rss>
