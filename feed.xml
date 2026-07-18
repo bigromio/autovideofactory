@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Build an Autonomous News Bot with n8n & DeepSeek: Summarize & Publish (Full Guide + Code) | بناء روبوت أخبار ذاتي التشغيل باستخدام n8n و DeepSeek: تلخيص ونشر (دليل كامل + كود)</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-autonomous-news-bot-n8n-deepseek</link>
+    <description>Learn to build a powerful autonomous news bot that fetches articles, summarizes them using DeepSeek AI, and publishes them automatically using n8n. This guide provides a step-by-step walkthrough to leverage advanced AI for content automation.</description>
+    <pubDate>Sat, 18 Jul 2026 02:01:00 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Social Media Automation: Build a Python & Playwright Auto-Posting Bot | إتقان أتمتة وسائل التواصل الاجتماعي: بناء روبوت نشر تلقائي باستخدام Python و Playwright</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-python-playwright-social-media-bot</link>
     <description>Learn to build a powerful Python script using Playwright to automate social media posts on platforms like LinkedIn. This guide provides step-by-step instructions and code to save you hours of manual effort.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-remotion-nodejs-auto-generate</link>
     <description>Learn to leverage Remotion and Node.js to programmatically create and render videos, enabling powerful automation for content generation. This guide will walk you through setting up your environment and building a scalable video pipeline.</description>
     <pubDate>Tue, 14 Jul 2026 13:01:03 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Programmatic Video: Auto-Generate Videos at Scale with Remotion & Node.js | إتقان الفيديو البرمجي: إنشاء مقاطع فيديو تلقائيًا على نطاق واسع باستخدام Remotion و Node.js</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-videos-remotion-nodejs</link>
-    <description>Learn to programmatically generate dynamic video content using Remotion and Node.js. This guide covers setup, component creation, and automated rendering to scale your video production efforts.</description>
-    <pubDate>Tue, 14 Jul 2026 04:52:24 GMT</pubDate>
   </item>
 </channel>
 </rss>
