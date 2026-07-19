@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Real-time Data Enrichment: Build Dynamic Workflows with n8n & Perplexity AI | إتقان إثراء البيانات في الوقت الفعلي: بناء سير عمل ديناميكي باستخدام n8n وPerplexity AI</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-realtime-data-enrichment-n8n-perplexity-ai</link>
+    <description>Learn how to leverage n8n webhooks and the Perplexity AI API to create automated workflows that enrich data and make dynamic decisions in real-time. This guide empowers you to build smarter, event-driven automation pipelines.</description>
+    <pubDate>Sun, 19 Jul 2026 14:15:37 GMT</pubDate>
+  </item>
+  <item>
     <title>Auto-Generate Dynamic Videos at Scale: A Remotion & Node.js Blueprint | إنشاء مقاطع فيديو ديناميكية تلقائيًا على نطاق واسع: مخطط Remotion و Node.js</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-dynamic-videos-remotion-nodejs</link>
     <description>Learn to build a powerful programmatic video pipeline using Remotion and Node.js. This guide shows you how to generate dynamic, data-driven videos at scale, transforming raw data into compelling visual stories.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-advanced-content-automation-n8n-claude-3-5-sonnet</link>
     <description>Learn to build a powerful n8n workflow that leverages Claude 3.5 Sonnet for intelligent content generation and rewriting. This guide provides a step-by-step process to automate your content pipeline, saving you valuable time.</description>
     <pubDate>Wed, 15 Jul 2026 16:14:06 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Web Automation: Build a Powerful Data Scraper with Python & Playwright | إتقان أتمتة الويب: بناء كاشط بيانات قوي باستخدام بايثون وبلاي رايت</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-web-automation-python-playwright-scraper</link>
-    <description>Learn how to leverage Python and Playwright to build a robust, headless browser automation pipeline for web scraping. This guide walks you through setting up Playwright, navigating dynamic websites, and extracting data efficiently.</description>
-    <pubDate>Wed, 15 Jul 2026 13:28:30 GMT</pubDate>
   </item>
 </channel>
 </rss>
