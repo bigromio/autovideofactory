@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Dynamic Data Visualization Videos with Node.js & Remotion | أتمتة مقاطع فيديو تصور البيانات الديناميكية باستخدام Node.js و Remotion</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-data-viz-videos-remotion-nodejs</link>
+    <description>Learn to build a powerful pipeline for programmatically generating animated data visualization videos at scale using Node.js and Remotion. This guide will walk you through setting up your project, integrating data, and rendering dynamic video content for reports and dashboards.</description>
+    <pubDate>Sun, 19 Jul 2026 21:01:19 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate YouTube Shorts Production: AI Scripting & Programmatic Video Generation with Node.js | أتمتة إنتاج فيديوهات YouTube القصيرة: كتابة النصوص بالذكاء الاصطناعي وإنشاء الفيديو برمجيًا باستخدام Node.js</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-youtube-shorts-ai-nodejs-2024</link>
     <description>Unlock the power of AI and Node.js to autonomously generate engaging YouTube Shorts. This guide walks you through scripting, voiceovers, and video assembly, transforming your content creation pipeline.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-gemini-1-5-pro-long-form-automation</link>
     <description>Learn how to design powerful n8n workflows that leverage Google Gemini 1.5 Pro's massive context window for advanced long-form content analysis, summarization, and generation, transforming your data processing capabilities.</description>
     <pubDate>Thu, 16 Jul 2026 03:09:34 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Programmatic Video Editing with FFmpeg & Python (Full Guide + Code) | إتقان تحرير الفيديو البرمجي باستخدام FFmpeg وبايثون (دليل كامل + كود)</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-ffmpeg-python-programmatic-video</link>
-    <description>Learn how to harness the power of FFmpeg via Python to automate video editing tasks like cutting, merging, and overlaying. This guide provides step-by-step instructions and practical code examples to kickstart your scalable video generation projects.</description>
-    <pubDate>Wed, 15 Jul 2026 21:00:48 GMT</pubDate>
   </item>
 </channel>
 </rss>
