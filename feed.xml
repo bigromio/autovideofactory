@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Structured Data Extraction with DeepSeek V3 & Python for Automated Workflows | إتقان استخراج البيانات المهيكلة باستخدام DeepSeek V3 و Python لسير العمل المؤتمتة</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=deepseek-v3-python-structured-data-extraction</link>
+    <description>Learn to leverage DeepSeek V3's advanced capabilities for precise structured data extraction from unstructured text using Python. This guide provides a step-by-step tutorial to build robust automation pipelines for critical business information.</description>
+    <pubDate>Sun, 19 Jul 2026 05:01:19 GMT</pubDate>
+  </item>
+  <item>
     <title>Build a Custom AI Customer Support Chatbot with n8n & Claude 3 Opus | بناء روبوت دردشة دعم عملاء مخصص بالذكاء الاصطناعي باستخدام n8n و Claude 3 Opus</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-ai-customer-support-chatbot-n8n-claude-opus</link>
     <description>Learn to build an intelligent, automated customer support chatbot using n8n and Anthropic's Claude 3 Opus. This guide covers setting up webhooks, prompt engineering, and basic escalation logic to handle customer inquiries efficiently.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-ai-content-analysis-deepseek-v3-python</link>
     <description>Unlock advanced content analysis by integrating the powerful DeepSeek V3 LLM into your Python scripts. This guide provides a step-by-step tutorial to automate sophisticated text summarization and information extraction.</description>
     <pubDate>Wed, 15 Jul 2026 13:18:51 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Programmatic Video: Generate YouTube Shorts at Scale with Remotion & Node.js | إتقان الفيديو البرمجي: إنشاء مقاطع يوتيوب قصيرة على نطاق واسع باستخدام Remotion و Node.js</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-remotion-nodejs-youtube-shorts</link>
-    <description>Unlock the power of programmatic video to automatically generate countless YouTube Shorts using Remotion and Node.js. This guide provides a step-by-step tutorial on setting up your project, designing dynamic video components, and automating the rendering process for scalable content creation.</description>
-    <pubDate>Wed, 15 Jul 2026 09:36:10 GMT</pubDate>
   </item>
 </channel>
 </rss>
