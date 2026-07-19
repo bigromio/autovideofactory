@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Local LLMs with n8n: Build Privacy-Focused AI Workflows (Ollama Integration Guide) | إتقان النماذج اللغوية المحلية (LLMs) باستخدام n8n: بناء سير عمل ذكاء اصطناعي يركز على الخصوصية (دليل تكامل Ollama)</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-ollama-local-llm-workflow</link>
+    <description>Learn to integrate local Large Language Models (LLMs) via Ollama with n8n, enabling powerful, privacy-focused AI automation without reliance on external cloud services. This guide provides step-by-step instructions to set up Ollama and connect it to n8n for custom AI workflows.</description>
+    <pubDate>Sun, 19 Jul 2026 23:20:38 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Dynamic Data Visualization Videos with Node.js & Remotion | أتمتة مقاطع فيديو تصور البيانات الديناميكية باستخدام Node.js و Remotion</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-data-viz-videos-remotion-nodejs</link>
     <description>Learn to build a powerful pipeline for programmatically generating animated data visualization videos at scale using Node.js and Remotion. This guide will walk you through setting up your project, integrating data, and rendering dynamic video content for reports and dashboards.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-system-python-llms-autoflow</link>
     <description>Learn to design and implement a multi-agent AI system in Python that autonomously researches topics and drafts content using large language models. This guide provides a step-by-step tutorial for building your own intelligent automation pipeline.</description>
     <pubDate>Thu, 16 Jul 2026 14:44:17 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master n8n & Google Gemini 1.5 Pro: Automate Long-Form Content Analysis & Generation | إتقان n8n وGoogle Gemini 1.5 Pro: أتمتة تحليل المحتوى الطويل وتوليده</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-gemini-1-5-pro-long-form-automation</link>
-    <description>Learn how to design powerful n8n workflows that leverage Google Gemini 1.5 Pro's massive context window for advanced long-form content analysis, summarization, and generation, transforming your data processing capabilities.</description>
-    <pubDate>Thu, 16 Jul 2026 03:09:34 GMT</pubDate>
   </item>
 </channel>
 </rss>
