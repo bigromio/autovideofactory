@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Self-Hosted n8n with Docker Compose for Secure AI Workflows (Claude 3.5 Sonnet Example) | إتقان استضافة n8n ذاتيًا باستخدام Docker Compose لسير عمل الذكاء الاصطناعي الآمن (مثال Claude 3.5 Sonnet)</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-self-hosted-n8n-docker-compose-claude-35-sonnet</link>
+    <description>This guide provides a step-by-step tutorial on deploying a secure, self-hosted n8n instance using Docker Compose on a Virtual Private Server (VPS), and then integrating it with Claude 3.5 Sonnet for advanced AI-powered content generation workflows.</description>
+    <pubDate>Mon, 20 Jul 2026 13:01:08 GMT</pubDate>
+  </item>
+  <item>
     <title>Build a Multi-Agent Competitive Intelligence System with Python & DeepSeek V3 | بناء نظام ذكاء تنافسي متعدد الوكلاء باستخدام بايثون و DeepSeek V3</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-competitive-intelligence-system-python-deepseek</link>
     <description>Learn how to design and build a sophisticated multi-agent system in Python, leveraging DeepSeek V3 for automated competitive analysis and strategic insights. This guide provides a step-by-step tutorial for creating specialized agents that collaborate to research, analyze, and report on market trends.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-autonomous-news-bot-n8n-deepseek</link>
     <description>Learn to build a powerful autonomous news bot that fetches articles, summarizes them using DeepSeek AI, and publishes them automatically using n8n. This guide provides a step-by-step walkthrough to leverage advanced AI for content automation.</description>
     <pubDate>Sat, 18 Jul 2026 02:01:00 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Social Media Automation: Build a Python & Playwright Auto-Posting Bot | إتقان أتمتة وسائل التواصل الاجتماعي: بناء روبوت نشر تلقائي باستخدام Python و Playwright</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-python-playwright-social-media-bot</link>
-    <description>Learn to build a powerful Python script using Playwright to automate social media posts on platforms like LinkedIn. This guide provides step-by-step instructions and code to save you hours of manual effort.</description>
-    <pubDate>Fri, 17 Jul 2026 22:15:15 GMT</pubDate>
   </item>
 </channel>
 </rss>
