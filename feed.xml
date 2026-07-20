@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Programmatic Video Ad Generation with FFmpeg & Node.js | إتقان إنشاء إعلانات الفيديو البرمجية باستخدام FFmpeg و Node.js</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-ads-ffmpeg-nodejs</link>
+    <description>Learn to build a powerful Node.js pipeline to programmatically generate dynamic video ads using FFmpeg. This guide covers stitching clips, adding text overlays, and integrating data for scalable video creation.</description>
+    <pubDate>Mon, 20 Jul 2026 05:01:21 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Research Digest Creation with n8n & Google Gemini 1.5 Pro (Full Guide + Code) | أتمتة إنشاء ملخصات الأبحاث باستخدام n8n و Google Gemini 1.5 Pro (دليل كامل + كود)</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-research-digests-n8n-gemini-1-5-pro</link>
     <description>Learn to build a powerful n8n workflow that leverages Google Gemini 1.5 Pro's advanced capabilities to automatically summarize complex documents and extract key insights for research digests. This guide provides step-by-step instructions and practical code to streamline your information processing.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-advanced-ai-agent-claude-3-5-sonnet-python-tool-use</link>
     <description>Discover how to leverage Claude 3.5 Sonnet's powerful tool use capabilities with Python to build sophisticated AI agents that can interact with external systems and perform complex tasks. This guide will walk you through implementing a dynamic tool-calling agent from scratch.</description>
     <pubDate>Fri, 17 Jul 2026 08:50:22 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Self-Hosted n8n: Comprehensive Docker Deployment for Scalable Automation | إتقان n8n المستضاف ذاتيًا: دليل شامل لنشر Docker للأتمتة القابلة للتطوير</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-self-hosted-n8n-docker-deployment-guide</link>
-    <description>This guide provides a step-by-step tutorial on deploying n8n using Docker and Docker Compose, ensuring a robust, scalable, and persistent automation environment. Learn to set up n8n on your own infrastructure, taking full control of your workflows and data.</description>
-    <pubDate>Thu, 16 Jul 2026 18:00:03 GMT</pubDate>
   </item>
 </channel>
 </rss>
