@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Research Digest Creation with n8n & Google Gemini 1.5 Pro (Full Guide + Code) | أتمتة إنشاء ملخصات الأبحاث باستخدام n8n و Google Gemini 1.5 Pro (دليل كامل + كود)</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-research-digests-n8n-gemini-1-5-pro</link>
+    <description>Learn to build a powerful n8n workflow that leverages Google Gemini 1.5 Pro's advanced capabilities to automatically summarize complex documents and extract key insights for research digests. This guide provides step-by-step instructions and practical code to streamline your information processing.</description>
+    <pubDate>Mon, 20 Jul 2026 04:16:54 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Local LLMs with n8n: Build Privacy-Focused AI Workflows (Ollama Integration Guide) | إتقان النماذج اللغوية المحلية (LLMs) باستخدام n8n: بناء سير عمل ذكاء اصطناعي يركز على الخصوصية (دليل تكامل Ollama)</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-ollama-local-llm-workflow</link>
     <description>Learn to integrate local Large Language Models (LLMs) via Ollama with n8n, enabling powerful, privacy-focused AI automation without reliance on external cloud services. This guide provides step-by-step instructions to set up Ollama and connect it to n8n for custom AI workflows.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-self-hosted-n8n-docker-deployment-guide</link>
     <description>This guide provides a step-by-step tutorial on deploying n8n using Docker and Docker Compose, ensuring a robust, scalable, and persistent automation environment. Learn to set up n8n on your own infrastructure, taking full control of your workflows and data.</description>
     <pubDate>Thu, 16 Jul 2026 18:00:03 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Multi-Agent AI Systems: Build an Autonomous Research & Drafting Bot with Python & LLMs | إتقان أنظمة الذكاء الاصطناعي متعددة الوكلاء: بناء روبوت بحث وصياغة مستقل باستخدام بايثون ونماذج اللغة الكبيرة</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-system-python-llms-autoflow</link>
-    <description>Learn to design and implement a multi-agent AI system in Python that autonomously researches topics and drafts content using large language models. This guide provides a step-by-step tutorial for building your own intelligent automation pipeline.</description>
-    <pubDate>Thu, 16 Jul 2026 14:44:17 GMT</pubDate>
   </item>
 </channel>
 </rss>
