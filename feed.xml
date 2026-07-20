@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Dynamic Web Scraping: Python & Playwright for Complex Data Extraction | إتقان استخراج البيانات الديناميكية من الويب: بايثون وبلاي رايت لاستخلاص البيانات المعقدة</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-dynamic-web-scraping-python-playwright</link>
+    <description>Learn to build powerful web scrapers using Python and Playwright, mastering techniques to navigate dynamic websites, handle JavaScript-rendered content, and extract complex data efficiently. This guide provides a step-by-step tutorial for robust automation.</description>
+    <pubDate>Mon, 20 Jul 2026 19:10:07 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Self-Hosted n8n with Docker Compose for Secure AI Workflows (Claude 3.5 Sonnet Example) | إتقان استضافة n8n ذاتيًا باستخدام Docker Compose لسير عمل الذكاء الاصطناعي الآمن (مثال Claude 3.5 Sonnet)</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-self-hosted-n8n-docker-compose-claude-35-sonnet</link>
     <description>This guide provides a step-by-step tutorial on deploying a secure, self-hosted n8n instance using Docker Compose on a Virtual Private Server (VPS), and then integrating it with Claude 3.5 Sonnet for advanced AI-powered content generation workflows.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-llama3-content-classifier-python</link>
     <description>Learn how to integrate Meta's Llama 3 LLM via a high-speed API (e.g., Groq) into a Python application to build an efficient, real-time content classification system. This guide provides step-by-step instructions and practical code to process and categorize text data automatically.</description>
     <pubDate>Sat, 18 Jul 2026 18:54:16 GMT</pubDate>
-  </item>
-  <item>
-    <title>Build an Autonomous News Bot with n8n & DeepSeek: Summarize & Publish (Full Guide + Code) | بناء روبوت أخبار ذاتي التشغيل باستخدام n8n و DeepSeek: تلخيص ونشر (دليل كامل + كود)</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-autonomous-news-bot-n8n-deepseek</link>
-    <description>Learn to build a powerful autonomous news bot that fetches articles, summarizes them using DeepSeek AI, and publishes them automatically using n8n. This guide provides a step-by-step walkthrough to leverage advanced AI for content automation.</description>
-    <pubDate>Sat, 18 Jul 2026 02:01:00 GMT</pubDate>
   </item>
 </channel>
 </rss>
