@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Educational Video Creation: Python, MoviePy & LLM-Generated Scripts | أتمتة إنشاء مقاطع الفيديو التعليمية: بايثون، MoviePy، وسكريبتات من نماذج اللغة الكبيرة (LLM)</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-educational-video-python-moviepy-llm</link>
+    <description>Learn how to build an automated pipeline to generate educational videos programmatically using Python, MoviePy, and AI-generated scripts. This guide empowers developers and creators to scale content production efficiently.</description>
+    <pubDate>Mon, 20 Jul 2026 21:01:04 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Dynamic Web Scraping: Python & Playwright for Complex Data Extraction | إتقان استخراج البيانات الديناميكية من الويب: بايثون وبلاي رايت لاستخلاص البيانات المعقدة</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-dynamic-web-scraping-python-playwright</link>
     <description>Learn to build powerful web scrapers using Python and Playwright, mastering techniques to navigate dynamic websites, handle JavaScript-rendered content, and extract complex data efficiently. This guide provides a step-by-step tutorial for robust automation.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-e2e-testing-python-playwright</link>
     <description>Learn how to build robust, automated end-to-end (E2E) tests for any web application using Python and Microsoft Playwright. This guide provides a step-by-step approach to setting up your environment, writing powerful test scripts, and ensuring your applications perform flawlessly.</description>
     <pubDate>Sat, 18 Jul 2026 22:27:22 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Llama 3 Integration: Build a Real-time Content Classifier with Python | إتقان تكامل Llama 3: بناء مصنف محتوى في الوقت الفعلي باستخدام بايثون</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-llama3-content-classifier-python</link>
-    <description>Learn how to integrate Meta's Llama 3 LLM via a high-speed API (e.g., Groq) into a Python application to build an efficient, real-time content classification system. This guide provides step-by-step instructions and practical code to process and categorize text data automatically.</description>
-    <pubDate>Sat, 18 Jul 2026 18:54:16 GMT</pubDate>
   </item>
 </channel>
 </rss>
