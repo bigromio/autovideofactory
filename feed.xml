@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Build a Multi-Agent Competitive Intelligence System with Python & DeepSeek V3 | بناء نظام ذكاء تنافسي متعدد الوكلاء باستخدام بايثون و DeepSeek V3</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-competitive-intelligence-system-python-deepseek</link>
+    <description>Learn how to design and build a sophisticated multi-agent system in Python, leveraging DeepSeek V3 for automated competitive analysis and strategic insights. This guide provides a step-by-step tutorial for creating specialized agents that collaborate to research, analyze, and report on market trends.</description>
+    <pubDate>Mon, 20 Jul 2026 10:06:36 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Programmatic Video Ad Generation with FFmpeg & Node.js | إتقان إنشاء إعلانات الفيديو البرمجية باستخدام FFmpeg و Node.js</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-ads-ffmpeg-nodejs</link>
     <description>Learn to build a powerful Node.js pipeline to programmatically generate dynamic video ads using FFmpeg. This guide covers stitching clips, adding text overlays, and integrating data for scalable video creation.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-python-playwright-social-media-bot</link>
     <description>Learn to build a powerful Python script using Playwright to automate social media posts on platforms like LinkedIn. This guide provides step-by-step instructions and code to save you hours of manual effort.</description>
     <pubDate>Fri, 17 Jul 2026 22:15:15 GMT</pubDate>
-  </item>
-  <item>
-    <title>Build an Advanced AI Agent with Claude 3.5 Sonnet & Python: Mastering Dynamic Tool Use | بناء وكيل ذكاء اصطناعي متقدم باستخدام Claude 3.5 Sonnet وبايثون: إتقان استخدام الأدوات الديناميكي</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-advanced-ai-agent-claude-3-5-sonnet-python-tool-use</link>
-    <description>Discover how to leverage Claude 3.5 Sonnet's powerful tool use capabilities with Python to build sophisticated AI agents that can interact with external systems and perform complex tasks. This guide will walk you through implementing a dynamic tool-calling agent from scratch.</description>
-    <pubDate>Fri, 17 Jul 2026 08:50:22 GMT</pubDate>
   </item>
 </channel>
 </rss>
