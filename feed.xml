@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate LinkedIn Engagement: Build a Python Playwright Bot for Likes & Comments | أتمتة تفاعل LinkedIn: بناء بوت Python Playwright للإعجابات والتعليقات</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-linkedin-engagement-playwright-python</link>
+    <description>Learn to build a powerful Python bot using Playwright to automate LinkedIn post likes and comments. This guide provides step-by-step instructions to boost your professional network's visibility and engagement efficiently.</description>
+    <pubDate>Tue, 21 Jul 2026 13:05:54 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Automated Code Review with DeepSeek V3 & n8n (Full Workflow Guide) | إتقان مراجعة الكود الآلية باستخدام DeepSeek V3 و n8n (دليل سير العمل الكامل)</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-code-review-deepseek-n8n-workflow</link>
     <description>Learn to build a powerful n8n workflow that leverages DeepSeek V3 to perform automated code reviews, providing instant feedback and refactoring suggestions. Streamline your development process and enhance code quality effortlessly.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-dynamic-videos-remotion-nodejs</link>
     <description>Learn to build a powerful programmatic video pipeline using Remotion and Node.js. This guide shows you how to generate dynamic, data-driven videos at scale, transforming raw data into compelling visual stories.</description>
     <pubDate>Sun, 19 Jul 2026 13:58:36 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Structured Data Extraction with DeepSeek V3 & Python for Automated Workflows | إتقان استخراج البيانات المهيكلة باستخدام DeepSeek V3 و Python لسير العمل المؤتمتة</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=deepseek-v3-python-structured-data-extraction</link>
-    <description>Learn to leverage DeepSeek V3's advanced capabilities for precise structured data extraction from unstructured text using Python. This guide provides a step-by-step tutorial to build robust automation pipelines for critical business information.</description>
-    <pubDate>Sun, 19 Jul 2026 05:01:19 GMT</pubDate>
   </item>
 </channel>
 </rss>
