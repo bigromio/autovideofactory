@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Automated Code Review with DeepSeek V3 & n8n (Full Workflow Guide) | إتقان مراجعة الكود الآلية باستخدام DeepSeek V3 و n8n (دليل سير العمل الكامل)</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-code-review-deepseek-n8n-workflow</link>
+    <description>Learn to build a powerful n8n workflow that leverages DeepSeek V3 to perform automated code reviews, providing instant feedback and refactoring suggestions. Streamline your development process and enhance code quality effortlessly.</description>
+    <pubDate>Tue, 21 Jul 2026 07:26:26 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Automated Social Media Content Generation with n8n & Google Gemini 1.5 Flash | إتقان إنشاء محتوى وسائل التواصل الاجتماعي الآلي باستخدام n8n و Google Gemini 1.5 Flash</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-social-media-content-gemini-n8n</link>
     <description>This guide teaches you how to build a powerful n8n workflow to automatically generate diverse social media posts using Google Gemini 1.5 Flash, saving you countless hours of manual content creation. Learn to engineer prompts, process AI outputs, and prepare content for seamless multi-platform scheduling.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=deepseek-v3-python-structured-data-extraction</link>
     <description>Learn to leverage DeepSeek V3's advanced capabilities for precise structured data extraction from unstructured text using Python. This guide provides a step-by-step tutorial to build robust automation pipelines for critical business information.</description>
     <pubDate>Sun, 19 Jul 2026 05:01:19 GMT</pubDate>
-  </item>
-  <item>
-    <title>Build a Custom AI Customer Support Chatbot with n8n & Claude 3 Opus | بناء روبوت دردشة دعم عملاء مخصص بالذكاء الاصطناعي باستخدام n8n و Claude 3 Opus</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-ai-customer-support-chatbot-n8n-claude-opus</link>
-    <description>Learn to build an intelligent, automated customer support chatbot using n8n and Anthropic's Claude 3 Opus. This guide covers setting up webhooks, prompt engineering, and basic escalation logic to handle customer inquiries efficiently.</description>
-    <pubDate>Sun, 19 Jul 2026 01:41:48 GMT</pubDate>
   </item>
 </channel>
 </rss>
