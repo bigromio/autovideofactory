@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Automated Social Media Content Generation with n8n & Google Gemini 1.5 Flash | إتقان إنشاء محتوى وسائل التواصل الاجتماعي الآلي باستخدام n8n و Google Gemini 1.5 Flash</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-social-media-content-gemini-n8n</link>
+    <description>This guide teaches you how to build a powerful n8n workflow to automatically generate diverse social media posts using Google Gemini 1.5 Flash, saving you countless hours of manual content creation. Learn to engineer prompts, process AI outputs, and prepare content for seamless multi-platform scheduling.</description>
+    <pubDate>Tue, 21 Jul 2026 05:01:50 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Educational Video Creation: Python, MoviePy & LLM-Generated Scripts | أتمتة إنشاء مقاطع الفيديو التعليمية: بايثون، MoviePy، وسكريبتات من نماذج اللغة الكبيرة (LLM)</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-educational-video-python-moviepy-llm</link>
     <description>Learn how to build an automated pipeline to generate educational videos programmatically using Python, MoviePy, and AI-generated scripts. This guide empowers developers and creators to scale content production efficiently.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-ai-customer-support-chatbot-n8n-claude-opus</link>
     <description>Learn to build an intelligent, automated customer support chatbot using n8n and Anthropic's Claude 3 Opus. This guide covers setting up webhooks, prompt engineering, and basic escalation logic to handle customer inquiries efficiently.</description>
     <pubDate>Sun, 19 Jul 2026 01:41:48 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master End-to-End Testing: Automate Web UI Flows with Python & Playwright | إتقان اختبارات النهاية إلى النهاية: أتمتة تدفقات واجهة المستخدم الويب باستخدام بايثون و بلاي رايت</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-e2e-testing-python-playwright</link>
-    <description>Learn how to build robust, automated end-to-end (E2E) tests for any web application using Python and Microsoft Playwright. This guide provides a step-by-step approach to setting up your environment, writing powerful test scripts, and ensuring your applications perform flawlessly.</description>
-    <pubDate>Sat, 18 Jul 2026 22:27:22 GMT</pubDate>
   </item>
 </channel>
 </rss>
