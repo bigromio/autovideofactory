@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master LLM Function Calling with n8n: Build an AI-Powered Data Lookup Agent using Google Gemini 1.5 Pro | إتقان استدعاء وظائف نماذج اللغة الكبيرة (LLM) باستخدام n8n: بناء وكيل بحث بيانات مدعوم بالذكاء الاصطناعي باستخدام Google Gemini 1.5 Pro</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-llm-function-calling-n8n-gemini-data-agent</link>
+    <description>Unlock the true potential of AI automation by mastering LLM function calling within n8n. This guide shows you how to build an intelligent data lookup agent using Google Gemini 1.5 Pro to interact with external systems and provide dynamic, accurate answers.</description>
+    <pubDate>Tue, 21 Jul 2026 19:13:10 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate LinkedIn Engagement: Build a Python Playwright Bot for Likes & Comments | أتمتة تفاعل LinkedIn: بناء بوت Python Playwright للإعجابات والتعليقات</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-linkedin-engagement-playwright-python</link>
     <description>Learn to build a powerful Python bot using Playwright to automate LinkedIn post likes and comments. This guide provides step-by-step instructions to boost your professional network's visibility and engagement efficiently.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-realtime-data-enrichment-n8n-perplexity-ai</link>
     <description>Learn how to leverage n8n webhooks and the Perplexity AI API to create automated workflows that enrich data and make dynamic decisions in real-time. This guide empowers you to build smarter, event-driven automation pipelines.</description>
     <pubDate>Sun, 19 Jul 2026 14:15:37 GMT</pubDate>
-  </item>
-  <item>
-    <title>Auto-Generate Dynamic Videos at Scale: A Remotion & Node.js Blueprint | إنشاء مقاطع فيديو ديناميكية تلقائيًا على نطاق واسع: مخطط Remotion و Node.js</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-dynamic-videos-remotion-nodejs</link>
-    <description>Learn to build a powerful programmatic video pipeline using Remotion and Node.js. This guide shows you how to generate dynamic, data-driven videos at scale, transforming raw data into compelling visual stories.</description>
-    <pubDate>Sun, 19 Jul 2026 13:58:36 GMT</pubDate>
   </item>
 </channel>
 </rss>
