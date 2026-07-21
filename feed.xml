@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Build a Hyper-Personalized Email Engine with n8n & Claude 3.5 Sonnet (Full Guide) | بناء محرك بريد إلكتروني فائق التخصيص باستخدام n8n و Claude 3.5 Sonnet (دليل كامل)</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-claude-3-5-sonnet-personalized-emails</link>
+    <description>Learn to create an advanced n8n workflow that leverages Anthropic's Claude 3.5 Sonnet to generate highly personalized emails at scale. This guide covers everything from setting up your API keys to crafting intelligent prompts for dynamic content generation.</description>
+    <pubDate>Tue, 21 Jul 2026 21:00:58 GMT</pubDate>
+  </item>
+  <item>
     <title>Master LLM Function Calling with n8n: Build an AI-Powered Data Lookup Agent using Google Gemini 1.5 Pro | إتقان استدعاء وظائف نماذج اللغة الكبيرة (LLM) باستخدام n8n: بناء وكيل بحث بيانات مدعوم بالذكاء الاصطناعي باستخدام Google Gemini 1.5 Pro</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-llm-function-calling-n8n-gemini-data-agent</link>
     <description>Unlock the true potential of AI automation by mastering LLM function calling within n8n. This guide shows you how to build an intelligent data lookup agent using Google Gemini 1.5 Pro to interact with external systems and provide dynamic, accurate answers.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-content-moderation-n8n-deepseek-v3</link>
     <description>Learn how to architect and implement a robust, real-time AI content moderation pipeline using n8n and DeepSeek V3, ensuring your platform remains safe and compliant. This guide provides a step-by-step tutorial for automatically classifying and flagging inappropriate content.</description>
     <pubDate>Sun, 19 Jul 2026 15:21:45 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Real-time Data Enrichment: Build Dynamic Workflows with n8n & Perplexity AI | إتقان إثراء البيانات في الوقت الفعلي: بناء سير عمل ديناميكي باستخدام n8n وPerplexity AI</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-realtime-data-enrichment-n8n-perplexity-ai</link>
-    <description>Learn how to leverage n8n webhooks and the Perplexity AI API to create automated workflows that enrich data and make dynamic decisions in real-time. This guide empowers you to build smarter, event-driven automation pipelines.</description>
-    <pubDate>Sun, 19 Jul 2026 14:15:37 GMT</pubDate>
   </item>
 </channel>
 </rss>
