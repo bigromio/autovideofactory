@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Autonomous Document Processing with n8n & DeepSeek V3: Extract & Summarize at Scale | إتقان معالجة المستندات المستقلة باستخدام n8n و DeepSeek V3: استخلاص وتلخيص على نطاق واسع</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-deepseek-v3-document-automation</link>
+    <description>Learn to build a powerful n8n workflow that leverages DeepSeek V3's long context window to autonomously extract structured data and generate concise summaries from any document. This guide provides a step-by-step tutorial with practical code to automate complex information processing.</description>
+    <pubDate>Wed, 22 Jul 2026 15:31:47 GMT</pubDate>
+  </item>
+  <item>
     <title>Programmatic Video Snippet Generation with Remotion & LLMs: Turn Long-Form Content into Engaging Social Clips | توليد مقاطع فيديو مبرمجة باستخدام Remotion ونماذج اللغة الكبيرة (LLMs): حوّل المحتوى الطويل إلى مقاطع اجتماعية جذابة</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=programmatic-video-snippets-remotion-llm-guide</link>
     <description>Discover how to transform lengthy articles or videos into captivating social media snippets using Remotion for dynamic video rendering and Large Language Models (LLMs) for intelligent content extraction. This guide provides a step-by-step pipeline to automate the creation of viral-ready clips from your existing content library.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-data-viz-videos-remotion-nodejs</link>
     <description>Learn to build a powerful pipeline for programmatically generating animated data visualization videos at scale using Node.js and Remotion. This guide will walk you through setting up your project, integrating data, and rendering dynamic video content for reports and dashboards.</description>
     <pubDate>Sun, 19 Jul 2026 21:01:19 GMT</pubDate>
-  </item>
-  <item>
-    <title>Automate YouTube Shorts Production: AI Scripting & Programmatic Video Generation with Node.js | أتمتة إنتاج فيديوهات YouTube القصيرة: كتابة النصوص بالذكاء الاصطناعي وإنشاء الفيديو برمجيًا باستخدام Node.js</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-youtube-shorts-ai-nodejs-2024</link>
-    <description>Unlock the power of AI and Node.js to autonomously generate engaging YouTube Shorts. This guide walks you through scripting, voiceovers, and video assembly, transforming your content creation pipeline.</description>
-    <pubDate>Sun, 19 Jul 2026 18:26:24 GMT</pubDate>
   </item>
 </channel>
 </rss>
