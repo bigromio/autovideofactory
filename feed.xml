@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Automated Code Generation with DeepSeek Coder (R1) & Python: From Prompt to Production-Ready Code | إتقان توليد الكود التلقائي باستخدام DeepSeek Coder (R1) وبايثون: من الموجه إلى الكود الجاهز للإنتاج</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=deepseek-coder-python-auto-code-generation</link>
+    <description>Learn how to integrate DeepSeek Coder with Python to build an automated code generation pipeline, from setting up your environment to crafting effective prompts and incorporating basic automated testing. This guide empowers developers to create functional, production-ready code snippets with AI, significantly boosting productivity.</description>
+    <pubDate>Wed, 22 Jul 2026 21:44:51 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Local LLM Automation with n8n & Ollama: Privacy-First Workflows | إتقان أتمتة LLM المحلية باستخدام n8n و Ollama: سير عمل يحفظ الخصوصية أولاً</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-local-llm-n8n-ollama-workflows</link>
     <description>Learn how to integrate local large language models (LLMs) via Ollama directly into n8n, enabling powerful, privacy-focused automation without cloud API dependencies. This guide walks you through setting up your local AI environment and building your first n8n workflow for secure, offline processing.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-competitive-intelligence-system-python-deepseek</link>
     <description>Learn how to design and build a sophisticated multi-agent system in Python, leveraging DeepSeek V3 for automated competitive analysis and strategic insights. This guide provides a step-by-step tutorial for creating specialized agents that collaborate to research, analyze, and report on market trends.</description>
     <pubDate>Mon, 20 Jul 2026 10:06:36 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Programmatic Video Ad Generation with FFmpeg & Node.js | إتقان إنشاء إعلانات الفيديو البرمجية باستخدام FFmpeg و Node.js</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-ads-ffmpeg-nodejs</link>
-    <description>Learn to build a powerful Node.js pipeline to programmatically generate dynamic video ads using FFmpeg. This guide covers stitching clips, adding text overlays, and integrating data for scalable video creation.</description>
-    <pubDate>Mon, 20 Jul 2026 05:01:21 GMT</pubDate>
   </item>
 </channel>
 </rss>
