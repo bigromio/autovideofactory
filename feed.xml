@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Personalized Social Media Intro Videos with Remotion & Node.js | أتمتة مقاطع فيديو المقدمة المخصصة لوسائل التواصل الاجتماعي باستخدام Remotion و Node.js</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-personalized-intro-videos-remotion-nodejs</link>
+    <description>Learn how to build an automated pipeline using Remotion and Node.js to generate unique, personalized intro videos at scale for social media. This guide covers dynamic data integration and server-side rendering.</description>
+    <pubDate>Wed, 22 Jul 2026 16:52:49 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Autonomous Document Processing with n8n & DeepSeek V3: Extract & Summarize at Scale | إتقان معالجة المستندات المستقلة باستخدام n8n و DeepSeek V3: استخلاص وتلخيص على نطاق واسع</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-deepseek-v3-document-automation</link>
     <description>Learn to build a powerful n8n workflow that leverages DeepSeek V3's long context window to autonomously extract structured data and generate concise summaries from any document. This guide provides a step-by-step tutorial with practical code to automate complex information processing.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-ollama-local-llm-workflow</link>
     <description>Learn to integrate local Large Language Models (LLMs) via Ollama with n8n, enabling powerful, privacy-focused AI automation without reliance on external cloud services. This guide provides step-by-step instructions to set up Ollama and connect it to n8n for custom AI workflows.</description>
     <pubDate>Sun, 19 Jul 2026 23:20:38 GMT</pubDate>
-  </item>
-  <item>
-    <title>Automate Dynamic Data Visualization Videos with Node.js & Remotion | أتمتة مقاطع فيديو تصور البيانات الديناميكية باستخدام Node.js و Remotion</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-data-viz-videos-remotion-nodejs</link>
-    <description>Learn to build a powerful pipeline for programmatically generating animated data visualization videos at scale using Node.js and Remotion. This guide will walk you through setting up your project, integrating data, and rendering dynamic video content for reports and dashboards.</description>
-    <pubDate>Sun, 19 Jul 2026 21:01:19 GMT</pubDate>
   </item>
 </channel>
 </rss>
