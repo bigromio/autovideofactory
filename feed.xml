@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Programmatic Video Snippet Generation with Remotion & LLMs: Turn Long-Form Content into Engaging Social Clips | توليد مقاطع فيديو مبرمجة باستخدام Remotion ونماذج اللغة الكبيرة (LLMs): حوّل المحتوى الطويل إلى مقاطع اجتماعية جذابة</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=programmatic-video-snippets-remotion-llm-guide</link>
+    <description>Discover how to transform lengthy articles or videos into captivating social media snippets using Remotion for dynamic video rendering and Large Language Models (LLMs) for intelligent content extraction. This guide provides a step-by-step pipeline to automate the creation of viral-ready clips from your existing content library.</description>
+    <pubDate>Wed, 22 Jul 2026 03:06:43 GMT</pubDate>
+  </item>
+  <item>
     <title>Build a Hyper-Personalized Email Engine with n8n & Claude 3.5 Sonnet (Full Guide) | بناء محرك بريد إلكتروني فائق التخصيص باستخدام n8n و Claude 3.5 Sonnet (دليل كامل)</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-claude-3-5-sonnet-personalized-emails</link>
     <description>Learn to create an advanced n8n workflow that leverages Anthropic's Claude 3.5 Sonnet to generate highly personalized emails at scale. This guide covers everything from setting up your API keys to crafting intelligent prompts for dynamic content generation.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-youtube-shorts-ai-nodejs-2024</link>
     <description>Unlock the power of AI and Node.js to autonomously generate engaging YouTube Shorts. This guide walks you through scripting, voiceovers, and video assembly, transforming your content creation pipeline.</description>
     <pubDate>Sun, 19 Jul 2026 18:26:24 GMT</pubDate>
-  </item>
-  <item>
-    <title>Build a Real-time AI Content Moderation System with n8n & DeepSeek V3 | بناء نظام ذكاء اصطناعي لمراقبة المحتوى في الوقت الفعلي باستخدام n8n و DeepSeek V3</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-content-moderation-n8n-deepseek-v3</link>
-    <description>Learn how to architect and implement a robust, real-time AI content moderation pipeline using n8n and DeepSeek V3, ensuring your platform remains safe and compliant. This guide provides a step-by-step tutorial for automatically classifying and flagging inappropriate content.</description>
-    <pubDate>Sun, 19 Jul 2026 15:21:45 GMT</pubDate>
   </item>
 </channel>
 </rss>
