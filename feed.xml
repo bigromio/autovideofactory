@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Local LLM Automation with n8n & Ollama: Privacy-First Workflows | إتقان أتمتة LLM المحلية باستخدام n8n و Ollama: سير عمل يحفظ الخصوصية أولاً</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-local-llm-n8n-ollama-workflows</link>
+    <description>Learn how to integrate local large language models (LLMs) via Ollama directly into n8n, enabling powerful, privacy-focused automation without cloud API dependencies. This guide walks you through setting up your local AI environment and building your first n8n workflow for secure, offline processing.</description>
+    <pubDate>Wed, 22 Jul 2026 20:40:38 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Data-Driven Video Shorts: Generate Financial News with Remotion & Google Gemini 1.5 | إتقان مقاطع الفيديو القصيرة المبنية على البيانات: إنشاء أخبار مالية باستخدام Remotion و Google Gemini 1.5</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-data-driven-video-shorts-remotion-gemini</link>
     <description>Learn to build an automated pipeline for generating data-driven financial news videos optimized for YouTube Shorts using Remotion, Node.js, and Google Gemini 1.5. This guide provides a step-by-step approach to scripting, rendering, and orchestrating dynamic video content at scale.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-programmatic-video-ads-ffmpeg-nodejs</link>
     <description>Learn to build a powerful Node.js pipeline to programmatically generate dynamic video ads using FFmpeg. This guide covers stitching clips, adding text overlays, and integrating data for scalable video creation.</description>
     <pubDate>Mon, 20 Jul 2026 05:01:21 GMT</pubDate>
-  </item>
-  <item>
-    <title>Automate Research Digest Creation with n8n & Google Gemini 1.5 Pro (Full Guide + Code) | أتمتة إنشاء ملخصات الأبحاث باستخدام n8n و Google Gemini 1.5 Pro (دليل كامل + كود)</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-research-digests-n8n-gemini-1-5-pro</link>
-    <description>Learn to build a powerful n8n workflow that leverages Google Gemini 1.5 Pro's advanced capabilities to automatically summarize complex documents and extract key insights for research digests. This guide provides step-by-step instructions and practical code to streamline your information processing.</description>
-    <pubDate>Mon, 20 Jul 2026 04:16:54 GMT</pubDate>
   </item>
 </channel>
 </rss>
