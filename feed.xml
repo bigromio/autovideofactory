@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Data-Driven Video Shorts: Generate Financial News with Remotion & Google Gemini 1.5 | إتقان مقاطع الفيديو القصيرة المبنية على البيانات: إنشاء أخبار مالية باستخدام Remotion و Google Gemini 1.5</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-data-driven-video-shorts-remotion-gemini</link>
+    <description>Learn to build an automated pipeline for generating data-driven financial news videos optimized for YouTube Shorts using Remotion, Node.js, and Google Gemini 1.5. This guide provides a step-by-step approach to scripting, rendering, and orchestrating dynamic video content at scale.</description>
+    <pubDate>Wed, 22 Jul 2026 19:36:04 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Personalized Social Media Intro Videos with Remotion & Node.js | أتمتة مقاطع فيديو المقدمة المخصصة لوسائل التواصل الاجتماعي باستخدام Remotion و Node.js</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-personalized-intro-videos-remotion-nodejs</link>
     <description>Learn how to build an automated pipeline using Remotion and Node.js to generate unique, personalized intro videos at scale for social media. This guide covers dynamic data integration and server-side rendering.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-research-digests-n8n-gemini-1-5-pro</link>
     <description>Learn to build a powerful n8n workflow that leverages Google Gemini 1.5 Pro's advanced capabilities to automatically summarize complex documents and extract key insights for research digests. This guide provides step-by-step instructions and practical code to streamline your information processing.</description>
     <pubDate>Mon, 20 Jul 2026 04:16:54 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Local LLMs with n8n: Build Privacy-Focused AI Workflows (Ollama Integration Guide) | إتقان النماذج اللغوية المحلية (LLMs) باستخدام n8n: بناء سير عمل ذكاء اصطناعي يركز على الخصوصية (دليل تكامل Ollama)</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-ollama-local-llm-workflow</link>
-    <description>Learn to integrate local Large Language Models (LLMs) via Ollama with n8n, enabling powerful, privacy-focused AI automation without reliance on external cloud services. This guide provides step-by-step instructions to set up Ollama and connect it to n8n for custom AI workflows.</description>
-    <pubDate>Sun, 19 Jul 2026 23:20:38 GMT</pubDate>
   </item>
 </channel>
 </rss>
