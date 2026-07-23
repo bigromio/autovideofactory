@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Programmatic Video: Auto-Generate Dynamic Highlight Reels with FFmpeg & Python | إتقان الفيديو البرمجي: التوليد التلقائي لمقاطع الفيديو البارزة الديناميكية باستخدام FFmpeg وبايثون</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-video-highlights-ffmpeg-python</link>
+    <description>Learn to build a powerful Python pipeline that leverages FFmpeg to automatically create engaging video highlight reels from raw footage and data. This guide equips you with the skills to generate dynamic video content at scale, complete with custom overlays and transitions.</description>
+    <pubDate>Thu, 23 Jul 2026 05:36:10 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Automated Code Generation with DeepSeek Coder (R1) & Python: From Prompt to Production-Ready Code | إتقان توليد الكود التلقائي باستخدام DeepSeek Coder (R1) وبايثون: من الموجه إلى الكود الجاهز للإنتاج</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=deepseek-coder-python-auto-code-generation</link>
     <description>Learn how to integrate DeepSeek Coder with Python to build an automated code generation pipeline, from setting up your environment to crafting effective prompts and incorporating basic automated testing. This guide empowers developers to create functional, production-ready code snippets with AI, significantly boosting productivity.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-self-hosted-n8n-docker-compose-claude-35-sonnet</link>
     <description>This guide provides a step-by-step tutorial on deploying a secure, self-hosted n8n instance using Docker Compose on a Virtual Private Server (VPS), and then integrating it with Claude 3.5 Sonnet for advanced AI-powered content generation workflows.</description>
     <pubDate>Mon, 20 Jul 2026 13:01:08 GMT</pubDate>
-  </item>
-  <item>
-    <title>Build a Multi-Agent Competitive Intelligence System with Python & DeepSeek V3 | بناء نظام ذكاء تنافسي متعدد الوكلاء باستخدام بايثون و DeepSeek V3</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-competitive-intelligence-system-python-deepseek</link>
-    <description>Learn how to design and build a sophisticated multi-agent system in Python, leveraging DeepSeek V3 for automated competitive analysis and strategic insights. This guide provides a step-by-step tutorial for creating specialized agents that collaborate to research, analyze, and report on market trends.</description>
-    <pubDate>Mon, 20 Jul 2026 10:06:36 GMT</pubDate>
   </item>
 </channel>
 </rss>
