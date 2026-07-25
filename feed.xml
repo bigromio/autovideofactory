@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Install Self-Hosted n8n with Docker & Build an AI-Powered News Digest Workflow (Full Guide) | تثبيت n8n المستضاف ذاتيًا باستخدام Docker وإنشاء سير عمل لتلخيص الأخبار المدعوم بالذكاء الاصطناعي (دليل كامل)</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=self-hosted-n8n-deepseek-ai-news-digest</link>
+    <description>Learn to set up n8n with Docker and create an advanced workflow that monitors RSS feeds, uses DeepSeek V3 for article summarization and categorization, and generates a daily news digest.</description>
+    <pubDate>Sat, 25 Jul 2026 23:08:10 GMT</pubDate>
+  </item>
+  <item>
     <title>Build an Autonomous Content Factory: Multi-Agent Systems for Research & Writing with Python & DeepSeek V3 | بناء مصنع محتوى مستقل: أنظمة متعددة الوكلاء للبحث والكتابة باستخدام بايثون وDeepSeek V3</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-content-factory-python-deepseek-v3</link>
     <description>Discover how to build a powerful multi-agent AI system using Python and DeepSeek V3 to autonomously research topics, outline articles, and draft engaging content. This guide provides a step-by-step tutorial to create your own automated content factory.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-educational-video-python-moviepy-llm</link>
     <description>Learn how to build an automated pipeline to generate educational videos programmatically using Python, MoviePy, and AI-generated scripts. This guide empowers developers and creators to scale content production efficiently.</description>
     <pubDate>Mon, 20 Jul 2026 21:01:04 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Dynamic Web Scraping: Python & Playwright for Complex Data Extraction | إتقان استخراج البيانات الديناميكية من الويب: بايثون وبلاي رايت لاستخلاص البيانات المعقدة</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-dynamic-web-scraping-python-playwright</link>
-    <description>Learn to build powerful web scrapers using Python and Playwright, mastering techniques to navigate dynamic websites, handle JavaScript-rendered content, and extract complex data efficiently. This guide provides a step-by-step tutorial for robust automation.</description>
-    <pubDate>Mon, 20 Jul 2026 19:10:07 GMT</pubDate>
   </item>
 </channel>
 </rss>
