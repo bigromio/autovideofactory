@@ -653,7 +653,6 @@ async function fetchArticles() {
     injectSEOLinks(allArticles); 
 
     let totalGlobalViews = (data || []).reduce((sum, item) => sum + (item.views || 0), 0);
-    if (totalGlobalViews < 100000) totalGlobalViews += 142800;
 
     animateCounter(document.getElementById('hero-counter'), totalGlobalViews, '+');
     const navCounterEl = document.getElementById('nav-counter');
