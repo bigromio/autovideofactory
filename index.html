@@ -418,8 +418,7 @@ let currentLang = localStorage.getItem('af-lang') || 'en';
 let currentCat  = 'all';
 let searchQuery = '';
 
-let currentFiltered = [];
-let visibleLimit = 9;
+
 
 // ─── TRANSLATIONS ───
 const T = {
@@ -847,22 +846,6 @@ function animateCounter(el, target, suffix='') {
 initTheme();
 applyLang(currentLang);
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-fetchArticles().then(() => {
-  // Dynamic Real Visits Counter
-  const baseReaders = 142800;
-  let localVisits = localStorage.getItem('af_total_visits');
-  if (!localVisits) {
-    localVisits = Math.floor(Math.random() * 10) + 1;
-  } else {
-    localVisits = parseInt(localVisits) + 1;
-  }
-  localStorage.setItem('af_total_visits', localVisits);
-  const finalScore = baseReaders + localVisits;
-  
-  animateCounter(document.getElementById('hero-counter'), finalScore, '+');
-  const navCounterEl = document.getElementById('nav-counter');
-  if (navCounterEl) navCounterEl.textContent = finalScore.toLocaleString() + '+';
-});
 </script>
 </body>
 </html>
