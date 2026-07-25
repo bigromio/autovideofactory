@@ -402,7 +402,7 @@ body:not(.dark) #nav-counter { color: #0284c7 !important; font-weight: 800; }
 
 
 <script>
-
+// ─── SUPABASE CONFIG ───
 const SUPABASE_URL  = 'https://vjmstjlprdnnpxsjurrp.supabase.co';
 const SUPABASE_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZqbXN0amxwcmRubnB4c2p1cnJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc1NzUyNTksImV4cCI6MjA5MzE1MTI1OX0.WPECnZ-98cORXPM6f7QIpE08gFiX2aSjT8NM5gFDHgw';
 let supabaseClient = null;
@@ -412,13 +412,13 @@ try {
   }
 } catch(e) { console.warn('Supabase init skipped.'); }
 
-// ─── STATE ───
+// ─── GLOBAL STATE (تم تعريفها مرة واحدة فقط لمنع تصادم المتصفح) ───
 let allArticles = [];
 let currentLang = localStorage.getItem('af-lang') || 'en';
 let currentCat  = 'all';
 let searchQuery = '';
-
-
+let currentFiltered = [];
+let visibleLimit = 9; // عدد المقالات التي تظهر في كل دفعة
 
 // ─── TRANSLATIONS ───
 const T = {
@@ -472,26 +472,22 @@ const T = {
   }
 };
 
-// ─── BADGE COLOR ───
+// ─── HELPERS ───
 function badgeClass(cat) {
   const map = { AI:'badge-ai', Automation:'badge-automation', Python:'badge-python', YouTube:'badge-youtube' };
   return map[cat] || 'badge-ai';
 }
-
-// ─── READING TIME ───
 function readingTime(text, lang) {
   const words = (text||'').split(/\s+/).length;
   const mins  = Math.max(1, Math.ceil(words / 200));
   return `${mins} ${T[lang].min_read}`;
 }
-
-// ─── FORMAT DATE ───
 function formatDate(ts, lang) {
   const d = new Date(ts);
   return d.toLocaleDateString(lang === 'ar' ? 'ar-EG' : 'en-US', { year:'numeric', month:'short', day:'numeric' });
 }
 
-// ─── RENDER FEATURED ───
+// ─── RENDER FEATURED ARTICLE ───
 function renderFeatured(article) {
   if (!article) { document.getElementById('featured-container').innerHTML = ''; return; }
   const l = currentLang;
@@ -521,7 +517,7 @@ function renderFeatured(article) {
     </a>`;
 }
 
-// ─── RENDER ARTICLE CARD ───
+// ─── RENDER CARD ───
 function renderCard(article) {
   const l = currentLang;
   const title   = article[`title_${l}`]   || article.title_en   || '';
@@ -548,41 +544,31 @@ function renderCard(article) {
     </a>`;
 }
 
-// ─── STATE FOR PAGINATION & SMART FILTERING ───
-let currentFiltered = [];
-let visibleLimit = 9; // عدد المقالات التي تظهر في كل دفعة
-
-// 🟢 1. خوارزمية التطابق الذكي للأقسام (تحل مشكلة الفلتر نهائياً)
+// ─── SMART FILTERING & PAGINATION ───
 function matchCategory(articleCat, targetCat) {
   if (targetCat === 'all') return true;
   const cat = (articleCat || '').toLowerCase();
   const target = targetCat.toLowerCase();
   
   if (cat === target || cat.includes(target)) return true;
-  
-  // ربط الأقسام بكل التسميات التي يولدها الذكاء الاصطناعي القديمة والجديدة
   if (target === 'ai' && (cat.includes('llm') || cat.includes('gemini') || cat.includes('claude') || cat.includes('deepseek') || cat.includes('ai') || cat.includes('agent') || cat.includes('chat'))) return true;
   if (target === 'automation' && (cat.includes('n8n') || cat.includes('workflow') || cat.includes('auto') || cat.includes('queue') || cat.includes('pipeline'))) return true;
   if (target === 'python' && (cat.includes('python') || cat.includes('script') || cat.includes('playwright') || cat.includes('scrape') || cat.includes('code'))) return true;
   if (target === 'youtube' && (cat.includes('video') || cat.includes('remotion') || cat.includes('shorts') || cat.includes('youtube') || cat.includes('programmatic') || cat.includes('ffmpeg'))) return true;
-  
   return false;
 }
 
-// 🟢 2. تطبيق الفلترة مع إعادة ضبط العداد التدريجي
 function applyFilter() {
-  const rest = allArticles.slice(1); // استبعاد المقال المميز العلوي
+  const rest = allArticles.slice(1);
   currentFiltered = rest.filter(a => {
     const matchCat = matchCategory(a.category, currentCat);
     const textToSearch = (a.title_en + ' ' + a.title_ar + ' ' + (a.summary_en||'') + ' ' + (a.summary_ar||'')).toLowerCase();
     const matchSearch = !searchQuery || textToSearch.includes(searchQuery.toLowerCase());
     return matchCat && matchSearch;
   });
-
   renderGrid();
 }
 
-// 🟢 3. رسم شبكة المقالات التدريجية
 function renderGrid() {
   const grid = document.getElementById('articles-grid');
   const noRes = document.getElementById('no-results');
@@ -597,18 +583,14 @@ function renderGrid() {
   }
 
   noRes.classList.add('hidden');
-  
-  // سحب الدفعة المسموح بها فقط حسب visibleLimit
   const toShow = currentFiltered.slice(0, visibleLimit);
   grid.innerHTML = toShow.map(a => renderCard(a)).join('');
 
-  // تشغيل تأثير الظهور السلس للمقالات الجديدة
-  grid.querySelectorAll('a').forEach((el, i) => {
+  grid.querySelectorAll('a').forEach((el) => {
     el.style.opacity = '1';
     el.style.transform = 'translateY(0)';
   });
 
-  // إدارة زر "شاهد مزيد من المقالات"
   if (loadMoreCont) {
     if (currentFiltered.length > visibleLimit) {
       const remaining = currentFiltered.length - visibleLimit;
@@ -624,15 +606,14 @@ function renderGrid() {
   }
 }
 
-// 🟢 4. زر التحميل التدريجي عند الضغط عليه
 function loadMoreArticles() {
-  visibleLimit += 9; // إضافة 9 مقالات جديدة في كل ضغطة
+  visibleLimit += 9;
   renderGrid();
 }
 
 function filterCat(btn, cat) {
   currentCat = cat;
-  visibleLimit = 9; // تصفير العداد عند تغيير القسم
+  visibleLimit = 9;
   document.querySelectorAll('.filter-tab').forEach(b => {
     b.classList.remove('active');
     b.classList.add('text-gray-400');
@@ -640,29 +621,22 @@ function filterCat(btn, cat) {
   btn.classList.add('active');
   btn.classList.remove('text-gray-400');
   applyFilter();
-  
-  const gridSection = document.getElementById('articles-grid');
-  if (gridSection) {
-    const y = gridSection.getBoundingClientRect().top + window.scrollY - 120;
-    window.scrollTo({top: y, behavior: 'smooth'});
-  }
 }
 
 function handleSearch(val) {
   searchQuery = val.trim();
-  visibleLimit = 9; // تصفير العداد عند البحث
+  visibleLimit = 9;
   applyFilter();
 }
 
-// 🟢 5. تحديث دالة الـ renderAll لتعمل مع النظام الجديد
 function renderAll() {
   document.getElementById('article-count').textContent = allArticles.length;
   renderFeatured(allArticles[0]);
-  visibleLimit = 9; // يبدأ العرض بـ 9 مقالات فقط في الشبكة
+  visibleLimit = 9;
   applyFilter();
 }
-  // ─── FETCH ARTICLES (مع الحقن الخفي لروابط جوجل SEO) ───
-  // ─── FETCH ARTICLES (مع سحب كل المقالات + العداد العالمي الحقيقي) ───
+
+// ─── FETCH FROM SUPABASE & LIVE COUNTER ───
 async function fetchArticles() {
   try {
     if (!supabaseClient) throw new Error("Supabase not configured yet.");
@@ -670,29 +644,22 @@ async function fetchArticles() {
       .from('articles')
       .select('id,slug,title_en,title_ar,summary_en,summary_ar,content_en,content_ar,category,image_url,created_at,views')
       .order('created_at', { ascending: false })
-      .limit(500); // 🟢 تم رفع الحد إلى 500 مقالة ليعرض كل مقالاتك الـ 60 وما بعدها
+      .limit(500);
 
     if (error) throw error;
     
-    // فصل المقالة الوهمية الخاصة بعداد الرئيسية إن وجدت حتى لا تظهر كتدوينة للزوار
     allArticles = (data || []).filter(a => a.slug !== 'home-page-counter');
-    
     renderAll();
     injectSEOLinks(allArticles); 
 
-    // 🟢 حساب العداد العالمي الحقيقي (مجموع كل المشاهدات في قاعدة البيانات)
     let totalGlobalViews = (data || []).reduce((sum, item) => sum + (item.views || 0), 0);
-    
-    // إذا لم تكن قد أنشأت صف home-page-counter في داتابيز بعد، نضيف رقم أساسي افتراضي
     if (totalGlobalViews < 100000) totalGlobalViews += 142800;
 
     animateCounter(document.getElementById('hero-counter'), totalGlobalViews, '+');
     const navCounterEl = document.getElementById('nav-counter');
     if (navCounterEl) navCounterEl.textContent = totalGlobalViews.toLocaleString() + '+';
 
-    // 🟢 تسجيل زيارة جديدة للصفحة الرئيسية عالمياً في Supabase
     incrementHomeVisits(data);
-
   } catch (err) {
     console.warn('Supabase fetch failed — using demo data:', err.message);
     allArticles = getDemoArticles();
@@ -700,7 +667,6 @@ async function fetchArticles() {
   }
 }
 
-// دالة لزيادة عداد الصفحة الرئيسية في Supabase في الصف المخصص له
 async function incrementHomeVisits(articlesData) {
   try {
     let homeRow = (articlesData || []).find(a => a.slug === 'home-page-counter');
@@ -712,8 +678,6 @@ async function incrementHomeVisits(articlesData) {
   } catch(e) {}
 }
 
-
-// 🟢 دالة الحقن الخفي (تجعل جوجل يرى جميع مقالاتك ويفهرسها دون تغيير التصميم)
 function injectSEOLinks(articles) {
   let seoContainer = document.getElementById('seo-hidden-links');
   if (!seoContainer) {
@@ -726,38 +690,7 @@ function injectSEOLinks(articles) {
     articles.map(a => `<a href="post.html?slug=${a.slug || a.id}">${a.title_en} | ${a.title_ar}</a>`).join('<br/>');
 }
 
-
-// ─── INIT & VISIT COUNTER ───
-initTheme();
-applyLang(currentLang);
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-fetchArticles().then(() => {
-  // 🟢 نظام العداد الموحد (يحسب زيارات الرئيسية والمقالات الفردية معاً)
-  const baseReaders = 142800;
-  let localVisits = parseInt(localStorage.getItem('af_total_visits') || '0', 10);
-  localVisits += 1; // إضافة زيارة الصفحة الرئيسية
-  localStorage.setItem('af_total_visits', localVisits);
-  
-  const finalScore = baseReaders + localVisits;
-  animateCounter(document.getElementById('hero-counter'), finalScore, '+');
-  const navCounterEl = document.getElementById('nav-counter');
-  if (navCounterEl) navCounterEl.textContent = finalScore.toLocaleString() + '+';
-});
-
-// ─── DEMO DATA (used when Supabase isn't configured) ───
-function getDemoArticles() {
-  return [
-    { id:1, slug:'how-we-hit-47m-views', title_en:'How We Hit 4.7M YouTube Views in 7 Days With Pure Automation', title_ar:'كيف حققنا 4.7 مليون مشاهدة يوتيوب في 7 أيام بالأتمتة الكاملة', summary_en:'A deep-dive into the exact n8n workflow, Remotion setup, and Gemini prompts that generated millions of views on autopilot.', summary_ar:'تحليل عميق لورك فلو n8n الدقيق وإعداد Remotion وبرومبتات Gemini التي ولّدت ملايين المشاهدات على الطيار الآلي.', content_en:'Full article content here...', content_ar:'محتوى المقالة الكاملة هنا...', category:'Automation', image_url:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80', created_at:'2025-01-15T10:00:00Z', views:18420 },
-    { id:2, slug:'n8n-youtube-pipeline', title_en:'Building the Ultimate n8n → YouTube Publishing Pipeline', title_ar:'بناء خط نشر n8n → يوتيوب المثالي', summary_en:'Step-by-step: connect Gemini, Edge TTS, Remotion, and the YouTube API into a single automated workflow that runs every 6 hours.', summary_ar:'خطوة بخطوة: اربط Gemini وEdge TTS وRemotion وYouTube API في ورك فلو آلي واحد يعمل كل 6 ساعات.', category:'Automation', image_url:'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&q=80', created_at:'2025-01-12T08:00:00Z', views:9340 },
-    { id:3, slug:'gemini-script-prompts', title_en:'The Gemini Prompt System That Writes Viral Scripts Every Time', title_ar:'نظام برومبتات Gemini الذي يكتب سكريبتات فيروسية في كل مرة', summary_en:'Our exact prompt architecture for generating hooks, captions, and voiceover scripts that consistently hit high retention.', summary_ar:'بنية البرومبتات الدقيقة لدينا لتوليد هوكات وكابشنات وسكريبتات فويس أوفر تحقق باستمرار استبقاءً عالياً.', category:'AI', image_url:'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=600&q=80', created_at:'2025-01-10T09:00:00Z', views:7210 },
-    { id:4, slug:'remotion-shorts-rendering', title_en:'Remotion Deep Dive: Rendering 60-Second Shorts Programmatically', title_ar:'تعمق في Remotion: تصيير Shorts بـ 60 ثانية برمجياً', summary_en:"Everything you need to know about Remotion's composition system, TransitionSeries, and audio sync for automated Shorts.", summary_ar:'كل ما تحتاج معرفته عن نظام تركيبة Remotion وTransitionSeries ومزامنة الصوت لـ Shorts الآلية.', category:'Python', image_url:'https://images.unsplash.com/photo-1536240478700-b869ad10e1e8?w=600&q=80', created_at:'2025-01-08T11:00:00Z', views:5890 },
-    { id:5, slug:'faceless-youtube-2025', title_en:'The Complete Faceless YouTube Playbook for 2025', title_ar:'الدليل الشامل لقنوات يوتيوب بدون وجه لعام 2025', summary_en:'Niches, formats, monetization strategies, and the automation stack required to build a faceless channel that earns passively.', summary_ar:'التخصصات والصيغ واستراتيجيات الربح وحزمة الأتمتة المطلوبة لبناء قناة بدون وجه تكسب سلبياً.', category:'YouTube', image_url:'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=600&q=80', created_at:'2025-01-06T07:00:00Z', views:12100 },
-    { id:6, slug:'edge-tts-voiceover', title_en:'Edge TTS: The Free Voiceover Tool That Beats Paid Alternatives', title_ar:'Edge TTS: أداة الفويس أوفر المجانية التي تتفوق على البدائل المدفوعة', summary_en:'Comparing Microsoft Edge TTS to ElevenLabs and others — why free wins for automated content pipelines.', summary_ar:'مقارنة Microsoft Edge TTS بـ ElevenLabs وغيرها — لماذا تفوز المجانية لخطوط إنتاج المحتوى الآلية.', category:'AI', image_url:'https://images.unsplash.com/photo-1589903308904-1010c2294adc?w=600&q=80', created_at:'2025-01-03T14:00:00Z', views:4450 },
-    { id:7, slug:'supabase-content-queue', title_en:'Using Supabase as a Smart Content Queue for Automated Publishing', title_ar:'استخدام Supabase كطابور محتوى ذكي للنشر الآلي', summary_en:'How to structure your Supabase schema to manage hundreds of scheduled videos, social posts, and analytics in one place.', summary_ar:'كيفية هيكلة مخطط Supabase لإدارة مئات الفيديوهات المجدولة والمنشورات الاجتماعية والتحليلات في مكان واحد.', category:'Automation', image_url:'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&q=80', created_at:'2024-12-28T09:00:00Z', views:3210 },
-  ];
-}
-
-// ─── THEME ───
+// ─── THEME & LANG & NEWSLETTER ───
 function toggleTheme() {
   const isDark = document.documentElement.classList.toggle('dark');
   localStorage.setItem('af-theme', isDark ? 'dark' : 'light');
@@ -768,8 +701,6 @@ function initTheme() {
   document.documentElement.classList.toggle('dark', saved === 'dark');
   document.getElementById('theme-btn').textContent = saved === 'dark' ? '🌙' : '☀️';
 }
-
-// ─── LANGUAGE ───
 function applyLang(lang) {
   currentLang = lang;
   localStorage.setItem('af-lang', lang);
@@ -782,34 +713,26 @@ function applyLang(lang) {
     if (d[k]) el.textContent = d[k];
   });
   document.getElementById('lang-btn').textContent = d.lang_btn;
-  // update search placeholder
   const si = document.getElementById('search-input');
   const se = document.getElementById('sub-email');
   if(se) se.placeholder = se.getAttribute(`data-ph-${lang}`) || '';
-  si.placeholder = si.getAttribute(`data-ph-${lang}`) || '';
-  // re-render cards for language switch
+  if(si) si.placeholder = si.getAttribute(`data-ph-${lang}`) || '';
   if (allArticles.length > 0) renderAll();
 }
 function toggleLang() { applyLang(currentLang === 'en' ? 'ar' : 'en'); }
 
-
-// ─── NEWSLETTER SUBSCRIPTION ───
 async function handleSubscribe(e) {
   e.preventDefault();
   const emailInput = document.getElementById('sub-email');
   const btn = document.getElementById('sub-btn');
   const msg = document.getElementById('sub-msg');
-  
   if(!emailInput.value) return;
-  
   btn.disabled = true;
   btn.textContent = '...';
-  
   try {
     if (!supabaseClient) throw new Error('DB not connected');
     const { error } = await supabaseClient.from('subscribers').insert([{ email: emailInput.value }]);
-    if (error && error.code !== '23505') throw error; // 23505 is unique violation (already subscribed)
-    
+    if (error && error.code !== '23505') throw error;
     msg.textContent = currentLang === 'ar' ? '✅ تم التسجيل بنجاح! شكراً لك.' : '✅ Subscribed successfully! Thank you.';
     msg.className = 'text-sm mt-4 font-medium text-green-500 block';
     emailInput.value = '';
@@ -817,23 +740,21 @@ async function handleSubscribe(e) {
     msg.textContent = currentLang === 'ar' ? '❌ حدث خطأ، يرجى المحاولة لاحقاً.' : '❌ An error occurred, please try again.';
     msg.className = 'text-sm mt-4 font-medium text-red-500 block';
   }
-  
   btn.disabled = false;
   btn.textContent = T[currentLang].news_btn || 'Subscribe';
   setTimeout(() => msg.classList.add('hidden'), 5000);
 }
 
-// ─── SCROLL REVEAL ───
+// ─── ANIMATIONS & OBSERVER ───
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
   });
 }, { threshold: 0.08 });
-// Safety net: reveal all after 2s
 setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible')), 2000);
 
-// ─── ANIMATED COUNTER ───
 function animateCounter(el, target, suffix='') {
+  if (!el) return;
   let start = 0; const step = target / 60;
   const timer = setInterval(() => {
     start += step;
@@ -842,10 +763,18 @@ function animateCounter(el, target, suffix='') {
   }, 16);
 }
 
-// ─── INIT ───
+function getDemoArticles() {
+  return [
+    { id:1, slug:'how-we-hit-47m-views', title_en:'How We Hit 4.7M YouTube Views in 7 Days With Pure Automation', title_ar:'كيف حققنا 4.7 مليون مشاهدة يوتيوب في 7 أيام بالأتمتة الكاملة', summary_en:'A deep-dive into the exact n8n workflow...', summary_ar:'تحليل عميق لورك فلو n8n الدقيق...', content_en:'Full article content here...', content_ar:'محتوى المقالة الكاملة هنا...', category:'Automation', image_url:'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80', created_at:'2025-01-15T10:00:00Z', views:18420 },
+    { id:2, slug:'n8n-youtube-pipeline', title_en:'Building the Ultimate n8n → YouTube Publishing Pipeline', title_ar:'بناء خط نشر n8n → يوتيوب المثالي', summary_en:'Step-by-step: connect Gemini...', summary_ar:'خطوة بخطوة: اربط Gemini...', category:'Automation', image_url:'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&q=80', created_at:'2025-01-12T08:00:00Z', views:9340 }
+  ];
+}
+
+// ─── EXECUTE INIT ───
 initTheme();
 applyLang(currentLang);
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+fetchArticles();
 </script>
 </body>
 </html>
