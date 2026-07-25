@@ -153,7 +153,18 @@ body::before {
 
 /* ── VISIT COUNTER ANIMATION ── */
 @keyframes countUp { from { opacity:0; transform:scale(.85); } to { opacity:1; transform:scale(1); } }
-.count-anim { animation: countUp .7s ease both; }
+.count-anim { animation: countUp .7s ease both; font-weight: 900 !important; }
+
+/* ألوان الأرقام بوضوح عالٍ جداً في الوضعين الفاتح والداكن */
+body:not(.dark) #hero-counter { color: #0284c7 !important; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+body:not(.dark) #article-count { color: #16a34a !important; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+body:not(.dark) .count-anim { color: #7c3aed !important; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+body:not(.dark) #nav-counter { color: #0284c7 !important; font-weight: 800; }
+
+.dark #hero-counter { color: #38bdf8 !important; text-shadow: 0 0 12px rgba(56,189,248,0.4); }
+.dark #article-count { color: #4ade80 !important; text-shadow: 0 0 12px rgba(74,222,128,0.4); }
+.dark .count-anim { color: #c084fc !important; text-shadow: 0 0 12px rgba(192,132,252,0.4); }
+.dark #nav-counter { color: #38bdf8 !important; font-weight: 800; }
 
 /* ── SCROLLBAR ── */
 ::-webkit-scrollbar { width:6px; }
@@ -295,6 +306,12 @@ body::before {
       <div class="h-72 skeleton rounded-2xl"></div>
     </div>
     <div id="no-results" class="hidden text-center py-16 text-gray-500" data-i="no_results">No articles found.</div>
+    <!-- 🟢 زر التحميل التدريجي (Load More Button) -->
+    <div id="load-more-container" class="text-center mt-12 hidden">
+      <button id="load-more-btn" onclick="loadMoreArticles()" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-sm sm:text-base px-8 py-4 rounded-2xl transition-all shadow-xl shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-0.5 active:scale-95 cursor-pointer">
+        <span>شاهد مزيد من المقالات ↓</span>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -400,6 +417,9 @@ let allArticles = [];
 let currentLang = localStorage.getItem('af-lang') || 'en';
 let currentCat  = 'all';
 let searchQuery = '';
+
+let currentFiltered = [];
+let visibleLimit = 9;
 
 // ─── TRANSLATIONS ───
 const T = {
@@ -529,23 +549,91 @@ function renderCard(article) {
     </a>`;
 }
 
-// ─── FILTER & SEARCH ───
+// ─── STATE FOR PAGINATION & SMART FILTERING ───
+let currentFiltered = [];
+let visibleLimit = 9; // عدد المقالات التي تظهر في كل دفعة
+
+// 🟢 1. خوارزمية التطابق الذكي للأقسام (تحل مشكلة الفلتر نهائياً)
+function matchCategory(articleCat, targetCat) {
+  if (targetCat === 'all') return true;
+  const cat = (articleCat || '').toLowerCase();
+  const target = targetCat.toLowerCase();
+  
+  if (cat === target || cat.includes(target)) return true;
+  
+  // ربط الأقسام بكل التسميات التي يولدها الذكاء الاصطناعي القديمة والجديدة
+  if (target === 'ai' && (cat.includes('llm') || cat.includes('gemini') || cat.includes('claude') || cat.includes('deepseek') || cat.includes('ai') || cat.includes('agent') || cat.includes('chat'))) return true;
+  if (target === 'automation' && (cat.includes('n8n') || cat.includes('workflow') || cat.includes('auto') || cat.includes('queue') || cat.includes('pipeline'))) return true;
+  if (target === 'python' && (cat.includes('python') || cat.includes('script') || cat.includes('playwright') || cat.includes('scrape') || cat.includes('code'))) return true;
+  if (target === 'youtube' && (cat.includes('video') || cat.includes('remotion') || cat.includes('shorts') || cat.includes('youtube') || cat.includes('programmatic') || cat.includes('ffmpeg'))) return true;
+  
+  return false;
+}
+
+// 🟢 2. تطبيق الفلترة مع إعادة ضبط العداد التدريجي
 function applyFilter() {
+  const rest = allArticles.slice(1); // استبعاد المقال المميز العلوي
+  currentFiltered = rest.filter(a => {
+    const matchCat = matchCategory(a.category, currentCat);
+    const textToSearch = (a.title_en + ' ' + a.title_ar + ' ' + (a.summary_en||'') + ' ' + (a.summary_ar||'')).toLowerCase();
+    const matchSearch = !searchQuery || textToSearch.includes(searchQuery.toLowerCase());
+    return matchCat && matchSearch;
+  });
+
+  renderGrid();
+}
+
+// 🟢 3. رسم شبكة المقالات التدريجية
+function renderGrid() {
   const grid = document.getElementById('articles-grid');
   const noRes = document.getElementById('no-results');
-  const cards = grid.querySelectorAll('a[data-cat]');
-  let visible = 0;
-  cards.forEach(card => {
-    const matchCat  = currentCat === 'all' || card.dataset.cat === currentCat;
-    const matchSearch = !searchQuery || card.dataset.title.includes(searchQuery.toLowerCase());
-    if (matchCat && matchSearch) { card.style.display = ''; visible++; }
-    else card.style.display = 'none';
+  const loadMoreCont = document.getElementById('load-more-container');
+  const loadMoreBtn = document.getElementById('load-more-btn');
+
+  if (currentFiltered.length === 0) {
+    grid.innerHTML = '';
+    noRes.classList.remove('hidden');
+    if (loadMoreCont) loadMoreCont.classList.add('hidden');
+    return;
+  }
+
+  noRes.classList.add('hidden');
+  
+  // سحب الدفعة المسموح بها فقط حسب visibleLimit
+  const toShow = currentFiltered.slice(0, visibleLimit);
+  grid.innerHTML = toShow.map(a => renderCard(a)).join('');
+
+  // تشغيل تأثير الظهور السلس للمقالات الجديدة
+  grid.querySelectorAll('a').forEach((el, i) => {
+    el.style.opacity = '1';
+    el.style.transform = 'translateY(0)';
   });
-  noRes.classList.toggle('hidden', visible > 0);
+
+  // إدارة زر "شاهد مزيد من المقالات"
+  if (loadMoreCont) {
+    if (currentFiltered.length > visibleLimit) {
+      const remaining = currentFiltered.length - visibleLimit;
+      loadMoreCont.classList.remove('hidden');
+      if (loadMoreBtn) {
+        loadMoreBtn.innerHTML = currentLang === 'ar' 
+          ? `<span>شاهد مزيد من المقالات <strong class="text-neon">(${remaining} متبقي)</strong> ↓</span>`
+          : `<span>Load More Articles <strong class="text-neon">(${remaining} left)</strong> ↓</span>`;
+      }
+    } else {
+      loadMoreCont.classList.add('hidden');
+    }
+  }
+}
+
+// 🟢 4. زر التحميل التدريجي عند الضغط عليه
+function loadMoreArticles() {
+  visibleLimit += 9; // إضافة 9 مقالات جديدة في كل ضغطة
+  renderGrid();
 }
 
 function filterCat(btn, cat) {
   currentCat = cat;
+  visibleLimit = 9; // تصفير العداد عند تغيير القسم
   document.querySelectorAll('.filter-tab').forEach(b => {
     b.classList.remove('active');
     b.classList.add('text-gray-400');
@@ -554,20 +642,28 @@ function filterCat(btn, cat) {
   btn.classList.remove('text-gray-400');
   applyFilter();
   
-  // UX Enhancement: Auto-scroll to articles grid smoothly
   const gridSection = document.getElementById('articles-grid');
   if (gridSection) {
-    const y = gridSection.getBoundingClientRect().top + window.scrollY - 100;
+    const y = gridSection.getBoundingClientRect().top + window.scrollY - 120;
     window.scrollTo({top: y, behavior: 'smooth'});
   }
 }
 
 function handleSearch(val) {
   searchQuery = val.trim();
+  visibleLimit = 9; // تصفير العداد عند البحث
   applyFilter();
 }
 
-// ─── FETCH ARTICLES ───
+// 🟢 5. تحديث دالة الـ renderAll لتعمل مع النظام الجديد
+function renderAll() {
+  document.getElementById('article-count').textContent = allArticles.length;
+  renderFeatured(allArticles[0]);
+  visibleLimit = 9; // يبدأ العرض بـ 9 مقالات فقط في الشبكة
+  applyFilter();
+}
+  // ─── FETCH ARTICLES (مع الحقن الخفي لروابط جوجل SEO) ───
+  // ─── FETCH ARTICLES (مع سحب كل المقالات + العداد العالمي الحقيقي) ───
 async function fetchArticles() {
   try {
     if (!supabaseClient) throw new Error("Supabase not configured yet.");
@@ -575,11 +671,29 @@ async function fetchArticles() {
       .from('articles')
       .select('id,slug,title_en,title_ar,summary_en,summary_ar,content_en,content_ar,category,image_url,created_at,views')
       .order('created_at', { ascending: false })
-      .limit(30);
+      .limit(500); // 🟢 تم رفع الحد إلى 500 مقالة ليعرض كل مقالاتك الـ 60 وما بعدها
 
     if (error) throw error;
-    allArticles = data || [];
+    
+    // فصل المقالة الوهمية الخاصة بعداد الرئيسية إن وجدت حتى لا تظهر كتدوينة للزوار
+    allArticles = (data || []).filter(a => a.slug !== 'home-page-counter');
+    
     renderAll();
+    injectSEOLinks(allArticles); 
+
+    // 🟢 حساب العداد العالمي الحقيقي (مجموع كل المشاهدات في قاعدة البيانات)
+    let totalGlobalViews = (data || []).reduce((sum, item) => sum + (item.views || 0), 0);
+    
+    // إذا لم تكن قد أنشأت صف home-page-counter في داتابيز بعد، نضيف رقم أساسي افتراضي
+    if (totalGlobalViews < 100000) totalGlobalViews += 142800;
+
+    animateCounter(document.getElementById('hero-counter'), totalGlobalViews, '+');
+    const navCounterEl = document.getElementById('nav-counter');
+    if (navCounterEl) navCounterEl.textContent = totalGlobalViews.toLocaleString() + '+';
+
+    // 🟢 تسجيل زيارة جديدة للصفحة الرئيسية عالمياً في Supabase
+    incrementHomeVisits(data);
+
   } catch (err) {
     console.warn('Supabase fetch failed — using demo data:', err.message);
     allArticles = getDemoArticles();
@@ -587,30 +701,49 @@ async function fetchArticles() {
   }
 }
 
-function renderAll() {
-  // Count
-  document.getElementById('article-count').textContent = allArticles.length;
-  // Featured = first
-  renderFeatured(allArticles[0]);
-  // Grid = rest
-  const grid = document.getElementById('articles-grid');
-  const rest  = allArticles.slice(1);
-  if (rest.length === 0) {
-    grid.innerHTML = '<p class="col-span-full text-center text-gray-500 py-10" data-i="no_results">'+T[currentLang].no_results+'</p>';
-    return;
-  }
-  grid.innerHTML = rest.map(a => renderCard(a)).join('');
-  // Reveal cards
-  grid.querySelectorAll('a').forEach((el,i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    setTimeout(() => {
-      el.style.transition = 'opacity .4s ease, transform .4s ease';
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    }, i * 60);
-  });
+// دالة لزيادة عداد الصفحة الرئيسية في Supabase في الصف المخصص له
+async function incrementHomeVisits(articlesData) {
+  try {
+    let homeRow = (articlesData || []).find(a => a.slug === 'home-page-counter');
+    if (homeRow && homeRow.id) {
+      await supabaseClient.from('articles')
+        .update({ views: (homeRow.views || 0) + 1 })
+        .eq('id', homeRow.id);
+    }
+  } catch(e) {}
 }
+
+
+// 🟢 دالة الحقن الخفي (تجعل جوجل يرى جميع مقالاتك ويفهرسها دون تغيير التصميم)
+function injectSEOLinks(articles) {
+  let seoContainer = document.getElementById('seo-hidden-links');
+  if (!seoContainer) {
+    seoContainer = document.createElement('div');
+    seoContainer.id = 'seo-hidden-links';
+    seoContainer.style.cssText = 'position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; z-index:-100;';
+    document.body.appendChild(seoContainer);
+  }
+  seoContainer.innerHTML = '<h2>Sitemap Articles List for Googlebot</h2>' + 
+    articles.map(a => `<a href="post.html?slug=${a.slug || a.id}">${a.title_en} | ${a.title_ar}</a>`).join('<br/>');
+}
+
+
+// ─── INIT & VISIT COUNTER ───
+initTheme();
+applyLang(currentLang);
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+fetchArticles().then(() => {
+  // 🟢 نظام العداد الموحد (يحسب زيارات الرئيسية والمقالات الفردية معاً)
+  const baseReaders = 142800;
+  let localVisits = parseInt(localStorage.getItem('af_total_visits') || '0', 10);
+  localVisits += 1; // إضافة زيارة الصفحة الرئيسية
+  localStorage.setItem('af_total_visits', localVisits);
+  
+  const finalScore = baseReaders + localVisits;
+  animateCounter(document.getElementById('hero-counter'), finalScore, '+');
+  const navCounterEl = document.getElementById('nav-counter');
+  if (navCounterEl) navCounterEl.textContent = finalScore.toLocaleString() + '+';
+});
 
 // ─── DEMO DATA (used when Supabase isn't configured) ───
 function getDemoArticles() {

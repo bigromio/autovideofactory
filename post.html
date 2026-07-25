@@ -547,20 +547,19 @@ async function fetchArticle() {
     if (error || !data) throw new Error('not found');
     articleData = data;
     renderArticle(data);
-    // Increment view count (fire-and-forget)
-    if (data.id) supabaseClient.from('articles').update({ views: (data.views||0)+1 }).eq('id', data.id);
+    
+    // 🟢 زيادة مشاهدات المقالة عالمياً في Supabase (وهذا سيرفع العداد الكلي للمدونة تلقائياً)
+    if (data.id) {
+      await supabaseClient.from('articles')
+        .update({ views: (data.views || 0) + 1 })
+        .eq('id', data.id);
+    }
   } catch (err) {
     console.warn('Supabase fetch failed:', err.message);
-    // Use demo article if slug matches demo data
     const demo = getDemoArticle(slug||id);
     if (demo) { articleData = demo; renderArticle(demo); }
     else showError();
   }
-}
-
-function showError() {
-  document.getElementById('loading-state').style.display = 'none';
-  document.getElementById('error-state').classList.remove('hidden');
 }
 
 function getDemoArticle(slugOrId) {
