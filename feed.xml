@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Build an Autonomous Content Factory: Multi-Agent Systems for Research & Writing with Python & DeepSeek V3 | بناء مصنع محتوى مستقل: أنظمة متعددة الوكلاء للبحث والكتابة باستخدام بايثون وDeepSeek V3</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-content-factory-python-deepseek-v3</link>
+    <description>Discover how to build a powerful multi-agent AI system using Python and DeepSeek V3 to autonomously research topics, outline articles, and draft engaging content. This guide provides a step-by-step tutorial to create your own automated content factory.</description>
+    <pubDate>Sat, 25 Jul 2026 20:53:18 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Programmatic Video: Auto-Generate Dynamic Highlight Reels with FFmpeg & Python | إتقان الفيديو البرمجي: التوليد التلقائي لمقاطع الفيديو البارزة الديناميكية باستخدام FFmpeg وبايثون</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-video-highlights-ffmpeg-python</link>
     <description>Learn to build a powerful Python pipeline that leverages FFmpeg to automatically create engaging video highlight reels from raw footage and data. This guide equips you with the skills to generate dynamic video content at scale, complete with custom overlays and transitions.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-dynamic-web-scraping-python-playwright</link>
     <description>Learn to build powerful web scrapers using Python and Playwright, mastering techniques to navigate dynamic websites, handle JavaScript-rendered content, and extract complex data efficiently. This guide provides a step-by-step tutorial for robust automation.</description>
     <pubDate>Mon, 20 Jul 2026 19:10:07 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Self-Hosted n8n with Docker Compose for Secure AI Workflows (Claude 3.5 Sonnet Example) | إتقان استضافة n8n ذاتيًا باستخدام Docker Compose لسير عمل الذكاء الاصطناعي الآمن (مثال Claude 3.5 Sonnet)</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-self-hosted-n8n-docker-compose-claude-35-sonnet</link>
-    <description>This guide provides a step-by-step tutorial on deploying a secure, self-hosted n8n instance using Docker Compose on a Virtual Private Server (VPS), and then integrating it with Claude 3.5 Sonnet for advanced AI-powered content generation workflows.</description>
-    <pubDate>Mon, 20 Jul 2026 13:01:08 GMT</pubDate>
   </item>
 </channel>
 </rss>
