@@ -171,6 +171,30 @@ body::before {
   font-size: 1.05rem;
 }
 
+/* 🟢 حل مشكلة تمدد النص واختفائه في شاشات الكمبيوتر */
+article {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.prose {
+    max-width: 100% !important;
+    width: 100% !important;
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
+}
+
+/* إجبار الأكواد والجداول على التمرير الداخلي فقط دون مط الصفحة */
+.prose pre, .prose table, .prose code {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+}
+
+/* منع أي عنصر داخل المقال من تجاوز عرض الشاشة */
+.prose * {
+    max-width: 100%;
+}
 </style>
 </head>
 <body class="relative">
