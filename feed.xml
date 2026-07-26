@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Web UI Testing: Playwright & Google Gemini 1.5 for Smart Test Scenario Generation | أتمتة اختبار واجهة المستخدم للويب: Playwright و Google Gemini 1.5 لتوليد سيناريوهات اختبار ذكية</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=playwright-gemini-1-5-smart-ui-testing-automation</link>
+    <description>Learn how to build an advanced UI test automation pipeline using Python Playwright, supercharged by Google Gemini 1.5 Pro. This guide demonstrates how to intelligently generate comprehensive test scenarios based on your application's UI, drastically reducing manual test design and maintenance.</description>
+    <pubDate>Sun, 26 Jul 2026 02:36:38 GMT</pubDate>
+  </item>
+  <item>
     <title>Master AI Content Repurposing with Claude 3.5 Sonnet & Python: Summarize for Any Platform | إتقان إعادة استخدام المحتوى بالذكاء الاصطناعي باستخدام Claude 3.5 Sonnet و Python: تلخيص لأي منصة</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-content-repurposing-claude-3-5-sonnet-python</link>
     <description>This guide teaches you how to leverage Claude 3.5 Sonnet with Python to automatically repurpose long-form content into platform-specific summaries and formats for efficient multi-channel distribution. Learn to build a powerful automation script that saves hours of manual content adaptation.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-code-review-deepseek-n8n-workflow</link>
     <description>Learn to build a powerful n8n workflow that leverages DeepSeek V3 to perform automated code reviews, providing instant feedback and refactoring suggestions. Streamline your development process and enhance code quality effortlessly.</description>
     <pubDate>Tue, 21 Jul 2026 07:26:26 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Automated Social Media Content Generation with n8n & Google Gemini 1.5 Flash | إتقان إنشاء محتوى وسائل التواصل الاجتماعي الآلي باستخدام n8n و Google Gemini 1.5 Flash</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-social-media-content-gemini-n8n</link>
-    <description>This guide teaches you how to build a powerful n8n workflow to automatically generate diverse social media posts using Google Gemini 1.5 Flash, saving you countless hours of manual content creation. Learn to engineer prompts, process AI outputs, and prepare content for seamless multi-platform scheduling.</description>
-    <pubDate>Tue, 21 Jul 2026 05:01:50 GMT</pubDate>
   </item>
 </channel>
 </rss>
