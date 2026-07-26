@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Turn Blog Posts into Engaging Videos: Remotion, Node.js & Google Gemini 1.5 | حوّل منشورات المدونة إلى فيديوهات جذابة: Remotion، Node.js و Google Gemini 1.5</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=turn-blog-posts-into-videos-remotion-gemini</link>
+    <description>Learn how to build an automated pipeline that transforms any blog post into a ready-to-publish video using Google Gemini 1.5 for script generation and Remotion for programmatic video rendering. This guide provides a step-by-step approach to creating scalable video content from text.</description>
+    <pubDate>Sun, 26 Jul 2026 02:51:31 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Web UI Testing: Playwright & Google Gemini 1.5 for Smart Test Scenario Generation | أتمتة اختبار واجهة المستخدم للويب: Playwright و Google Gemini 1.5 لتوليد سيناريوهات اختبار ذكية</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=playwright-gemini-1-5-smart-ui-testing-automation</link>
     <description>Learn how to build an advanced UI test automation pipeline using Python Playwright, supercharged by Google Gemini 1.5 Pro. This guide demonstrates how to intelligently generate comprehensive test scenarios based on your application's UI, drastically reducing manual test design and maintenance.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-linkedin-engagement-playwright-python</link>
     <description>Learn to build a powerful Python bot using Playwright to automate LinkedIn post likes and comments. This guide provides step-by-step instructions to boost your professional network's visibility and engagement efficiently.</description>
     <pubDate>Tue, 21 Jul 2026 13:05:54 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Automated Code Review with DeepSeek V3 & n8n (Full Workflow Guide) | إتقان مراجعة الكود الآلية باستخدام DeepSeek V3 و n8n (دليل سير العمل الكامل)</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-code-review-deepseek-n8n-workflow</link>
-    <description>Learn to build a powerful n8n workflow that leverages DeepSeek V3 to perform automated code reviews, providing instant feedback and refactoring suggestions. Streamline your development process and enhance code quality effortlessly.</description>
-    <pubDate>Tue, 21 Jul 2026 07:26:26 GMT</pubDate>
   </item>
 </channel>
 </rss>
