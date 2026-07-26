@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master AI Content Repurposing with Claude 3.5 Sonnet & Python: Summarize for Any Platform | إتقان إعادة استخدام المحتوى بالذكاء الاصطناعي باستخدام Claude 3.5 Sonnet و Python: تلخيص لأي منصة</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-content-repurposing-claude-3-5-sonnet-python</link>
+    <description>This guide teaches you how to leverage Claude 3.5 Sonnet with Python to automatically repurpose long-form content into platform-specific summaries and formats for efficient multi-channel distribution. Learn to build a powerful automation script that saves hours of manual content adaptation.</description>
+    <pubDate>Sun, 26 Jul 2026 01:58:16 GMT</pubDate>
+  </item>
+  <item>
     <title>Install Self-Hosted n8n with Docker & Build an AI-Powered News Digest Workflow (Full Guide) | تثبيت n8n المستضاف ذاتيًا باستخدام Docker وإنشاء سير عمل لتلخيص الأخبار المدعوم بالذكاء الاصطناعي (دليل كامل)</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=self-hosted-n8n-deepseek-ai-news-digest</link>
     <description>Learn to set up n8n with Docker and create an advanced workflow that monitors RSS feeds, uses DeepSeek V3 for article summarization and categorization, and generates a daily news digest.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-social-media-content-gemini-n8n</link>
     <description>This guide teaches you how to build a powerful n8n workflow to automatically generate diverse social media posts using Google Gemini 1.5 Flash, saving you countless hours of manual content creation. Learn to engineer prompts, process AI outputs, and prepare content for seamless multi-platform scheduling.</description>
     <pubDate>Tue, 21 Jul 2026 05:01:50 GMT</pubDate>
-  </item>
-  <item>
-    <title>Automate Educational Video Creation: Python, MoviePy & LLM-Generated Scripts | أتمتة إنشاء مقاطع الفيديو التعليمية: بايثون، MoviePy، وسكريبتات من نماذج اللغة الكبيرة (LLM)</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-educational-video-python-moviepy-llm</link>
-    <description>Learn how to build an automated pipeline to generate educational videos programmatically using Python, MoviePy, and AI-generated scripts. This guide empowers developers and creators to scale content production efficiently.</description>
-    <pubDate>Mon, 20 Jul 2026 21:01:04 GMT</pubDate>
   </item>
 </channel>
 </rss>
