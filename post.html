@@ -195,6 +195,23 @@ article {
 .prose * {
     max-width: 100%;
 }
+
+/* 🟢 إجبار صناديق الملاحظات والأكواد المولدة من الذكاء الاصطناعي على احترام الوضع الداكن */
+.dark .prose div[style*="background"], 
+.dark .prose blockquote,
+.dark .prose .callout-box {
+    background-color: rgba(59, 130, 246, 0.1) !important;
+    color: #e2e8f0 !important;
+    border-color: #3b82f6 !important;
+}
+
+:not(.dark) .prose div[style*="background"],
+:not(.dark) .prose blockquote,
+:not(.dark) .prose .callout-box {
+    background-color: rgba(59, 130, 246, 0.08) !important;
+    color: #1e293b !important;
+    border-color: #2563eb !important;
+}
 </style>
 </head>
 <body class="relative">
@@ -507,6 +524,7 @@ function renderArticle(a) {
       setTimeout(() => el.classList.add('visible'), i * 80);
     });
   }, 50);
+  fetchRelatedArticles(a.id, a.category);
 }
 
 // ─── TOC ───
