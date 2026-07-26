@@ -298,6 +298,14 @@ article {
       <aside class="hidden lg:block">
         <div class="sticky top-20 space-y-6">
 
+          <!-- 🟢 شبكة الربط الداخلي للمقالات ذات الصلة (Related Articles) -->
+          <div id="related-sidebar" class="dark:bg-[#161b22] bg-white border dark:border-[#21262d] border-gray-200 rounded-2xl p-5 hidden">
+            <div class="font-mono text-xs text-green-400 tracking-widest mb-4">// RELATED GUIDES</div>
+            <div id="related-links-container" class="space-y-3">
+              <!-- filled by JS -->
+            </div>
+          </div>
+
           <!-- TOC -->
           <div class="dark:bg-[#161b22] bg-white border dark:border-[#21262d] border-gray-200 rounded-2xl p-5">
             <div class="font-mono text-xs text-blue-400 tracking-widest mb-4" data-i="toc_title">// TABLE OF CONTENTS</div>
@@ -723,6 +731,59 @@ setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList
 initTheme();
 applyLang(currentLang);
 fetchArticle();
+
+// 🟢 دالة جلب المقالات ذات الصلة وبناء شبكة الزحف الجانبية والخفية
+async function fetchRelatedArticles(currentId, currentCat) {
+  try {
+    if (!supabaseClient) return;
+    // جلب 4 مقالات من نفس القسم أو أحدث المقالات (مع استبعاد المقال الحالي)
+    let { data } = await supabaseClient
+      .from('articles')
+      .select('id, slug, title_en, title_ar, category')
+      .neq('id', currentId)
+      .eq('category', currentCat || 'AI & LLMs')
+      .limit(3);
+
+    // إذا لم يجد في نفس القسم عدد كافٍ، يجلب أحدث المقالات عامة
+    if (!data || data.length < 3) {
+      const { data: moreData } = await supabaseClient
+        .from('articles')
+        .select('id, slug, title_en, title_ar, category')
+        .neq('id', currentId)
+        .limit(3);
+      data = moreData;
+    }
+
+    if (!data || data.length === 0) return;
+
+    // 1. رسم الكروت الأنيقة في القائمة الجانبية
+    const container = document.getElementById('related-links-container');
+    const sidebarEl = document.getElementById('related-sidebar');
+    const l = currentLang;
+
+    container.innerHTML = data.map(a => {
+      const t = a[`title_${l}`] || a.title_en;
+      const s = a.slug || a.id;
+      return `<a href="post.html?slug=${s}" class="block group p-3 rounded-xl border dark:border-white/5 border-black/5 dark:bg-white/[0.02] hover:bg-blue-500/5 dark:hover:border-blue-500/40 hover:border-blue-500/40 transition-all">
+        <span class="text-[10px] font-mono font-bold text-blue-400 uppercase block mb-1">${a.category || 'Tech Guide'}</span>
+        <span class="font-semibold text-xs dark:text-gray-300 text-gray-700 group-hover:text-blue-500 transition-colors line-clamp-2 leading-snug">${t}</span>
+      </a>`;
+    }).join('');
+
+    sidebarEl.classList.remove('hidden');
+
+    // 2. الحقن الخفي الإضافي (لضمان زحف عناكب جوجل وروبوتات الذكاء الاصطناعي)
+    let seoBox = document.getElementById('seo-hidden-links');
+    if (!seoBox) {
+      seoBox = document.createElement('div');
+      seoBox.id = 'seo-hidden-links';
+      seoBox.style.cssText = 'position:absolute; width:1px; height:1px; overflow:hidden; opacity:0; pointer-events:none; z-index:-100;';
+      document.body.appendChild(seoBox);
+    }
+    seoBox.innerHTML += '<h3>Related Tutorials for Crawlers</h3>' + data.map(a => `<a href="post.html?slug=${a.slug || a.id}">${a.title_en} | ${a.title_ar}</a>`).join('<br/>');
+
+  } catch(e) { console.warn('Related fetch skipped:', e.message); }
+}
 </script>
 </body>
 </html>
