@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Scrape E-commerce Data with Playwright & Python | استخراج بيانات التجارة الإلكترونية باستخدام Playwright و Python</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=scrape-ecommerce-data-playwright-python</link>
+    <description>Learn how to build a robust Python and Playwright pipeline to programmatically extract product details from e-commerce websites at scale, a critical skill for data-driven automation.</description>
+    <pubDate>Sun, 26 Jul 2026 23:18:44 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Dynamic Explainer Videos with Remotion & Claude 3.5 Sonnet | أتمتة فيديوهات الشرح الديناميكية باستخدام Remotion و Claude 3.5 Sonnet</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-explainer-videos-remotion-claude-3-5-sonnet</link>
     <description>Learn how to build a powerful automated pipeline for generating dynamic explainer videos using Remotion, Node.js, and Claude 3.5 Sonnet for script generation. This guide will show you how to programmatically create scalable, data-driven video content.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-deepseek-v3-document-automation</link>
     <description>Learn to build a powerful n8n workflow that leverages DeepSeek V3's long context window to autonomously extract structured data and generate concise summaries from any document. This guide provides a step-by-step tutorial with practical code to automate complex information processing.</description>
     <pubDate>Wed, 22 Jul 2026 15:31:47 GMT</pubDate>
-  </item>
-  <item>
-    <title>Programmatic Video Snippet Generation with Remotion & LLMs: Turn Long-Form Content into Engaging Social Clips | توليد مقاطع فيديو مبرمجة باستخدام Remotion ونماذج اللغة الكبيرة (LLMs): حوّل المحتوى الطويل إلى مقاطع اجتماعية جذابة</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=programmatic-video-snippets-remotion-llm-guide</link>
-    <description>Discover how to transform lengthy articles or videos into captivating social media snippets using Remotion for dynamic video rendering and Large Language Models (LLMs) for intelligent content extraction. This guide provides a step-by-step pipeline to automate the creation of viral-ready clips from your existing content library.</description>
-    <pubDate>Wed, 22 Jul 2026 03:06:43 GMT</pubDate>
   </item>
 </channel>
 </rss>
