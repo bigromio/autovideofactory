@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Stock Analysis Videos with Remotion & Claude 3.5 | أتمتة مقاطع فيديو تحليل الأسهم باستخدام Remotion و Claude 3.5</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-stock-analysis-videos-remotion-claude-3-5-sonnet</link>
+    <description>Discover how to build an automated pipeline to generate dynamic stock analysis videos using Remotion, a React-based video framework, and Anthropic's Claude 3.5 Sonnet for script generation and insights. This guide provides a step-by-step tutorial from data fetching to video rendering.</description>
+    <pubDate>Sun, 26 Jul 2026 06:28:16 GMT</pubDate>
+  </item>
+  <item>
     <title>Turn Blog Posts into Engaging Videos: Remotion, Node.js & Google Gemini 1.5 | حوّل منشورات المدونة إلى فيديوهات جذابة: Remotion، Node.js و Google Gemini 1.5</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=turn-blog-posts-into-videos-remotion-gemini</link>
     <description>Learn how to build an automated pipeline that transforms any blog post into a ready-to-publish video using Google Gemini 1.5 for script generation and Remotion for programmatic video rendering. This guide provides a step-by-step approach to creating scalable video content from text.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-llm-function-calling-n8n-gemini-data-agent</link>
     <description>Unlock the true potential of AI automation by mastering LLM function calling within n8n. This guide shows you how to build an intelligent data lookup agent using Google Gemini 1.5 Pro to interact with external systems and provide dynamic, accurate answers.</description>
     <pubDate>Tue, 21 Jul 2026 19:13:10 GMT</pubDate>
-  </item>
-  <item>
-    <title>Automate LinkedIn Engagement: Build a Python Playwright Bot for Likes & Comments | أتمتة تفاعل LinkedIn: بناء بوت Python Playwright للإعجابات والتعليقات</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-linkedin-engagement-playwright-python</link>
-    <description>Learn to build a powerful Python bot using Playwright to automate LinkedIn post likes and comments. This guide provides step-by-step instructions to boost your professional network's visibility and engagement efficiently.</description>
-    <pubDate>Tue, 21 Jul 2026 13:05:54 GMT</pubDate>
   </item>
 </channel>
 </rss>
