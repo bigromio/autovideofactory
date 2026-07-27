@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Market Research with Python & Gemini 2.5 | أتمتة أبحاث السوق باستخدام بايثون وجميني 2.5</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-market-research-python-gemini-2-5</link>
+    <description>Learn to build a powerful Python pipeline leveraging Google Gemini 2.5 Flash/Pro to automate market research report generation, transforming raw data into actionable insights at scale.</description>
+    <pubDate>Mon, 27 Jul 2026 08:26:17 GMT</pubDate>
+  </item>
+  <item>
     <title>Scrape E-commerce Data with Playwright & Python | استخراج بيانات التجارة الإلكترونية باستخدام Playwright و Python</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=scrape-ecommerce-data-playwright-python</link>
     <description>Learn how to build a robust Python and Playwright pipeline to programmatically extract product details from e-commerce websites at scale, a critical skill for data-driven automation.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-personalized-intro-videos-remotion-nodejs</link>
     <description>Learn how to build an automated pipeline using Remotion and Node.js to generate unique, personalized intro videos at scale for social media. This guide covers dynamic data integration and server-side rendering.</description>
     <pubDate>Wed, 22 Jul 2026 16:52:49 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Autonomous Document Processing with n8n & DeepSeek V3: Extract & Summarize at Scale | إتقان معالجة المستندات المستقلة باستخدام n8n و DeepSeek V3: استخلاص وتلخيص على نطاق واسع</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=n8n-deepseek-v3-document-automation</link>
-    <description>Learn to build a powerful n8n workflow that leverages DeepSeek V3's long context window to autonomously extract structured data and generate concise summaries from any document. This guide provides a step-by-step tutorial with practical code to automate complex information processing.</description>
-    <pubDate>Wed, 22 Jul 2026 15:31:47 GMT</pubDate>
   </item>
 </channel>
 </rss>
