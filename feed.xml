@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Invoice Extraction with Claude 3.5 Sonnet & Python | أتمتة استخراج الفواتير باستخدام Claude 3.5 Sonnet وبايثون</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-invoice-extraction-claude-3-5-python</link>
+    <description>This guide will walk you through building a Python pipeline to automatically extract structured data from unstructured invoice text using Anthropic's Claude 3.5 Sonnet, transforming chaotic document data into actionable insights.</description>
+    <pubDate>Tue, 28 Jul 2026 22:11:06 GMT</pubDate>
+  </item>
+  <item>
     <title>Auto-Generate Event Recaps with Remotion & Node.js | إنشاء ملخصات الأحداث تلقائيًا باستخدام Remotion و Node.js</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-event-recaps-remotion-nodejs</link>
     <description>Learn to build a powerful programmatic video pipeline using Remotion and Node.js to automatically transform event data into polished, dynamic video recaps. This guide covers setup, template design, data fetching, and automated rendering.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-video-highlights-ffmpeg-python</link>
     <description>Learn to build a powerful Python pipeline that leverages FFmpeg to automatically create engaging video highlight reels from raw footage and data. This guide equips you with the skills to generate dynamic video content at scale, complete with custom overlays and transitions.</description>
     <pubDate>Thu, 23 Jul 2026 05:36:10 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Automated Code Generation with DeepSeek Coder (R1) & Python: From Prompt to Production-Ready Code | إتقان توليد الكود التلقائي باستخدام DeepSeek Coder (R1) وبايثون: من الموجه إلى الكود الجاهز للإنتاج</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=deepseek-coder-python-auto-code-generation</link>
-    <description>Learn how to integrate DeepSeek Coder with Python to build an automated code generation pipeline, from setting up your environment to crafting effective prompts and incorporating basic automated testing. This guide empowers developers to create functional, production-ready code snippets with AI, significantly boosting productivity.</description>
-    <pubDate>Wed, 22 Jul 2026 21:44:51 GMT</pubDate>
   </item>
 </channel>
 </rss>
