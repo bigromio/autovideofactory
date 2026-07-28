@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Social Posting: Playwright & Claude 3.5 Sonnet | أتمتة النشر الاجتماعي: Playwright و Claude 3.5 Sonnet</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-social-posting-playwright-claude-3-5-sonnet</link>
+    <description>Learn how to build a dynamic social media auto-poster using Python, Playwright for browser automation, and Claude 3.5 Sonnet for intelligent content generation. This guide will equip you with the skills to scale your digital communication effortlessly.</description>
+    <pubDate>Tue, 28 Jul 2026 05:00:31 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Data-Driven Product Demos with Remotion & Claude 3.5 | أتمتة عروض المنتجات المعتمدة على البيانات باستخدام Remotion و Claude 3.5</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-product-demos-remotion-claude-3-5</link>
     <description>Learn how to build a powerful automated pipeline to generate dynamic product demo videos at scale using Remotion (Node.js) and Claude 3.5 Sonnet for intelligent script generation from structured data.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-local-llm-n8n-ollama-workflows</link>
     <description>Learn how to integrate local large language models (LLMs) via Ollama directly into n8n, enabling powerful, privacy-focused automation without cloud API dependencies. This guide walks you through setting up your local AI environment and building your first n8n workflow for secure, offline processing.</description>
     <pubDate>Wed, 22 Jul 2026 20:40:38 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Data-Driven Video Shorts: Generate Financial News with Remotion & Google Gemini 1.5 | إتقان مقاطع الفيديو القصيرة المبنية على البيانات: إنشاء أخبار مالية باستخدام Remotion و Google Gemini 1.5</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-data-driven-video-shorts-remotion-gemini</link>
-    <description>Learn to build an automated pipeline for generating data-driven financial news videos optimized for YouTube Shorts using Remotion, Node.js, and Google Gemini 1.5. This guide provides a step-by-step approach to scripting, rendering, and orchestrating dynamic video content at scale.</description>
-    <pubDate>Wed, 22 Jul 2026 19:36:04 GMT</pubDate>
   </item>
 </channel>
 </rss>
