@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Auto-Generate Educational Shorts with Remotion & Claude 3.5 | التوليد التلقائي لمقاطع الفيديو التعليمية القصيرة باستخدام Remotion و Claude 3.5</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-educational-shorts-remotion-claude-3-5</link>
+    <description>Learn to build a powerful automation pipeline that combines Remotion for programmatic video rendering and Claude 3.5 Sonnet for dynamic script generation, enabling you to create educational video shorts at scale.</description>
+    <pubDate>Wed, 29 Jul 2026 20:07:44 GMT</pubDate>
+  </item>
+  <item>
     <title>Auto-Generate News Summaries with Playwright & Claude 3.5 | إنشاء ملخصات إخبارية تلقائية باستخدام Playwright و Claude 3.5</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-news-summaries-playwright-claude-3-5</link>
     <description>Learn how to build an automated Python pipeline using Playwright for web scraping and Claude 3.5 Sonnet for advanced AI summarization to effortlessly generate daily news briefs or content highlights. This guide provides a step-by-step approach to transform raw web content into concise, actionable insights for newsletters or internal reports.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=turn-blog-posts-into-videos-remotion-gemini</link>
     <description>Learn how to build an automated pipeline that transforms any blog post into a ready-to-publish video using Google Gemini 1.5 for script generation and Remotion for programmatic video rendering. This guide provides a step-by-step approach to creating scalable video content from text.</description>
     <pubDate>Sun, 26 Jul 2026 02:51:31 GMT</pubDate>
-  </item>
-  <item>
-    <title>Automate Web UI Testing: Playwright & Google Gemini 1.5 for Smart Test Scenario Generation | أتمتة اختبار واجهة المستخدم للويب: Playwright و Google Gemini 1.5 لتوليد سيناريوهات اختبار ذكية</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=playwright-gemini-1-5-smart-ui-testing-automation</link>
-    <description>Learn how to build an advanced UI test automation pipeline using Python Playwright, supercharged by Google Gemini 1.5 Pro. This guide demonstrates how to intelligently generate comprehensive test scenarios based on your application's UI, drastically reducing manual test design and maintenance.</description>
-    <pubDate>Sun, 26 Jul 2026 02:36:38 GMT</pubDate>
   </item>
 </channel>
 </rss>
