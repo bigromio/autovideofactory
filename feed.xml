@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Social Video Ads: Remotion & Gemini 2.5 Flash | أتمتة إعلانات الفيديو الاجتماعية: Remotion و Gemini 2.5 Flash</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-social-video-ads-remotion-gemini-2-5-flash</link>
+    <description>Learn to build a powerful pipeline for auto-generating dynamic social media video ads using Remotion (React-based video rendering) and Google Gemini 2.5 Flash for dynamic content generation. This guide details the architectural steps to scale video ad production.</description>
+    <pubDate>Wed, 29 Jul 2026 14:30:38 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Ad Copy with Gemini 2.5 Flash & Python | أتمتة نسخ الإعلانات باستخدام Gemini 2.5 Flash وبايثون</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-ad-copy-gemini-2-5-flash-python</link>
     <description>Learn to build a powerful Python script for automated ad copy generation using Google's cutting-edge Gemini 2.5 Flash, enabling scalable and creative marketing content.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=ai-content-repurposing-claude-3-5-sonnet-python</link>
     <description>This guide teaches you how to leverage Claude 3.5 Sonnet with Python to automatically repurpose long-form content into platform-specific summaries and formats for efficient multi-channel distribution. Learn to build a powerful automation script that saves hours of manual content adaptation.</description>
     <pubDate>Sun, 26 Jul 2026 01:58:16 GMT</pubDate>
-  </item>
-  <item>
-    <title>Install Self-Hosted n8n with Docker & Build an AI-Powered News Digest Workflow (Full Guide) | تثبيت n8n المستضاف ذاتيًا باستخدام Docker وإنشاء سير عمل لتلخيص الأخبار المدعوم بالذكاء الاصطناعي (دليل كامل)</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=self-hosted-n8n-deepseek-ai-news-digest</link>
-    <description>Learn to set up n8n with Docker and create an advanced workflow that monitors RSS feeds, uses DeepSeek V3 for article summarization and categorization, and generates a daily news digest.</description>
-    <pubDate>Sat, 25 Jul 2026 23:08:10 GMT</pubDate>
   </item>
 </channel>
 </rss>
