@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Technical Blogs with Claude 3.5 Sonnet & Python | أتمتة المدونات التقنية باستخدام Claude 3.5 Sonnet و Python</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-technical-blogs-claude-3-5-sonnet-python</link>
+    <description>Learn to engineer a powerful Python pipeline for generating highly structured, SEO-optimized technical blog posts using Anthropic's Claude 3.5 Sonnet. This guide reveals how to create production-ready content generation logic, perfect for scaling your documentation or narrative creation.</description>
+    <pubDate>Wed, 29 Jul 2026 21:23:00 GMT</pubDate>
+  </item>
+  <item>
     <title>Auto-Generate Educational Shorts with Remotion & Claude 3.5 | التوليد التلقائي لمقاطع الفيديو التعليمية القصيرة باستخدام Remotion و Claude 3.5</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-educational-shorts-remotion-claude-3-5</link>
     <description>Learn to build a powerful automation pipeline that combines Remotion for programmatic video rendering and Claude 3.5 Sonnet for dynamic script generation, enabling you to create educational video shorts at scale.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-stock-analysis-videos-remotion-claude-3-5-sonnet</link>
     <description>Discover how to build an automated pipeline to generate dynamic stock analysis videos using Remotion, a React-based video framework, and Anthropic's Claude 3.5 Sonnet for script generation and insights. This guide provides a step-by-step tutorial from data fetching to video rendering.</description>
     <pubDate>Sun, 26 Jul 2026 06:28:16 GMT</pubDate>
-  </item>
-  <item>
-    <title>Turn Blog Posts into Engaging Videos: Remotion, Node.js & Google Gemini 1.5 | حوّل منشورات المدونة إلى فيديوهات جذابة: Remotion، Node.js و Google Gemini 1.5</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=turn-blog-posts-into-videos-remotion-gemini</link>
-    <description>Learn how to build an automated pipeline that transforms any blog post into a ready-to-publish video using Google Gemini 1.5 for script generation and Remotion for programmatic video rendering. This guide provides a step-by-step approach to creating scalable video content from text.</description>
-    <pubDate>Sun, 26 Jul 2026 02:51:31 GMT</pubDate>
   </item>
 </channel>
 </rss>
