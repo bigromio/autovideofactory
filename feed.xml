@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Master Dynamic Form Automation with Playwright & DeepSeek V3 | إتقان أتمتة النماذج الديناميكية باستخدام Playwright و DeepSeek V3</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-dynamic-form-automation-playwright-deepseek-v3</link>
+    <description>This guide teaches you how to build a powerful automation pipeline using Python, Playwright, and DeepSeek V3 to intelligently interpret and fill complex web forms dynamically. You will learn to overcome common automation challenges by leveraging advanced AI for smart data generation and interaction.</description>
+    <pubDate>Wed, 29 Jul 2026 00:34:31 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Invoice Extraction with Claude 3.5 Sonnet & Python | أتمتة استخراج الفواتير باستخدام Claude 3.5 Sonnet وبايثون</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-invoice-extraction-claude-3-5-python</link>
     <description>This guide will walk you through building a Python pipeline to automatically extract structured data from unstructured invoice text using Anthropic's Claude 3.5 Sonnet, transforming chaotic document data into actionable insights.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-content-factory-python-deepseek-v3</link>
     <description>Discover how to build a powerful multi-agent AI system using Python and DeepSeek V3 to autonomously research topics, outline articles, and draft engaging content. This guide provides a step-by-step tutorial to create your own automated content factory.</description>
     <pubDate>Sat, 25 Jul 2026 20:53:18 GMT</pubDate>
-  </item>
-  <item>
-    <title>Master Programmatic Video: Auto-Generate Dynamic Highlight Reels with FFmpeg & Python | إتقان الفيديو البرمجي: التوليد التلقائي لمقاطع الفيديو البارزة الديناميكية باستخدام FFmpeg وبايثون</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-video-highlights-ffmpeg-python</link>
-    <description>Learn to build a powerful Python pipeline that leverages FFmpeg to automatically create engaging video highlight reels from raw footage and data. This guide equips you with the skills to generate dynamic video content at scale, complete with custom overlays and transitions.</description>
-    <pubDate>Thu, 23 Jul 2026 05:36:10 GMT</pubDate>
   </item>
 </channel>
 </rss>
