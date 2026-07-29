@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Automate Ad Copy with Gemini 2.5 Flash & Python | أتمتة نسخ الإعلانات باستخدام Gemini 2.5 Flash وبايثون</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-ad-copy-gemini-2-5-flash-python</link>
+    <description>Learn to build a powerful Python script for automated ad copy generation using Google's cutting-edge Gemini 2.5 Flash, enabling scalable and creative marketing content.</description>
+    <pubDate>Wed, 29 Jul 2026 09:22:15 GMT</pubDate>
+  </item>
+  <item>
     <title>Master Dynamic Form Automation with Playwright & DeepSeek V3 | إتقان أتمتة النماذج الديناميكية باستخدام Playwright و DeepSeek V3</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=master-dynamic-form-automation-playwright-deepseek-v3</link>
     <description>This guide teaches you how to build a powerful automation pipeline using Python, Playwright, and DeepSeek V3 to intelligently interpret and fill complex web forms dynamically. You will learn to overcome common automation challenges by leveraging advanced AI for smart data generation and interaction.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=self-hosted-n8n-deepseek-ai-news-digest</link>
     <description>Learn to set up n8n with Docker and create an advanced workflow that monitors RSS feeds, uses DeepSeek V3 for article summarization and categorization, and generates a daily news digest.</description>
     <pubDate>Sat, 25 Jul 2026 23:08:10 GMT</pubDate>
-  </item>
-  <item>
-    <title>Build an Autonomous Content Factory: Multi-Agent Systems for Research & Writing with Python & DeepSeek V3 | بناء مصنع محتوى مستقل: أنظمة متعددة الوكلاء للبحث والكتابة باستخدام بايثون وDeepSeek V3</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=build-multi-agent-content-factory-python-deepseek-v3</link>
-    <description>Discover how to build a powerful multi-agent AI system using Python and DeepSeek V3 to autonomously research topics, outline articles, and draft engaging content. This guide provides a step-by-step tutorial to create your own automated content factory.</description>
-    <pubDate>Sat, 25 Jul 2026 20:53:18 GMT</pubDate>
   </item>
 </channel>
 </rss>
