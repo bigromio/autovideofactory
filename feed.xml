@@ -5,6 +5,12 @@
   <link>https://bigromio.github.io/autovideofactory</link>
   <description>AI, Automation & Programming Blog</description>
   <item>
+    <title>Auto-Generate Viral Shorts with Remotion & Claude 3.5 | إنشاء مقاطع فيديو قصيرة (Shorts) فيروسية تلقائيًا باستخدام Remotion وClaude 3.5</title>
+    <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-viral-shorts-remotion-claude-3-5</link>
+    <description>Learn to build an automated pipeline to generate engaging, viral-style short videos using Remotion for rendering and Claude 3.5 Sonnet for dynamic script generation, scaling your content creation efforts.</description>
+    <pubDate>Thu, 30 Jul 2026 04:12:28 GMT</pubDate>
+  </item>
+  <item>
     <title>Automate Technical Blogs with Claude 3.5 Sonnet & Python | أتمتة المدونات التقنية باستخدام Claude 3.5 Sonnet و Python</title>
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-technical-blogs-claude-3-5-sonnet-python</link>
     <description>Learn to engineer a powerful Python pipeline for generating highly structured, SEO-optimized technical blog posts using Anthropic's Claude 3.5 Sonnet. This guide reveals how to create production-ready content generation logic, perfect for scaling your documentation or narrative creation.</description>
@@ -87,12 +93,6 @@
     <link>https://bigromio.github.io/autovideofactory/post.html?slug=auto-generate-marketing-videos-ffmpeg-claude-3-5-sonnet</link>
     <description>Learn to build a powerful automated pipeline for generating dynamic marketing videos from text using FFmpeg, Python, and the advanced capabilities of Claude 3.5 Sonnet. This guide provides a step-by-step tutorial for creators and developers.</description>
     <pubDate>Sun, 26 Jul 2026 08:15:03 GMT</pubDate>
-  </item>
-  <item>
-    <title>Automate Stock Analysis Videos with Remotion & Claude 3.5 | أتمتة مقاطع فيديو تحليل الأسهم باستخدام Remotion و Claude 3.5</title>
-    <link>https://bigromio.github.io/autovideofactory/post.html?slug=automate-stock-analysis-videos-remotion-claude-3-5-sonnet</link>
-    <description>Discover how to build an automated pipeline to generate dynamic stock analysis videos using Remotion, a React-based video framework, and Anthropic's Claude 3.5 Sonnet for script generation and insights. This guide provides a step-by-step tutorial from data fetching to video rendering.</description>
-    <pubDate>Sun, 26 Jul 2026 06:28:16 GMT</pubDate>
   </item>
 </channel>
 </rss>
